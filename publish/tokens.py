@@ -17,6 +17,9 @@ from . import instagram, linkedin, zernio
 from .common import PublishError, SkipForNow
 from .http import Http
 
+# Any public image works; Zernio only validates the request in a dry run.
+PREFLIGHT_IMAGE = "https://gsissons2.github.io/pryce-content/previews/pr-1/pipeline-check/slide-01.jpg"
+
 def whoami(http: Http) -> list[str]:
     """Read-only identity checks. Returns problems found."""
     problems = []
@@ -69,6 +72,12 @@ def whoami(http: Http) -> list[str]:
                     can = (info.get("creator") or {}).get("canPostMore")
                     print(f"Zernio: TikTok privacy levels {', '.join(levels) or '(none listed)'}; "
                           f"can post now: {can}")
+                    pre = zernio.tiktok_preflight(http, key, acc, PREFLIGHT_IMAGE)
+                    verdicts = "; ".join(str(v.get("reason") or v) for v in pre.get("tiktok") or [] if v)
+                    print(f"Zernio: TikTok preflight (dry run, nothing posted): can publish {pre.get('canPublish')}"
+                          + (f" ({verdicts})" if verdicts else ""))
+                    if pre.get("canPublish") is False:
+                        problems.append(f"Zernio says TikTok cannot publish right now: {verdicts or 'no reason given'}")
                     if levels and zernio.TIKTOK_PRIVACY not in levels:
                         problems.append(f"TikTok does not offer privacy level {zernio.TIKTOK_PRIVACY} for this "
                                         f"account (it offers {', '.join(levels)}). Set variable "

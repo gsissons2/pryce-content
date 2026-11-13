@@ -52,8 +52,17 @@ class LinkedIn:
     def __init__(self, http: Http, token: str | None = None, person: str | None = None):
         self.http = http
         self.token = token or env("LINKEDIN_ACCESS_TOKEN", http.dry_run)
-        person = person or env("LINKEDIN_PERSON_URN", http.dry_run)
+        person = person or os.environ.get("LINKEDIN_PERSON_URN", "").strip() or self.whoami()
         self.person = person if person.startswith("urn:li:") or person.startswith("<") else f"urn:li:person:{person}"
+
+    def whoami(self) -> str:
+        """The member id behind the token (OpenID userinfo `sub`), so LINKEDIN_PERSON_URN is optional."""
+        r = self.http.request("GET", "https://api.linkedin.com/v2/userinfo",
+                              headers={"Authorization": f"Bearer {self.token}"}, dry={"sub": "<member id>"})
+        sub = self.http.check(r, "LinkedIn userinfo").json().get("sub")
+        if not sub:
+            raise PublishError("LinkedIn userinfo returned no member id. The token needs the openid and profile scopes.")
+        return str(sub)
 
     def _headers(self, content_type: str | None = "application/json") -> dict:
         h = {"Authorization": f"Bearer {self.token}", "Linkedin-Version": LINKEDIN_VERSION,

@@ -182,6 +182,27 @@ class Zernio:
                 "url": entry.get("platformPostUrl") or None}
 
 
+def tiktok_preflight(http: Http, key: str, account_id: str, image_url: str) -> dict:
+    """Send a TikTok photo post with dryRun=true: Zernio checks the key, the body and the daily limits
+    and answers 200 with a verdict. Nothing is created, scheduled or published."""
+    settings = {"privacyLevel": TIKTOK_PRIVACY, "allowComment": True, "contentPreviewConfirmed": True,
+                "expressConsentGiven": True, "mediaType": "photo", "photoCoverIndex": 0,
+                "description": "Preflight check, never published.", "autoAddMusic": TIKTOK_AUTO_MUSIC}
+    # No publishNow or scheduledFor: if dryRun were ever ignored, Zernio would only save a draft.
+    body = {"content": "Preflight check", "dryRun": True,
+            "mediaItems": [{"type": "image", "url": image_url}],
+            "platforms": [{"platform": "tiktok", "accountId": account_id, "platformSpecificData": settings}]}
+    r = http.request("POST", f"{BASE}/posts", headers={"Authorization": f"Bearer {key}",
+                                                      "Content-Type": "application/json"},
+                     json_body=body, dry={"dryRun": True, "canPublish": True, "tiktok": []})
+    res = http.check(r, "Zernio TikTok preflight").json()
+    if res.get("dryRun") is not True:
+        # Zernio ignored dryRun. With no timing set it can only have saved a draft, never a post.
+        raise PermanentError("Zernio did not treat the preflight as a dry run and saved a draft instead. "
+                             "Delete the draft 'Preflight check' in the Zernio dashboard. Nothing was posted.")
+    return res
+
+
 def tiktok_body(spec: dict, assets, account_id: str) -> tuple[dict, list[str]]:
     text, warnings = captions.tiktok_caption(spec, assets.kind)
     settings = {

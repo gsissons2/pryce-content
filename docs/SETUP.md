@@ -23,7 +23,7 @@ TikTok and YouTube keep posts private for apps that have not passed their audit.
 1. **[Graham]** Sign up at zernio.com and create an API key (done 14 Nov 2026).
 2. **[Graham]** In the Zernio dashboard, connect TikTok (log in as **@prycedigital**) and YouTube (the Google account that owns the **@prycedigital** channel). Allow everything it asks for.
 3. **[Graham]** Add the key as secret `ZERNIO_API_KEY` (Settings, Secrets and variables, Actions, New repository secret).
-4. **[Graham]** Run Actions, Token check, Run workflow. In the log you want `Zernio: tiktok @prycedigital id=...`, `Zernio: youtube ... id=...` and a line of TikTok privacy levels that includes `PUBLIC_TO_EVERYONE`. Any problem opens an issue with what to fix.
+4. **[Graham]** Run Actions, Token check, Run workflow. In the log you want `Zernio: tiktok @prycedigital id=...`, `Zernio: youtube ... id=...`, a line of TikTok privacy levels that includes `PUBLIC_TO_EVERYONE`, and `TikTok preflight (dry run, nothing posted): can publish True` (Zernio checks a sample photo post without creating it). Any problem opens an issue with what to fix.
 
 That is all. The account ids are looked up from the key on every run, so there are no ids to copy. Optional variables: `ZERNIO_TIKTOK_USERNAME` / `ZERNIO_YOUTUBE_USERNAME` only if you ever connect a second TikTok or YouTube account, and `ZERNIO_TIKTOK_PRIVACY` only if Token check says TikTok does not offer `PUBLIC_TO_EVERYONE`.
 
@@ -53,7 +53,7 @@ Token check refreshes this token every week, which pushes its expiry out another
 6. **[Graham]** Add it as secret `LINKEDIN_ACCESS_TOKEN`.
 7. **[Graham]** Add **variable** (not secret) `LINKEDIN_TOKEN_EXPIRES`, today plus 60 days as `YYYY-MM-DD`. Example: made on 13 Nov 2026, enter `2027-01-12`.
 8. **[Graham]** Run Token check. It prints `LinkedIn: person URN is urn:li:person:...` (the `sub` from LinkedIn's `/v2/userinfo`).
-9. **[Graham]** Add that whole `urn:li:person:...` as secret `LINKEDIN_PERSON_URN`.
+9. Optional: add that whole `urn:li:person:...` as secret `LINKEDIN_PERSON_URN`. Without it the publisher reads it from the token each run.
 
 Every 60 days: redo steps 5, 6 and 7. Self-serve LinkedIn tokens cannot be refreshed. Token check opens an issue 10 days before expiry.
 
@@ -75,7 +75,7 @@ Every 60 days: redo steps 5, 6 and 7. Self-serve LinkedIn tokens cannot be refre
 | `IG_ACCESS_TOKEN` | secret | Instagram token (60 days, refreshed weekly) |
 | `IG_USER_ID` | secret | Instagram account id (`user_id`) |
 | `LINKEDIN_ACCESS_TOKEN` | secret | LinkedIn token (60 days, cannot refresh) |
-| `LINKEDIN_PERSON_URN` | secret | `urn:li:person:...` |
+| `LINKEDIN_PERSON_URN` | secret, optional | `urn:li:person:...` (read from the token if unset) |
 | `LINKEDIN_TOKEN_EXPIRES` | variable | LinkedIn token expiry, `YYYY-MM-DD` |
 | `ZERNIO_TIKTOK_PRIVACY` | variable, optional | TikTok privacy level, default `PUBLIC_TO_EVERYONE` |
 | `IG_REELS_UPLOAD` | variable, optional | `url` to always send Reels by link instead of direct upload |

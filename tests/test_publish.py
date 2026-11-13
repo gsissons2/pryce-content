@@ -271,6 +271,13 @@ class TestLinkedIn(Base):
         self.assertEqual(post["visibility"], "PUBLIC")
         self.assertEqual(post["distribution"]["feedDistribution"], "MAIN_FEED")
 
+    def test_member_id_comes_from_the_token(self):
+        self.t.on("GET", r"/v2/userinfo$", R(200, {"sub": "MqEP19"}))
+        with mock.patch.dict(os.environ, {"LINKEDIN_PERSON_URN": ""}):
+            li = linkedin.LinkedIn(http())
+        self.assertEqual(li.person, "urn:li:person:MqEP19")
+        self.assertEqual(self.t.calls[0]["headers"]["Authorization"], "Bearer litoken")
+
     def test_video_post(self):
         size = 5_000_000
         a = make_assets(self.tmp, "video", video_bytes=size)
@@ -473,6 +480,21 @@ class TestZernio(Base):
         with self.assertRaises(UncertainError):
             zernio.publish_tiktok(http(), make_spec(), make_assets(self.tmp))
         self.assertEqual(len(self.t.find("POST", r"/posts$")), 2)
+
+    def test_tiktok_preflight_is_a_dry_run(self):
+        self.t.on("POST", r"/api/v1/posts$", R(200, {"dryRun": True, "canPublish": True, "tiktok": [
+            {"accountId": "tt1", "canPublish": True, "reason": "within limits"}]}))
+        res = zernio.tiktok_preflight(http(), "zkey", "tt1", "https://x/slide.jpg")
+        body = self.t.calls[0]["json"]
+        self.assertIs(body["dryRun"], True)
+        self.assertNotIn("publishNow", body)
+        self.assertNotIn("scheduledFor", body)
+        self.assertEqual(body["platforms"][0]["platformSpecificData"]["mediaType"], "photo")
+        self.assertTrue(res["canPublish"])
+        self.t.routes.clear()
+        self.t.on("POST", r"/api/v1/posts$", R(201, {"post": {"_id": "oops"}}))
+        with self.assertRaisesRegex(PermanentError, "did not treat the preflight as a dry run"):
+            zernio.tiktok_preflight(http(), "zkey", "tt1", "https://x/slide.jpg")
 
     def test_conflicts(self):
         self.t.on("POST", r"/api/v1/posts$",
