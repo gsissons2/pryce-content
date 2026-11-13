@@ -1,0 +1,169 @@
+name: Publish
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+    # private repo budget option: '5,20,35,50 21,22,23,1,2,3,6,7,8,9,10 * * *'
+    # (runs only in Melbourne posting windows 08:00 to 09:59, 12:00 to 13:59 and 17:00 to 20:59, in both AEDT and AEST)
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Dry run (print the requests, post nothing, write nothing)
+        type: boolean
+        default: true
+      only:
+        description: Only this platform (instagram, tiktok, youtube, linkedin). Blank for all.
+        type: string
+        default: ''
+      now:
+        description: Pretend it is this time, for testing (e.g. 2026-11-17T19:05:00+11:00). Blank for now.
+        type: string
+        default: ''
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  DRY_RUN: ${{ inputs.dry_run }}
+  ONLY: ${{ inputs.only }}
+  NOW: ${{ inputs.now }}
+
+jobs:
+  # Cheap check on every tick. The publish job (and its Pages environment) only starts when something is due.
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      due: ${{ steps.due.outputs.due }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Anything due?
+        id: due
+        run: |
+          args=()
+          [ -n "$ONLY" ] && args+=(--only "$ONLY")
+          [ -n "$NOW" ] && args+=(--now "$NOW")
+          python3 -m publish.run --check "${args[@]}"
+
+  publish:
+    needs: check
+    if: needs.check.outputs.due == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    permissions:
+      contents: write   # push the media branch and the queue results
+      issues: write
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: https://gsissons2.github.io/pryce-content/
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install renderer
+        run: |
+          pip install playwright pillow requests
+          python -m playwright install --with-deps chromium
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+
+      - name: Fetch full-size photos
+        run: |
+          if [ -f engine/fetch_photos.py ]; then python engine/fetch_photos.py
+          else echo "::warning::engine/fetch_photos.py not found, rendering with local photos"; fi
+
+      - name: Check out the media branch
+        if: env.DRY_RUN != 'true'
+        run: python -m publish.media checkout _media
+
+      - name: Render and stage media
+        id: stage
+        if: env.DRY_RUN != 'true'
+        run: |
+          args=(--stage-media _media --summary "$RUNNER_TEMP/stage-summary.json")
+          [ -n "$ONLY" ] && args+=(--only "$ONLY")
+          [ -n "$NOW" ] && args+=(--now "$NOW")
+          python -m publish.run "${args[@]}"
+
+      - name: Push the media branch
+        if: steps.stage.outputs.changed == 'true'
+        env:
+          IDS: ${{ steps.stage.outputs.ids }}
+        run: |
+          python -m publish.media push _media -m "media: $IDS"
+
+      - uses: actions/upload-pages-artifact@v3
+        if: steps.stage.outputs.deploy == 'true'
+        with:
+          path: _media
+
+      - uses: actions/deploy-pages@v4
+        if: steps.stage.outputs.deploy == 'true'
+
+      - name: Publish
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_REELS_UPLOAD: ${{ vars.IG_REELS_UPLOAD }}
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_PERSON_URN: ${{ secrets.LINKEDIN_PERSON_URN }}
+          LINKEDIN_TOKEN_EXPIRES: ${{ vars.LINKEDIN_TOKEN_EXPIRES }}
+          ZERNIO_API_KEY: ${{ secrets.ZERNIO_API_KEY }}
+          ZERNIO_TIKTOK_ACCOUNT_ID: ${{ secrets.ZERNIO_TIKTOK_ACCOUNT_ID }}
+          ZERNIO_YOUTUBE_ACCOUNT_ID: ${{ secrets.ZERNIO_YOUTUBE_ACCOUNT_ID }}
+          ZERNIO_TIKTOK_PRIVACY: ${{ vars.ZERNIO_TIKTOK_PRIVACY }}
+        run: |
+          args=(--summary "$RUNNER_TEMP/publish-summary.json")
+          if [ "$DRY_RUN" = "true" ]; then args+=(--dry-run); else args+=(--media-dir _media); fi
+          [ -n "$ONLY" ] && args+=(--only "$ONLY")
+          [ -n "$NOW" ] && args+=(--now "$NOW")
+          python -m publish.run "${args[@]}"
+
+      # Runs even if a step above crashed or timed out, so anything that went live is recorded.
+      - name: Commit results
+        if: always() && env.DRY_RUN != 'true'
+        run: |
+          if git diff --quiet -- queue/; then echo "No queue changes."; exit 0; fi
+          ids=$(git diff --name-only -- queue/ | xargs -n1 basename | sed 's/\.json$//' | paste -sd ' ' -)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add queue/
+          git commit -q -m "publish: ${ids} [skip ci]"
+          for i in 1 2 3 4 5; do
+            if git pull -q --rebase --autostash origin main && git push -q origin HEAD:main; then echo "Pushed."; exit 0; fi
+            sleep $((i * 10))
+          done
+          echo "::error::Could not push the publish results. The next run could post these again. Check queue/ now."
+          exit 1
+
+      - name: Open issues for posts that gave up
+        if: always() && env.DRY_RUN != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          for f in "$RUNNER_TEMP/stage-summary.json" "$RUNNER_TEMP/publish-summary.json"; do
+            if [ -f "$f" ]; then jq -c '.gave_up[]' "$f"; fi
+          done | while read -r row; do
+            id=$(jq -r .id <<<"$row"); platform=$(jq -r .platform <<<"$row")
+            file=$(jq -r .file <<<"$row"); error=$(jq -r .error <<<"$row")
+            title="Publish failed: $id on $platform"
+            body=$(printf 'The publisher stopped trying **%s** on **%s**.\n\nLast error:\n```\n%s\n```\n\nSpec: `%s`\nRun: %s\n\nWhat to do: see docs/PUBLISHING.md, "When something fails".\n' "$id" "$platform" "$error" "$file" "$RUN_URL")
+            existing=$(gh issue list --state open --search "\"$title\" in:title" --json number,title \
+              --jq ".[] | select(.title == \"$title\") | .number" | head -n1)
+            if [ -n "$existing" ]; then gh issue comment "$existing" --body "$body"
+            else gh issue create --title "$title" --body "$body"; fi
+          done

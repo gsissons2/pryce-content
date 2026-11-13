@@ -1,0 +1,46 @@
+name: Token check
+
+on:
+  schedule:
+    - cron: '23 21 * * 0'   # Sunday 21:23 UTC, Monday morning in Melbourne
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  tokens:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - run: pip install requests
+
+      - name: Check and refresh tokens
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_PERSON_URN: ${{ secrets.LINKEDIN_PERSON_URN }}
+          LINKEDIN_TOKEN_EXPIRES: ${{ vars.LINKEDIN_TOKEN_EXPIRES }}
+          ZERNIO_API_KEY: ${{ secrets.ZERNIO_API_KEY }}
+        run: python -m publish.tokens --warn-days 10 --issue-body "$RUNNER_TEMP/token-issue.md"
+
+      - name: Open or update the warning issue
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          BODY="$RUNNER_TEMP/token-issue.md"
+          [ -s "$BODY" ] || { echo "All tokens fine."; exit 0; }
+          title="Token expiry warning"
+          existing=$(gh issue list --state open --search "\"$title\" in:title" --json number,title \
+            --jq ".[] | select(.title == \"$title\") | .number" | head -n1)
+          if [ -n "$existing" ]; then gh issue comment "$existing" --body-file "$BODY"
+          else gh issue create --title "$title" --body-file "$BODY"; fi

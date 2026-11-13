@@ -1,0 +1,92 @@
+{
+ "id": "example-wattle-creek-motel-video",
+ "format": "redesign-video",
+ "schedule": {},
+ "captions": {
+  "instagram": "Concept redesign of a fictional motel. Not a client project.\n\nGuests pick dates on the homepage, tap Book Now, then type the dates again on the booking page and still don't see a price until step 3. The fix: dates and the nightly rate on the homepage, and a booking page that opens already filled in.\n\nFree review at prycedigital.com/book\n\n#webdesign #smallbusiness #melbourne #uxdesign #websitedesign #motel #hospitality",
+  "tiktok": "Six taps to see a price. Concept redesign of a fictional motel. #webdesign #hospitality #motel",
+  "linkedin": "Concept redesign: a fictional motel's booking flow.\n\nBefore: dates chosen on the homepage are forgotten by the booking engine, guests enter them again, and the rate only appears after picking a room and extras. Six taps to see a price.\n\nAfter: dates and the nightly rate sit on the homepage, and the booking page opens already filled in. Two taps to book.\n\nNot a client project. Happy to look at yours: prycedigital.com/book",
+  "youtube": {
+   "title": "Six taps to see a price. Concept motel booking redesign",
+   "description": "Concept redesign of a fictional business. Not a client project. Free review: prycedigital.com/book"
+  }
+ },
+ "alt": [
+  "Title slide: Six taps to see a price. A phone shows a generic booking engine page.",
+  "Before: booking engine with empty date fields, six steps and no price.",
+  "After: motel homepage with dates, the nightly rate and a book button.",
+  "Before and after side by side.",
+  "Call to action: book a free review at prycedigital.com/book."
+ ],
+ "data": {
+  "business": "Wattle Creek Motel",
+  "post": "08",
+  "hook": "Six taps to see a price.",
+  "hookSub": "A motel’s booking flow, rebuilt so guests can book in two.",
+  "before": {
+   "screen": "screens/wattlecreek-before.json",
+   "title": "Start again, please.",
+   "stat": "6 taps to see a price",
+   "items": [
+    {
+     "title": "Dates, again",
+     "body": "Guests chose dates on the homepage. This page forgot them.",
+     "mark": "engine-card",
+     "anchor": {
+      "x": 0.8,
+      "y": 0.15
+     }
+    },
+    {
+     "title": "Six steps to book",
+     "body": "Dates, room, rate, extras, details, pay.",
+     "mark": "steps",
+     "anchor": {
+      "x": 0.94,
+      "y": 1.1
+     }
+    },
+    {
+     "title": "No price until step 3",
+     "body": "Rates stay hidden until a room is picked.",
+     "mark": "engine-button",
+     "anchor": {
+      "x": 0.93,
+      "y": 0.5
+     }
+    }
+   ]
+  },
+  "after": {
+   "screen": "screens/wattlecreek-after.json",
+   "title": "Dates in. Price shown.",
+   "stat": "2 taps to book",
+   "items": [
+    {
+     "title": "Dates on the homepage",
+     "body": "Pick them once. They carry straight through.",
+     "mark": "dates"
+    },
+    {
+     "title": "Price up front",
+     "body": "$139 a night, shown before booking.",
+     "mark": "rate",
+     "anchor": {
+      "x": 0.64,
+      "y": 0.55
+     }
+    },
+    {
+     "title": "Booking opens prefilled",
+     "body": "Two taps to a confirmed room.",
+     "mark": "book",
+     "anchor": {
+      "x": 0.96,
+      "y": 0.5
+     }
+    }
+   ]
+  },
+  "cta": "review"
+ }
+}

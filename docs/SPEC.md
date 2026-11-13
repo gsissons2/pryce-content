@@ -28,7 +28,7 @@ Merging a spec into `main` is the approval. The publisher only ever posts specs 
 
 - `schedule`: one ISO time per platform. A platform that is missing is skipped. YouTube only takes video formats.
 - `published`: written by the publisher, never by hand. Shape: `{ "instagram": { "id": "...", "url": "...", "at": "ISO time" } }`. A platform listed here is never posted again.
-- `failed`: written by the publisher on error, `{ "linkedin": { "at": "...", "error": "..." } }`. It retries on the next run up to 3 times, then stops and opens an issue.
+- `failed`: written by the publisher on error, never by hand except to delete it for a retry. Shape: `{ "linkedin": { "at": "...", "error": "...", "history": [ { "at": "...", "error": "..." } ], "gave_up": true } }`. `at` and `error` are the latest failure, `history` has one entry per failure, and `gave_up` appears when it stops. It retries on the next run up to 3 failures, then stops and opens an issue. Errors that retrying cannot fix, or where it cannot tell whether the post went live, give up at once.
 
 ## Formats
 

@@ -1,0 +1,84 @@
+name: Render preview
+
+on:
+  pull_request:
+    paths:
+      - 'queue/**'
+      - 'screens/**'
+
+concurrency:
+  group: preview-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+# No Pages deploy from PRs: previews are committed to the media branch and shown via raw.githubusercontent.com.
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      PR: ${{ github.event.pull_request.number }}
+      BASE_REF: ${{ github.base_ref }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install renderer
+        run: |
+          pip install playwright pillow requests
+          python -m playwright install --with-deps chromium
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+
+      - name: Fetch full-size photos
+        run: |
+          if [ -f engine/fetch_photos.py ]; then python engine/fetch_photos.py
+          else echo "::warning::engine/fetch_photos.py not found, rendering with local photos"; fi
+
+      - name: Check out the media branch
+        run: python -m publish.media checkout _media
+
+      - name: Render and check
+        id: preview
+        run: |
+          git diff --name-only --diff-filter=AMR "origin/${BASE_REF}...HEAD" > "$RUNNER_TEMP/changed.txt"
+          cat "$RUNNER_TEMP/changed.txt"
+          set +e
+          python -m publish.preview --pr "$PR" --changed "$RUNNER_TEMP/changed.txt" \
+            --comment "$RUNNER_TEMP/preview-comment.md" --media-dir _media
+          echo "code=$?" >> "$GITHUB_OUTPUT"
+
+      - name: Push previews to the media branch
+        if: always()
+        run: |
+          python -m publish.media push _media -m "previews: PR #$PR"
+
+      - name: Post or update the PR comment
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          COMMENT="$RUNNER_TEMP/preview-comment.md"
+          [ -s "$COMMENT" ] || { echo "No comment to post."; exit 0; }
+          id=$(gh api "repos/$REPO/issues/$PR/comments" --paginate \
+            --jq '.[] | select(.body | contains("<!-- pryce-preview -->")) | .id' | head -n1)
+          if [ -n "$id" ]; then
+            gh api -X PATCH "repos/$REPO/issues/comments/$id" -F body=@"$COMMENT" > /dev/null
+          else
+            gh api -X POST "repos/$REPO/issues/$PR/comments" -F body=@"$COMMENT" > /dev/null
+          fi
+
+      - name: Fail if any render check failed
+        if: steps.preview.outputs.code != '0'
+        run: |
+          echo "::error::Render checks failed. See the PR comment."
+          exit 1

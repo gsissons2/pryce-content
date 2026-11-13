@@ -1,0 +1,80 @@
+name: Media cleanup
+
+on:
+  schedule:
+    - cron: '41 16 1 * *'   # 1st of the month, early morning in Melbourne
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Only list what would be deleted
+        type: boolean
+        default: true
+
+# Same group as Publish, so cleanup never runs while posts are staging or publishing.
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write   # force-push the media branch only
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: https://gsissons2.github.io/pryce-content/
+    env:
+      DRY_RUN: ${{ inputs.dry_run }}
+      # Squash the media branch to one commit so deleted videos stop taking space in the repo.
+      SQUASH_HISTORY: 'true'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Check out the media branch
+        run: python -m publish.media checkout _media
+
+      - name: Remove old media and previews
+        run: |
+          args=(_media --media-days 45 --preview-days 14)
+          [ "$DRY_RUN" = "true" ] && args+=(--dry-run)
+          python -m publish.cleanup "${args[@]}"
+
+      - name: Commit and push the media branch
+        id: push
+        if: env.DRY_RUN != 'true'
+        working-directory: _media
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --cached --quiet; then echo "Nothing to delete."; exit 0; fi
+          git commit -q -m "cleanup: remove old media"
+          old=$(git rev-parse refs/remotes/origin/media)
+          if [ "$SQUASH_HISTORY" = "true" ]; then
+            git checkout -q --orphan media-snapshot
+            git commit -q -m "media snapshot $(date -u +%F)"
+            git push --force-with-lease="media:$old" origin HEAD:refs/heads/media
+          else
+            git push origin HEAD:refs/heads/media
+          fi
+          echo "pushed=true" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/upload-pages-artifact@v3
+        if: steps.push.outputs.pushed == 'true'
+        with:
+          path: _media
+
+      - uses: actions/deploy-pages@v4
+        if: steps.push.outputs.pushed == 'true'
