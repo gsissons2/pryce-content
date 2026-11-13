@@ -1,0 +1,84 @@
+{
+ "business": "Fernleaf Café",
+ "state": "after",
+ "theme": {
+  "bg": "#F5F0E6",
+  "ink": "#1B1B18",
+  "muted": "#6B675E",
+  "accent": "#1F3B2D",
+  "line": "#E1D9C9",
+  "display": "Fraunces"
+ },
+ "blocks": [
+  {
+   "type": "status",
+   "color": "#1B1B18"
+  },
+  {
+   "type": "header",
+   "height": 52,
+   "logo": "Fernleaf",
+   "logoFont": "Fraunces",
+   "logoWeight": 600,
+   "logoSize": 26,
+   "logoLs": -0.02,
+   "color": "#1F3B2D"
+  },
+  {
+   "type": "group",
+   "padding": "8px 20px 0",
+   "gap": 16,
+   "blocks": [
+    {
+     "type": "openRow",
+     "id": "open-now",
+     "pill": "Open now · until 3pm",
+     "pillBg": "#E2EADC",
+     "dot": "#2F8F55",
+     "sub": "7 days, 7am–3pm"
+    },
+    {
+     "type": "h1",
+     "text": "All-day brunch and good bread in Brunswick East.",
+     "size": 33
+    },
+    {
+     "type": "photo",
+     "id": "photo",
+     "photo": "cafe/brunch-benedict.jpg",
+     "height": 188
+    },
+    {
+     "type": "button",
+     "id": "order",
+     "text": "Order for pickup"
+    },
+    {
+     "type": "menuList",
+     "id": "menu",
+     "title": "Today’s menu",
+     "link": "Full menu",
+     "items": [
+      [
+       "Green eggs, sourdough",
+       "$22"
+      ],
+      [
+       "Ricotta hotcakes, berries",
+       "$21"
+      ],
+      [
+       "Mushroom & gruyère toastie",
+       "$18"
+      ]
+     ]
+    },
+    {
+     "type": "map",
+     "id": "map",
+     "title": "Find us"
+    }
+   ]
+  }
+ ]
+}

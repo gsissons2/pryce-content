@@ -1,0 +1,62 @@
+{
+ "business": "Fernleaf Café",
+ "state": "before",
+ "theme": {
+  "bg": "#FFFFFF",
+  "ink": "#222222",
+  "muted": "#888888",
+  "accent": "#C8A96A",
+  "line": "#E5E5E5",
+  "display": "'Playfair Display'"
+ },
+ "blocks": [
+  {
+   "type": "photoOverlay",
+   "id": "slider",
+   "height": 640,
+   "photo": "cafe/interior-white.jpg",
+   "shade": "linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 35%, rgba(0,0,0,0.25) 65%, rgba(0,0,0,0.7) 100%)",
+   "blocks": [
+    {
+     "type": "status",
+     "color": "#FFFFFF"
+    },
+    {
+     "type": "header",
+     "height": 56,
+     "logo": "Fernleaf Café",
+     "logoFont": "'Playfair Display'",
+     "logoItalic": true,
+     "logoSize": 22,
+     "color": "#FFFFFF"
+    },
+    {
+     "type": "spacer"
+    },
+    {
+     "type": "sliderCaption",
+     "kicker": "WELCOME TO",
+     "title": "Fernleaf Café",
+     "tag": "Est. 2014  ·  Good Food  ·  Good Coffee  ·  Good Vibes"
+    },
+    {
+     "type": "sliderControls",
+     "dots": 5,
+     "active": 1
+    }
+   ]
+  },
+  {
+   "type": "pdfStrip",
+   "id": "menu-pdf",
+   "color": "#C8A96A",
+   "text": "VIEW OUR MENU (PDF, 8.4 MB)"
+  },
+  {
+   "type": "igLoading",
+   "id": "instagram",
+   "title": "Follow us on Instagram",
+   "sub": "Loading feed…"
+  }
+ ]
+}

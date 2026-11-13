@@ -1,0 +1,83 @@
+{
+ "business": "Southgate Plumbing",
+ "state": "before",
+ "theme": {
+  "bg": "#FFFFFF",
+  "ink": "#111111",
+  "muted": "#666666",
+  "accent": "#0B4F9C",
+  "line": "#E3E3E3",
+  "display": "Montserrat"
+ },
+ "blocks": [
+  {
+   "type": "status",
+   "color": "#111111"
+  },
+  {
+   "type": "header",
+   "id": "header",
+   "height": 64,
+   "padX": 16,
+   "border": "#E3E3E3",
+   "burgerColor": "#333333",
+   "logoIcon": "drop",
+   "logoIconColor": "#0B4F9C",
+   "logoParts": [
+    {
+     "text": "SOUTHGATE",
+     "w": 700,
+     "size": 18,
+     "fam": "Roboto",
+     "ls": 0.02,
+     "color": "#0B4F9C"
+    },
+    {
+     "text": "PLUMBING SERVICES",
+     "w": 400,
+     "size": 9,
+     "fam": "Roboto",
+     "ls": 0.22,
+     "color": "#7A7A7A"
+    }
+   ]
+  },
+  {
+   "type": "stockHero",
+   "id": "stock-hero",
+   "height": 300,
+   "photo": "stock/handshake-office.jpg",
+   "overlay": "rgba(11,79,156,0.62)",
+   "title": "Your trusted plumbing professionals",
+   "sub": "Quality Service Since 1998",
+   "button": "LEARN MORE",
+   "buttonBg": "#F5A623"
+  },
+  {
+   "type": "longForm",
+   "id": "quote-form",
+   "titleColor": "#0B4F9C",
+   "title": "Request a Free Quote",
+   "intro": "Please complete all fields marked * and a member of our team will contact you within 2–3 business days.",
+   "rows": [
+    [
+     "First Name *",
+     "Last Name *"
+    ],
+    [
+     "Email Address *"
+    ],
+    [
+     "Phone Number *"
+    ],
+    [
+     "Street Address *"
+    ],
+    [
+     "Suburb *",
+     "Postcode *"
+    ]
+   ]
+  }
+ ]
+}

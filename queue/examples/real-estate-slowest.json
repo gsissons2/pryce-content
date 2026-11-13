@@ -1,0 +1,94 @@
+{
+ "id": "example-real-estate-slowest",
+ "format": "stat-carousel",
+ "schedule": {},
+ "captions": {
+  "instagram": "We tested 12,621 Australian small-business websites on a simulated phone. Real estate came out with the lowest average performance score of any industry with 80 or more sites, 54.1 out of 100. 41.1% scored poor.\n\nIs yours one of them? Free review at prycedigital.com/book\n\n#realestate #webdesign #smallbusiness #australia",
+  "tiktok": "Real estate had the slowest websites in our test of 12,621 Australian businesses. #realestate #webdesign",
+  "linkedin": "From our test of 12,621 Australian small-business websites (Google Lighthouse, simulated mid-range phone):\n\nReal estate had the lowest average performance score of any industry with 80+ sites: 54.1 out of 100. 41.1% scored poor. Dentists were next at 57.1.\n\nFull method: prycedigital.com/research"
+ },
+ "sources": [
+  "Pryce Digital Lighthouse study 2026, worst_10_industries and overall_scores (data/lighthouse-2026.json)"
+ ],
+ "alt": [],
+ "data": {
+  "footer": "12,621 Australian small-business sites",
+  "videoLabel": "Research",
+  "slides": [
+   {
+    "type": "bignum",
+    "kicker": "Google's lab test · 151 real estate sites",
+    "value": "54.1",
+    "unit": "out of 100.",
+    "body": "The average performance score for real estate websites. The lowest of any industry we tested."
+   },
+   {
+    "type": "bars",
+    "kicker": "Average performance score",
+    "title": "The five lowest-scoring industries",
+    "max": 100,
+    "unit": "",
+    "bars": [
+     {
+      "label": "Real estate",
+      "value": 54.1,
+      "highlight": true
+     },
+     {
+      "label": "Dentist",
+      "value": 57.1
+     },
+     {
+      "label": "Physio",
+      "value": 59.1
+     },
+     {
+      "label": "Day spa",
+      "value": 59.5
+     },
+     {
+      "label": "Mortgage broker",
+      "value": 60.6
+     }
+    ],
+    "marker": {
+     "value": 62.0,
+     "note": "The average across all 12,621 sites was 62."
+    },
+    "foot": "Industries with 80 or more sites"
+   },
+   {
+    "type": "percent",
+    "kicker": "151 real estate sites",
+    "value": "41.1%",
+    "body": "scored \"poor\" in Google's lab test, under 50 out of 100.",
+    "foot": "\"Poor\" = performance score under 50"
+   },
+   {
+    "type": "list",
+    "kicker": "Usually why",
+    "title": "What slows them down",
+    "size": 84,
+    "items": [
+     {
+      "title": "Big listing photos",
+      "body": "Full-size images loaded before anyone scrolls."
+     },
+     {
+      "title": "Third-party widgets",
+      "body": "Listing feeds, chat and tracking scripts all at once."
+     },
+     {
+      "title": "Sliders up top",
+      "body": "Several heavy images just to show the first one."
+     }
+    ],
+    "foot": "Common causes, not measured per site"
+   },
+   {
+    "type": "cta",
+    "cta": "review"
+   }
+  ]
+ }
+}

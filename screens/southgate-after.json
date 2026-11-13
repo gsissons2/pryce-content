@@ -1,0 +1,101 @@
+{
+ "business": "Southgate Plumbing",
+ "state": "after",
+ "theme": {
+  "bg": "#F3F2EE",
+  "ink": "#0E1B2C",
+  "muted": "#5B6472",
+  "accent": "#FF5A1F",
+  "line": "#DCD9D1",
+  "display": "Archivo"
+ },
+ "blocks": [
+  {
+   "type": "status",
+   "color": "#0E1B2C"
+  },
+  {
+   "type": "header",
+   "id": "header",
+   "height": 58,
+   "logo": "Southgate Plumbing",
+   "logoFont": "Archivo",
+   "logoWeight": 800,
+   "logoSize": 19,
+   "logoLs": -0.01,
+   "color": "#0E1B2C",
+   "sub": "VBA Lic. 12345 · Fully insured",
+   "subColor": "#5B6472"
+  },
+  {
+   "type": "group",
+   "padding": "6px 20px 0",
+   "gap": 16,
+   "blocks": [
+    {
+     "type": "chip",
+     "id": "available",
+     "text": "Available now · on site in about 60 min",
+     "bg": "#0E1B2C",
+     "dot": "#FF5A1F"
+    },
+    {
+     "type": "group",
+     "gap": 10,
+     "blocks": [
+      {
+       "type": "h1",
+       "text": "Blocked drain? No hot water?",
+       "size": 32,
+       "weight": 800,
+       "lh": 1.04
+      },
+      {
+       "type": "para",
+       "text": "Licensed plumbers across South Melbourne, Port Melbourne and Albert Park."
+      }
+     ]
+    },
+    {
+     "type": "jobPhotos",
+     "id": "job-photos",
+     "photos": [
+      "trades/copper-bath-tap.jpg",
+      "trades/hot-tap.jpg",
+      "trades/hands-basin-tap.jpg"
+     ]
+    },
+    {
+     "type": "quoteForm",
+     "id": "quote-form",
+     "title": "Get a fixed price",
+     "sub": "3 quick fields. We text you back within 15 minutes.",
+     "button": "Send for a fixed price",
+     "fields": [
+      {
+       "label": "What’s wrong?",
+       "value": "Blocked drain",
+       "filled": true,
+       "chevron": true
+      },
+      {
+       "label": "Suburb",
+       "value": "e.g. Port Melbourne"
+      },
+      {
+       "label": "Mobile",
+       "value": "04__ ___ ___"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "stickyCall",
+   "id": "call",
+   "text": "Call 0491 570 156",
+   "bg": "#FF5A1F",
+   "glass": "rgba(243,242,238,0.92)"
+  }
+ ]
+}

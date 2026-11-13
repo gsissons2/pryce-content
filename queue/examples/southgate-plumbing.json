@@ -1,0 +1,102 @@
+{
+ "id": "example-southgate-plumbing",
+ "format": "redesign-carousel",
+ "schedule": {},
+ "captions": {
+  "instagram": "Concept redesign of a fictional plumber. Not a client project.\n\nSomeone with water on the floor wants one thing: a number to call. This homepage hides it, leads with a stock handshake and asks for 12 fields. The fix: a call button that stays on screen, the licence number up top, a 3-field quote form and real job photos.\n\nFree review at prycedigital.com/book\n\n#webdesign #smallbusiness #melbourne #uxdesign #websitedesign #plumber #tradies",
+  "tiktok": "Where's the phone number? Concept redesign of a fictional plumber. #webdesign #plumber #tradies",
+  "linkedin": "Concept redesign: a fictional plumber's homepage, rebuilt for someone with water on the floor.\n\nBefore: no phone number on the first screen, a stock photo of an office handshake, a 12-field quote form with a 2 to 3 day reply, and no licence number anywhere.\n\nAfter: a call button that stays on screen, the licence number up top, 3 fields for a fixed price, and photos of real work.\n\nNot a client project. Happy to look at yours: prycedigital.com/book"
+ },
+ "alt": [
+  "Title slide: Where's the phone number? A phone shows a plumber homepage with a stock photo.",
+  "Before: plumber homepage with numbered problems, no phone number, stock hero, 12-field form.",
+  "After: redesigned plumber homepage with a sticky call button, licence number, 3-field form and job photos.",
+  "Before and after side by side.",
+  "Call to action: book a free review at prycedigital.com/book."
+ ],
+ "data": {
+  "business": "Southgate Plumbing",
+  "post": "07",
+  "hook": "Where’s the phone number?",
+  "hookSub": "A plumber’s homepage, rebuilt for someone with water on the floor.",
+  "before": {
+   "screen": "screens/southgate-before.json",
+   "title": "Nowhere to call.",
+   "stat": "Phone: not on the screen",
+   "items": [
+    {
+     "title": "No phone number",
+     "body": "The first thing someone with a leak looks for.",
+     "mark": "header",
+     "anchor": {
+      "x": 0.74,
+      "y": 0.5
+     }
+    },
+    {
+     "title": "A stock photo hero",
+     "body": "An office handshake. No plumber in sight.",
+     "mark": "stock-hero",
+     "anchor": {
+      "x": 0.885,
+      "y": 0.1
+     }
+    },
+    {
+     "title": "A 12-field quote form",
+     "body": "Then a 2–3 day wait. They’ll call someone else.",
+     "mark": "quote-form",
+     "anchor": {
+      "x": 0.85,
+      "y": 0.06
+     }
+    },
+    {
+     "title": "No licence number",
+     "body": "Nothing on the page says they’re qualified."
+    }
+   ]
+  },
+  "after": {
+   "screen": "screens/southgate-after.json",
+   "title": "Call in one tap.",
+   "stat": "Phone: one tap, always",
+   "items": [
+    {
+     "title": "Call button stays put",
+     "body": "One tap from anywhere on the page.",
+     "mark": "call",
+     "anchor": {
+      "x": 0.885,
+      "y": 0.4
+     }
+    },
+    {
+     "title": "Licence number up top",
+     "body": "Trust before they’ve scrolled.",
+     "mark": "header",
+     "anchor": {
+      "x": 0.67,
+      "y": 0.6
+     }
+    },
+    {
+     "title": "3 fields, not 12",
+     "body": "Problem, suburb, mobile. Done.",
+     "mark": "quote-form",
+     "anchor": {
+      "x": 0.91,
+      "y": 0.03
+     }
+    },
+    {
+     "title": "Real job photos",
+     "body": "Their work, not a stock handshake.",
+     "mark": "job-photos",
+     "anchor": "center"
+    }
+   ]
+  },
+  "cta": "review"
+ }
+}

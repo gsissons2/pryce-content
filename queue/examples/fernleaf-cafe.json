@@ -1,0 +1,101 @@
+{
+ "id": "example-fernleaf-cafe",
+ "format": "redesign-carousel",
+ "schedule": {},
+ "captions": {
+  "instagram": "Concept redesign of a fictional café. Not a client project.\n\nA lot of café sites open with a photo slider, put the menu in a PDF and leave the hours at the bottom. The fix: today's hours up top, one button to order, the menu as real text, the map one scroll down.\n\nIs yours doing this? Free review at prycedigital.com/book\n\n#webdesign #smallbusiness #melbourne #uxdesign #websitedesign #cafe",
+  "tiktok": "Can you tell if this café is open? Concept redesign of a fictional café. #webdesign #cafe #smallbusiness",
+  "linkedin": "Concept redesign: a fictional café homepage, rebuilt for the phone.\n\nThe old version looks nice and answers nothing. Five photos to swipe, an 8 MB PDF menu, an Instagram feed that loads before anything useful, and the hours at the very bottom.\n\nThe new one puts today's hours and \"open now\" at the top, has one button to order, shows the menu as text and keeps the map one scroll down.\n\nNot a client project. If your site does any of this, I'm happy to take a look: prycedigital.com/book"
+ },
+ "alt": [
+  "Title slide: Is this café open right now? A phone shows a café homepage filled with a photo slider.",
+  "Before: the café homepage with numbered problems, photo slider, PDF menu, Instagram feed loading, hours at the bottom.",
+  "After: the redesigned homepage with open-now hours at the top, an order button, the menu as text and a map.",
+  "Before and after side by side.",
+  "Call to action: book a free review at prycedigital.com/book."
+ ],
+ "data": {
+  "business": "Fernleaf Café",
+  "post": "06",
+  "hook": "Is this café open right now?",
+  "hookSub": "Its homepage won’t tell you. Here’s how we’d fix it.",
+  "before": {
+   "screen": "screens/fernleaf-before.json",
+   "title": "Pretty. No answers.",
+   "stat": "Hours: bottom of the page",
+   "items": [
+    {
+     "title": "Photos fill the screen",
+     "body": "Five slides to swipe before anything useful.",
+     "mark": "slider",
+     "anchor": {
+      "x": 0.77,
+      "y": 0.4
+     }
+    },
+    {
+     "title": "Menu is an 8 MB PDF",
+     "body": "Slow on mobile data. Pinch to read.",
+     "mark": "menu-pdf",
+     "anchor": {
+      "x": 0.89,
+      "y": 0.5
+     }
+    },
+    {
+     "title": "Instagram loads first",
+     "body": "Spinners where the useful stuff should be.",
+     "mark": "instagram",
+     "anchor": {
+      "x": 0.85,
+      "y": 0.4
+     }
+    },
+    {
+     "title": "Hours are at the bottom",
+     "body": "The one thing most visitors came for."
+    }
+   ]
+  },
+  "after": {
+   "screen": "screens/fernleaf-after.json",
+   "title": "Answers first.",
+   "stat": "Hours: top of the screen",
+   "items": [
+    {
+     "title": "Open now, at the top",
+     "body": "Today’s hours before anything else.",
+     "mark": "open-now"
+    },
+    {
+     "title": "One clear button",
+     "body": "Order for pickup. Nothing to hunt for.",
+     "mark": "order",
+     "anchor": {
+      "x": 0.92,
+      "y": 0.5
+     }
+    },
+    {
+     "title": "Menu as real text",
+     "body": "Loads instantly. Google can read it.",
+     "mark": "menu",
+     "anchor": {
+      "x": 0.6,
+      "y": 0.08
+     }
+    },
+    {
+     "title": "Map one scroll down",
+     "body": "Directions without leaving the page.",
+     "mark": "map",
+     "anchor": {
+      "x": 0.5,
+      "y": 0.6
+     }
+    }
+   ]
+  },
+  "cta": "review"
+ }
+}

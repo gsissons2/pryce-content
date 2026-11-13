@@ -1,0 +1,12 @@
+{
+  "_note": "Unsplash License photos. CI downloads full-resolution versions over the local previews. Add new photos here, then run the fetch-photos workflow.",
+  "cafe/interior-white.jpg": "https://images.unsplash.com/photo-1613274554329-70f997f5789f?fm=jpg&q=82&w=1400",
+  "cafe/brunch-benedict.jpg": "https://images.unsplash.com/photo-1773091839506-26ecff84172c?fm=jpg&q=82&w=1400",
+  "stock/handshake-office.jpg": "https://images.unsplash.com/photo-1698047682091-782b1e5c6536?fm=jpg&q=82&w=1400",
+  "trades/copper-bath-tap.jpg": "https://images.unsplash.com/photo-1631215750638-bdde5f616128?fm=jpg&q=82&w=800",
+  "trades/hot-tap.jpg": "https://images.unsplash.com/photo-1626880494339-5a5d5ec8f17a?fm=jpg&q=82&w=800",
+  "trades/hands-basin-tap.jpg": "https://images.unsplash.com/photo-1594072282386-915fadf1a2d6?fm=jpg&q=82&w=800",
+  "motel/room-queen-wide.jpg": "https://images.unsplash.com/photo-1714138083505-fc47d575e3b1?fm=jpg&q=82&w=1400",
+  "motel/room-green.jpg": "https://images.unsplash.com/photo-1714138100706-790c1b19056a?fm=jpg&q=82&w=900",
+  "motel/room-lamp.jpg": "https://images.unsplash.com/photo-1759264244746-140bbbc54e1b?fm=jpg&q=82&w=900"
+}

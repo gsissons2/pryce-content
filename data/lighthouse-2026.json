@@ -1,0 +1,3861 @@
+{
+  "sample": {
+    "n_domains": 12621,
+    "date_range": [
+      "2026-05-25 06:47:53.351000",
+      "2026-09-05 12:15:34.984000"
+    ],
+    "lighthouse_versions": [
+      {
+        "version": "13.3.0",
+        "n": 12685
+      },
+      {
+        "version": "13.4.0",
+        "n": 7
+      },
+      {
+        "version": "13.0.1",
+        "n": 1
+      },
+      {
+        "version": "13.4.1",
+        "n": 1
+      }
+    ],
+    "total_ok_runs_all_time": 12694,
+    "total_failed_runs": 10,
+    "share_with_lead_match": 99.4,
+    "share_has_field_data_flag": 100.0,
+    "share_with_real_field_data": 22.9,
+    "data_quality_note": "The has_field_data boolean is true for 12617 of 12621 domains (100.0%), but the actual CrUX field metric columns (field_lcp_ms) are only populated for 2887 domains (22.9%). has_field_data appears to default true rather than confirming a real Chrome UX Report match; only field_lcp_ms/field_cls/field_inp_ms being non-null should be treated as 'we have real-user data'."
+  },
+  "overall_scores": {
+    "performance": {
+      "n": 12621,
+      "mean": 62.0,
+      "median": 61,
+      "poor_pct": 27.3,
+      "needs_improvement_pct": 59.9,
+      "good_pct": 12.8
+    },
+    "accessibility": {
+      "n": 12621,
+      "mean": 83.6,
+      "median": 86,
+      "poor_pct": 2.4,
+      "needs_improvement_pct": 60.7,
+      "good_pct": 36.9
+    },
+    "best_practices": {
+      "n": 12612,
+      "mean": 85.3,
+      "median": 92.0,
+      "poor_pct": 1.4,
+      "needs_improvement_pct": 47.0,
+      "good_pct": 51.6
+    },
+    "seo": {
+      "n": 12620,
+      "mean": 89.4,
+      "median": 92.0,
+      "poor_pct": 2.1,
+      "needs_improvement_pct": 31.9,
+      "good_pct": 65.9
+    }
+  },
+  "core_web_vitals": {
+    "lab": {
+      "lcp_ms": {
+        "n": 12621,
+        "median": 6905,
+        "p75": 11799,
+        "pass_le_2500ms_pct": 11.7
+      },
+      "cls": {
+        "n": 12621,
+        "median": 0.006,
+        "p75": 0.075,
+        "pass_le_0_1_pct": 78.2
+      },
+      "tbt_ms": {
+        "n": 12621,
+        "median": 139,
+        "p75": 437,
+        "good_le_200ms_pct": 57.3,
+        "poor_gt_600ms_pct": 17.6
+      },
+      "inp_ms": {
+        "n": 0,
+        "note": "Lighthouse lab INP (inp_ms) is null for every single run in this dataset (0/12621 populated). Lab INP cannot be reported; see field INP below."
+      }
+    },
+    "field_crux_where_available": {
+      "lcp_ms": {
+        "n": 2887,
+        "median": 2200,
+        "p75": 3168,
+        "pass_le_2500ms_pct": 59.9
+      },
+      "cls": {
+        "n": 2924,
+        "median": 0.0,
+        "p75": 0.06,
+        "pass_le_0_1_pct": 83.4
+      },
+      "inp_ms": {
+        "n": 2405,
+        "median": 115,
+        "p75": 154,
+        "pass_le_200ms_pct": 85.6
+      }
+    },
+    "lab_vs_field_lcp_pass_rate_gap_pct_points": -48.2
+  },
+  "page_weight": {
+    "n_with_flagged_total_byte_weight_item": 63,
+    "coverage_note": "total-byte-weight is a Lighthouse diagnostic that only appears in the 'items' array when the audit is flagged (i.e. the page payload is large enough to warrant a warning). It is not populated for every domain, so this is a biased sample of heavier-than-ideal sites, not a census of page weight across all domains.",
+    "mean_kib": 8227,
+    "median_kib": 5133,
+    "p75_kib": 8474,
+    "lcp_gt_4s_pct": 74.3,
+    "lcp_gt_4s_n": 9374,
+    "lcp_gt_10s_pct": 32.2,
+    "lcp_gt_10s_n": 4062
+  },
+  "by_platform": [
+    {
+      "platform": "WordPress",
+      "n": 5554,
+      "n_high_confidence": 5554,
+      "meets_min_n": true,
+      "poor_pct": 28.7,
+      "mean_performance": 59.6,
+      "median_performance": 59.0,
+      "median_lcp_ms": 7424
+    },
+    {
+      "platform": "Custom",
+      "n": 4004,
+      "n_high_confidence": 0,
+      "meets_min_n": true,
+      "poor_pct": 25.6,
+      "mean_performance": 64.9,
+      "median_performance": 64.0,
+      "median_lcp_ms": 6078
+    },
+    {
+      "platform": "Unknown",
+      "n": 1143,
+      "n_high_confidence": 0,
+      "meets_min_n": true,
+      "poor_pct": 19.3,
+      "mean_performance": 72.2,
+      "median_performance": 74,
+      "median_lcp_ms": 3896
+    },
+    {
+      "platform": "Wix",
+      "n": 707,
+      "n_high_confidence": 707,
+      "meets_min_n": true,
+      "poor_pct": 10.0,
+      "mean_performance": 66.1,
+      "median_performance": 67,
+      "median_lcp_ms": 6604
+    },
+    {
+      "platform": "Squarespace",
+      "n": 528,
+      "n_high_confidence": 528,
+      "meets_min_n": true,
+      "poor_pct": 47.2,
+      "mean_performance": 49.4,
+      "median_performance": 50.0,
+      "median_lcp_ms": 11074
+    },
+    {
+      "platform": "Shopify",
+      "n": 527,
+      "n_high_confidence": 527,
+      "meets_min_n": true,
+      "poor_pct": 45.9,
+      "mean_performance": 51.5,
+      "median_performance": 52,
+      "median_lcp_ms": 11145
+    },
+    {
+      "platform": "Webflow",
+      "n": 143,
+      "n_high_confidence": 143,
+      "meets_min_n": true,
+      "poor_pct": 28.7,
+      "mean_performance": 55.9,
+      "median_performance": 59,
+      "median_lcp_ms": 8441
+    },
+    {
+      "platform": "Framer",
+      "n": 15,
+      "n_high_confidence": 15,
+      "meets_min_n": false,
+      "poor_pct": 6.7,
+      "mean_performance": 72.8,
+      "median_performance": 69,
+      "median_lcp_ms": 5805
+    }
+  ],
+  "platform_note": "'Custom' is reported at platform_confidence=0.4, meaning no known CMS fingerprint was found -- it is a default/residual label, not a verified bespoke build, and is kept separate from the confidently-fingerprinted CMS platforms (WordPress, Wix, Shopify, Squarespace, Webflow, Framer, all >= 0.7 confidence). 'Unknown' (confidence 0.0) is reported separately again and excluded from any 'platform' narrative claims.",
+  "industry_distinct_count_in_joined_set": 663,
+  "industry_counts_full": [
+    {
+      "industry": "Accountant",
+      "n": 211
+    },
+    {
+      "industry": "Financial Planner",
+      "n": 176
+    },
+    {
+      "industry": "Web Designer",
+      "n": 169
+    },
+    {
+      "industry": "Air Conditioning",
+      "n": 169
+    },
+    {
+      "industry": "Psychologist / Counsellor",
+      "n": 166
+    },
+    {
+      "industry": "Catering",
+      "n": 161
+    },
+    {
+      "industry": "Real Estate",
+      "n": 151
+    },
+    {
+      "industry": "Dentist",
+      "n": 149
+    },
+    {
+      "industry": "Plumber",
+      "n": 147
+    },
+    {
+      "industry": "Electrician",
+      "n": 137
+    },
+    {
+      "industry": "Restaurant",
+      "n": 134
+    },
+    {
+      "industry": "Cleaning Services",
+      "n": 132
+    },
+    {
+      "industry": "Fencing",
+      "n": 123
+    },
+    {
+      "industry": "Real Estate Agent",
+      "n": 118
+    },
+    {
+      "industry": "Physiotherapy",
+      "n": 118
+    },
+    {
+      "industry": "Day Spa",
+      "n": 117
+    },
+    {
+      "industry": "Car Detailing",
+      "n": 116
+    },
+    {
+      "industry": "Builder",
+      "n": 114
+    },
+    {
+      "industry": "Lawyer",
+      "n": 114
+    },
+    {
+      "industry": "Pool Builder",
+      "n": 110
+    },
+    {
+      "industry": "Mortgage Broker",
+      "n": 109
+    },
+    {
+      "industry": "Graphic Designer",
+      "n": 108
+    },
+    {
+      "industry": "Yoga Studio",
+      "n": 107
+    },
+    {
+      "industry": "Landscaper",
+      "n": 106
+    },
+    {
+      "industry": "Chiropractor",
+      "n": 103
+    },
+    {
+      "industry": "Cafe",
+      "n": 102
+    },
+    {
+      "industry": "Solar Installer",
+      "n": 101
+    },
+    {
+      "industry": "Gym",
+      "n": 101
+    },
+    {
+      "industry": "Mechanic",
+      "n": 100
+    },
+    {
+      "industry": "Car Mechanic",
+      "n": 100
+    },
+    {
+      "industry": "Beauty Clinic / Skin Clinic",
+      "n": 99
+    },
+    {
+      "industry": "Hair Salon",
+      "n": 98
+    },
+    {
+      "industry": "Signage / Printing",
+      "n": 96
+    },
+    {
+      "industry": "Kitchen & Bathroom Renovation",
+      "n": 95
+    },
+    {
+      "industry": "Conveyancer",
+      "n": 95
+    },
+    {
+      "industry": "Photographer",
+      "n": 95
+    },
+    {
+      "industry": "Beauty Clinic",
+      "n": 93
+    },
+    {
+      "industry": "Pest Control",
+      "n": 90
+    },
+    {
+      "industry": "Removalist",
+      "n": 89
+    },
+    {
+      "industry": "Allied Health",
+      "n": 86
+    },
+    {
+      "industry": "Carpenter",
+      "n": 85
+    },
+    {
+      "industry": "IT Consultant",
+      "n": 82
+    },
+    {
+      "industry": "Psychologist",
+      "n": 81
+    },
+    {
+      "industry": "Massage Therapist",
+      "n": 80
+    },
+    {
+      "industry": "Pet Grooming",
+      "n": 76
+    },
+    {
+      "industry": "Teeth Whitening",
+      "n": 76
+    },
+    {
+      "industry": "Panel Beater",
+      "n": 75
+    },
+    {
+      "industry": "Bookkeeper",
+      "n": 72
+    },
+    {
+      "industry": "Family Lawyer",
+      "n": 72
+    },
+    {
+      "industry": "Painter",
+      "n": 68
+    },
+    {
+      "industry": "Driving School",
+      "n": 65
+    },
+    {
+      "industry": "Car Dealer",
+      "n": 63
+    },
+    {
+      "industry": "Marketing Consultant",
+      "n": 61
+    },
+    {
+      "industry": "Co-working Space",
+      "n": 59
+    },
+    {
+      "industry": "Pilates Studio",
+      "n": 59
+    },
+    {
+      "industry": "Architecture Studio",
+      "n": 57
+    },
+    {
+      "industry": "Cleaning Service",
+      "n": 57
+    },
+    {
+      "industry": "Nail Salon",
+      "n": 56
+    },
+    {
+      "industry": "Veterinarian",
+      "n": 56
+    },
+    {
+      "industry": "Barber",
+      "n": 56
+    },
+    {
+      "industry": "Veterinary",
+      "n": 56
+    },
+    {
+      "industry": "Skip Bin Hire",
+      "n": 54
+    },
+    {
+      "industry": "Gutter / Roof",
+      "n": 54
+    },
+    {
+      "industry": "Insurance Broker",
+      "n": 54
+    },
+    {
+      "industry": "Dietitian / Nutritionist",
+      "n": 54
+    },
+    {
+      "industry": "Personal Trainer",
+      "n": 52
+    },
+    {
+      "industry": "Childcare",
+      "n": 52
+    },
+    {
+      "industry": "Medical Centre",
+      "n": 51
+    },
+    {
+      "industry": "Concreter / Paving",
+      "n": 51
+    },
+    {
+      "industry": "Podiatrist",
+      "n": 51
+    },
+    {
+      "industry": "Migration Agent",
+      "n": 50
+    },
+    {
+      "industry": "Furniture Store",
+      "n": 49
+    },
+    {
+      "industry": "Health Food Store",
+      "n": 48
+    },
+    {
+      "industry": "Florist",
+      "n": 48
+    },
+    {
+      "industry": "Arborist / Tree",
+      "n": 47
+    },
+    {
+      "industry": "Builder / Renovator",
+      "n": 47
+    },
+    {
+      "industry": "Landscape / Garden Design",
+      "n": 47
+    },
+    {
+      "industry": "Art Gallery",
+      "n": 47
+    },
+    {
+      "industry": "Roofer",
+      "n": 46
+    },
+    {
+      "industry": "Flooring",
+      "n": 45
+    },
+    {
+      "industry": "Glazier",
+      "n": 45
+    },
+    {
+      "industry": "Martial Arts Studio",
+      "n": 45
+    },
+    {
+      "industry": "Recruitment",
+      "n": 44
+    },
+    {
+      "industry": "Wine Bar / Bottle Shop",
+      "n": 44
+    },
+    {
+      "industry": "Osteopath",
+      "n": 43
+    },
+    {
+      "industry": "Surveyor",
+      "n": 43
+    },
+    {
+      "industry": "Interior Designer",
+      "n": 43
+    },
+    {
+      "industry": "Orthodontist",
+      "n": 42
+    },
+    {
+      "industry": "Garage Doors",
+      "n": 42
+    },
+    {
+      "industry": "Fine Jewellery",
+      "n": 42
+    },
+    {
+      "industry": "Photography Studio",
+      "n": 42
+    },
+    {
+      "industry": "Video Production",
+      "n": 41
+    },
+    {
+      "industry": "Gift Shop",
+      "n": 41
+    },
+    {
+      "industry": "Optometrist",
+      "n": 41
+    },
+    {
+      "industry": "Windscreen Repair",
+      "n": 40
+    },
+    {
+      "industry": "Wedding Venue",
+      "n": 40
+    },
+    {
+      "industry": "Event Planner",
+      "n": 40
+    },
+    {
+      "industry": "Storage",
+      "n": 40
+    },
+    {
+      "industry": "Dog Grooming",
+      "n": 40
+    },
+    {
+      "industry": "Tutoring Centre",
+      "n": 39
+    },
+    {
+      "industry": "Wedding Photography",
+      "n": 38
+    },
+    {
+      "industry": "Event Hire",
+      "n": 38
+    },
+    {
+      "industry": "Motorcycle Dealer",
+      "n": 38
+    },
+    {
+      "industry": "Curtains & Blinds",
+      "n": 38
+    },
+    {
+      "industry": "Structural Engineer",
+      "n": 37
+    },
+    {
+      "industry": "Dance Studio",
+      "n": 37
+    },
+    {
+      "industry": "Painter / Decorator",
+      "n": 36
+    },
+    {
+      "industry": "Tiler",
+      "n": 36
+    },
+    {
+      "industry": "Surf / Outdoor",
+      "n": 36
+    },
+    {
+      "industry": "Security / CCTV",
+      "n": 35
+    },
+    {
+      "industry": "Software Developer",
+      "n": 35
+    },
+    {
+      "industry": "Italian Restaurant",
+      "n": 35
+    },
+    {
+      "industry": "Shoe Store",
+      "n": 34
+    },
+    {
+      "industry": "Marriage Celebrant",
+      "n": 34
+    },
+    {
+      "industry": "Acupuncture / TCM",
+      "n": 33
+    },
+    {
+      "industry": "Motel",
+      "n": 33
+    },
+    {
+      "industry": "Digital Marketing",
+      "n": 33
+    },
+    {
+      "industry": "Car Rental",
+      "n": 32
+    },
+    {
+      "industry": "Waterproofing",
+      "n": 32
+    },
+    {
+      "industry": "Audiologist",
+      "n": 32
+    },
+    {
+      "industry": "Kids Activity Centre",
+      "n": 32
+    },
+    {
+      "industry": "Garden Centre",
+      "n": 32
+    },
+    {
+      "industry": "Cosmetic Clinic",
+      "n": 31
+    },
+    {
+      "industry": "Smash Repairs",
+      "n": 31
+    },
+    {
+      "industry": "Naturopath",
+      "n": 31
+    },
+    {
+      "industry": "Locksmith",
+      "n": 30
+    },
+    {
+      "industry": "Conference Centre",
+      "n": 30
+    },
+    {
+      "industry": "Demolition",
+      "n": 29
+    },
+    {
+      "industry": "Tattoo Studio",
+      "n": 29
+    },
+    {
+      "industry": "Antique Dealer",
+      "n": 29
+    },
+    {
+      "industry": "Music School",
+      "n": 28
+    },
+    {
+      "industry": "Entertainment",
+      "n": 28
+    },
+    {
+      "industry": "Gym / Fitness",
+      "n": 27
+    },
+    {
+      "industry": "Music Store",
+      "n": 27
+    },
+    {
+      "industry": "Powder Coating",
+      "n": 27
+    },
+    {
+      "industry": "Plant Nursery",
+      "n": 27
+    },
+    {
+      "industry": "Excavation",
+      "n": 26
+    },
+    {
+      "industry": "Tyre Service",
+      "n": 26
+    },
+    {
+      "industry": "Martial Arts",
+      "n": 26
+    },
+    {
+      "industry": "Serviced Apartments",
+      "n": 26
+    },
+    {
+      "industry": "Event Venue",
+      "n": 26
+    },
+    {
+      "industry": "Counsellor",
+      "n": 26
+    },
+    {
+      "industry": "Dog Day Care / Boarding",
+      "n": 25
+    },
+    {
+      "industry": "4WD Accessories",
+      "n": 24
+    },
+    {
+      "industry": "Town Planner",
+      "n": 24
+    },
+    {
+      "industry": "Sporting Goods",
+      "n": 24
+    },
+    {
+      "industry": "Hypnotherapy",
+      "n": 24
+    },
+    {
+      "industry": "Occupational Therapist",
+      "n": 23
+    },
+    {
+      "industry": "Property Management",
+      "n": 23
+    },
+    {
+      "industry": "Employment Lawyer",
+      "n": 23
+    },
+    {
+      "industry": "Hardware Store",
+      "n": 23
+    },
+    {
+      "industry": "Dog Trainer",
+      "n": 23
+    },
+    {
+      "industry": "Recruitment Agency",
+      "n": 23
+    },
+    {
+      "industry": "Car Wash",
+      "n": 23
+    },
+    {
+      "industry": "Dental Clinic",
+      "n": 23
+    },
+    {
+      "industry": "Life Coach",
+      "n": 23
+    },
+    {
+      "industry": "Bakery",
+      "n": 23
+    },
+    {
+      "industry": "Music Lessons",
+      "n": 22
+    },
+    {
+      "industry": "Printing",
+      "n": 21
+    },
+    {
+      "industry": "Business Consultant",
+      "n": 21
+    },
+    {
+      "industry": "Copywriter",
+      "n": 21
+    },
+    {
+      "industry": "Hr Consultant",
+      "n": 21
+    },
+    {
+      "industry": "Appliance Repair",
+      "n": 21
+    },
+    {
+      "industry": "Makeup Artist",
+      "n": 21
+    },
+    {
+      "industry": "Lighting Store",
+      "n": 21
+    },
+    {
+      "industry": "Business Coach",
+      "n": 20
+    },
+    {
+      "industry": "Barber Shop",
+      "n": 20
+    },
+    {
+      "industry": "Social Media Agency",
+      "n": 20
+    },
+    {
+      "industry": "Architect",
+      "n": 20
+    },
+    {
+      "industry": "Bike Shop",
+      "n": 20
+    },
+    {
+      "industry": "Fishing / Camping",
+      "n": 20
+    },
+    {
+      "industry": "Baby Store",
+      "n": 20
+    },
+    {
+      "industry": "Fashion Boutique",
+      "n": 20
+    },
+    {
+      "industry": "Criminal Lawyer",
+      "n": 20
+    },
+    {
+      "industry": "Float Tank",
+      "n": 19
+    },
+    {
+      "industry": "Buyers Agent",
+      "n": 19
+    },
+    {
+      "industry": "Sports Store",
+      "n": 19
+    },
+    {
+      "industry": "Videographer",
+      "n": 19
+    },
+    {
+      "industry": "Swim School",
+      "n": 19
+    },
+    {
+      "industry": "Independent Bookshop",
+      "n": 19
+    },
+    {
+      "industry": "Jeweller",
+      "n": 19
+    },
+    {
+      "industry": "Menswear",
+      "n": 19
+    },
+    {
+      "industry": "Towing Service",
+      "n": 18
+    },
+    {
+      "industry": "Vet",
+      "n": 18
+    },
+    {
+      "industry": "Fabric / Craft Store",
+      "n": 18
+    },
+    {
+      "industry": "Kids / Toy Shop",
+      "n": 18
+    },
+    {
+      "industry": "Tutoring",
+      "n": 18
+    },
+    {
+      "industry": "Escape Room",
+      "n": 17
+    },
+    {
+      "industry": "Bed & Breakfast",
+      "n": 17
+    },
+    {
+      "industry": "Waste Management",
+      "n": 17
+    },
+    {
+      "industry": "Manufacturing",
+      "n": 17
+    },
+    {
+      "industry": "Interior Decorator",
+      "n": 17
+    },
+    {
+      "industry": "Art Classes",
+      "n": 17
+    },
+    {
+      "industry": "Building Inspector",
+      "n": 17
+    },
+    {
+      "industry": "Pet Store",
+      "n": 17
+    },
+    {
+      "industry": "Indian Restaurant",
+      "n": 17
+    },
+    {
+      "industry": "Artisan Butcher",
+      "n": 17
+    },
+    {
+      "industry": "Solicitor",
+      "n": 17
+    },
+    {
+      "industry": "Language School",
+      "n": 16
+    },
+    {
+      "industry": "Logistics",
+      "n": 16
+    },
+    {
+      "industry": "Bricklayer",
+      "n": 16
+    },
+    {
+      "industry": "Mini Golf",
+      "n": 16
+    },
+    {
+      "industry": "Acupuncture",
+      "n": 16
+    },
+    {
+      "industry": "Plasterer",
+      "n": 16
+    },
+    {
+      "industry": "Waxing Studio",
+      "n": 16
+    },
+    {
+      "industry": "Dietitian",
+      "n": 16
+    },
+    {
+      "industry": "Immigration Lawyer",
+      "n": 16
+    },
+    {
+      "industry": "Food Truck",
+      "n": 16
+    },
+    {
+      "industry": "Golf Shop",
+      "n": 16
+    },
+    {
+      "industry": "Boxing Gym",
+      "n": 16
+    },
+    {
+      "industry": "Go Karting",
+      "n": 16
+    },
+    {
+      "industry": "Photo Booth Hire",
+      "n": 15
+    },
+    {
+      "industry": "Recording Studio",
+      "n": 15
+    },
+    {
+      "industry": "Advertising Agency",
+      "n": 15
+    },
+    {
+      "industry": "Tour Operator",
+      "n": 15
+    },
+    {
+      "industry": "Disability Services",
+      "n": 15
+    },
+    {
+      "industry": "Bar",
+      "n": 15
+    },
+    {
+      "industry": "Piano Teacher",
+      "n": 15
+    },
+    {
+      "industry": "Payroll Services",
+      "n": 14
+    },
+    {
+      "industry": "Cat Boarding",
+      "n": 14
+    },
+    {
+      "industry": "Funeral Director",
+      "n": 14
+    },
+    {
+      "industry": "Speech Therapist",
+      "n": 14
+    },
+    {
+      "industry": "Window Cleaning",
+      "n": 14
+    },
+    {
+      "industry": "Guitar Lessons",
+      "n": 14
+    },
+    {
+      "industry": "Thai Restaurant",
+      "n": 14
+    },
+    {
+      "industry": "Garage Door",
+      "n": 14
+    },
+    {
+      "industry": "Commercial Lawyer",
+      "n": 14
+    },
+    {
+      "industry": "Japanese Restaurant",
+      "n": 14
+    },
+    {
+      "industry": "Seo Consultant",
+      "n": 14
+    },
+    {
+      "industry": "Boat Dealer",
+      "n": 13
+    },
+    {
+      "industry": "Signage",
+      "n": 13
+    },
+    {
+      "industry": "Holistic Health",
+      "n": 13
+    },
+    {
+      "industry": "Stationery",
+      "n": 13
+    },
+    {
+      "industry": "Tattoo Removal",
+      "n": 13
+    },
+    {
+      "industry": "Coffee Roaster",
+      "n": 13
+    },
+    {
+      "industry": "Exercise Physiologist",
+      "n": 13
+    },
+    {
+      "industry": "Preschool",
+      "n": 13
+    },
+    {
+      "industry": "Chiropractic",
+      "n": 13
+    },
+    {
+      "industry": "Alarm Systems",
+      "n": 13
+    },
+    {
+      "industry": "Uniforms / Embroidery",
+      "n": 13
+    },
+    {
+      "industry": "Pharmacy",
+      "n": 13
+    },
+    {
+      "industry": "Concreter",
+      "n": 13
+    },
+    {
+      "industry": "Homewares",
+      "n": 13
+    },
+    {
+      "industry": "Blinds",
+      "n": 12
+    },
+    {
+      "industry": "Translator",
+      "n": 12
+    },
+    {
+      "industry": "Cake Shop",
+      "n": 12
+    },
+    {
+      "industry": "Cooking School",
+      "n": 12
+    },
+    {
+      "industry": "Paint Shop",
+      "n": 12
+    },
+    {
+      "industry": "Children's Clothing",
+      "n": 12
+    },
+    {
+      "industry": "Bed And Breakfast",
+      "n": 12
+    },
+    {
+      "industry": "Tailor",
+      "n": 12
+    },
+    {
+      "industry": "Daycare",
+      "n": 12
+    },
+    {
+      "industry": "Motorcycle Repair",
+      "n": 12
+    },
+    {
+      "industry": "Sports Bar",
+      "n": 12
+    },
+    {
+      "industry": "Ndis Provider",
+      "n": 12
+    },
+    {
+      "industry": "Party Supplies",
+      "n": 12
+    },
+    {
+      "industry": "Translation Services",
+      "n": 12
+    },
+    {
+      "industry": "Co-Working Space",
+      "n": 11
+    },
+    {
+      "industry": "Dog Training",
+      "n": 11
+    },
+    {
+      "industry": "Laser Clinic",
+      "n": 11
+    },
+    {
+      "industry": "Microbrewery",
+      "n": 11
+    },
+    {
+      "industry": "Dermatologist",
+      "n": 11
+    },
+    {
+      "industry": "Rubbish Removal",
+      "n": 11
+    },
+    {
+      "industry": "Car Service",
+      "n": 11
+    },
+    {
+      "industry": "Celebrant",
+      "n": 11
+    },
+    {
+      "industry": "Courier",
+      "n": 11
+    },
+    {
+      "industry": "Home Care",
+      "n": 11
+    },
+    {
+      "industry": "Aged Care",
+      "n": 10
+    },
+    {
+      "industry": "Lash & Brow Studio",
+      "n": 10
+    },
+    {
+      "industry": "Band Hire",
+      "n": 10
+    },
+    {
+      "industry": "Caravan Dealer",
+      "n": 10
+    },
+    {
+      "industry": "Musical Instruments",
+      "n": 10
+    },
+    {
+      "industry": "Lash Extensions",
+      "n": 10
+    },
+    {
+      "industry": "Metal Fabrication",
+      "n": 10
+    },
+    {
+      "industry": "Tyre Shop",
+      "n": 10
+    },
+    {
+      "industry": "Recycling",
+      "n": 10
+    },
+    {
+      "industry": "Pizza Restaurant",
+      "n": 10
+    },
+    {
+      "industry": "Burger Restaurant",
+      "n": 10
+    },
+    {
+      "industry": "Pub",
+      "n": 10
+    },
+    {
+      "industry": "Phone Repair",
+      "n": 10
+    },
+    {
+      "industry": "Flood Restoration",
+      "n": 10
+    },
+    {
+      "industry": "Paving",
+      "n": 9
+    },
+    {
+      "industry": "Handyman",
+      "n": 9
+    },
+    {
+      "industry": "Scaffolding",
+      "n": 9
+    },
+    {
+      "industry": "Estate Lawyer",
+      "n": 9
+    },
+    {
+      "industry": "Aquarium Shop",
+      "n": 9
+    },
+    {
+      "industry": "Hotel",
+      "n": 9
+    },
+    {
+      "industry": "Watch Store",
+      "n": 9
+    },
+    {
+      "industry": "Computer Shop",
+      "n": 9
+    },
+    {
+      "industry": "Gin Distillery",
+      "n": 9
+    },
+    {
+      "industry": "Vegan / Vegetarian Restaurant",
+      "n": 9
+    },
+    {
+      "industry": "Web Developer",
+      "n": 9
+    },
+    {
+      "industry": "Transmission Specialist",
+      "n": 9
+    },
+    {
+      "industry": "Auto Electrician",
+      "n": 9
+    },
+    {
+      "industry": "Security Systems",
+      "n": 9
+    },
+    {
+      "industry": "Furniture Repair",
+      "n": 9
+    },
+    {
+      "industry": "Boutique Hotel",
+      "n": 9
+    },
+    {
+      "industry": "Property Manager",
+      "n": 9
+    },
+    {
+      "industry": "Nutritionist",
+      "n": 9
+    },
+    {
+      "industry": "Gutter Cleaning",
+      "n": 8
+    },
+    {
+      "industry": "Nanny Agency",
+      "n": 8
+    },
+    {
+      "industry": "Toy Store",
+      "n": 8
+    },
+    {
+      "industry": "Pet Shop",
+      "n": 8
+    },
+    {
+      "industry": "Specialty Food / Deli",
+      "n": 8
+    },
+    {
+      "industry": "Mexican Restaurant",
+      "n": 8
+    },
+    {
+      "industry": "Spray Tan Studio",
+      "n": 8
+    },
+    {
+      "industry": "Cleaner",
+      "n": 8
+    },
+    {
+      "industry": "Skin Clinic",
+      "n": 8
+    },
+    {
+      "industry": "Commercial Cleaning",
+      "n": 8
+    },
+    {
+      "industry": "Bridal Shop",
+      "n": 8
+    },
+    {
+      "industry": "Cleaners",
+      "n": 8
+    },
+    {
+      "industry": "Painters",
+      "n": 8
+    },
+    {
+      "industry": "Spray Tan",
+      "n": 8
+    },
+    {
+      "industry": "Nightclub",
+      "n": 7
+    },
+    {
+      "industry": "Warehouse",
+      "n": 7
+    },
+    {
+      "industry": "Dj Hire",
+      "n": 7
+    },
+    {
+      "industry": "Dance School",
+      "n": 7
+    },
+    {
+      "industry": "Security Guard",
+      "n": 7
+    },
+    {
+      "industry": "Smash Repair",
+      "n": 7
+    },
+    {
+      "industry": "Laser Tag",
+      "n": 7
+    },
+    {
+      "industry": "Cctv Installation",
+      "n": 7
+    },
+    {
+      "industry": "Vietnamese Restaurant",
+      "n": 7
+    },
+    {
+      "industry": "Builders",
+      "n": 7
+    },
+    {
+      "industry": "Hypnotherapist",
+      "n": 7
+    },
+    {
+      "industry": "Clothing Store",
+      "n": 7
+    },
+    {
+      "industry": "Dessert Cafe",
+      "n": 7
+    },
+    {
+      "industry": "Waxing Salon",
+      "n": 7
+    },
+    {
+      "industry": "Carpenters",
+      "n": 7
+    },
+    {
+      "industry": "Curtains",
+      "n": 7
+    },
+    {
+      "industry": "DJ / Entertainment",
+      "n": 7
+    },
+    {
+      "industry": "Crane Hire",
+      "n": 7
+    },
+    {
+      "industry": "Physiotherapist",
+      "n": 7
+    },
+    {
+      "industry": "Seafood Restaurant",
+      "n": 7
+    },
+    {
+      "industry": "Chinese Restaurant",
+      "n": 7
+    },
+    {
+      "industry": "Chocolatier",
+      "n": 7
+    },
+    {
+      "industry": "Travel Agent",
+      "n": 7
+    },
+    {
+      "industry": "Karaoke / Bar",
+      "n": 7
+    },
+    {
+      "industry": "Pr Agency",
+      "n": 7
+    },
+    {
+      "industry": "First Aid Training",
+      "n": 7
+    },
+    {
+      "industry": "Plastic Surgeon",
+      "n": 7
+    },
+    {
+      "industry": "Welding",
+      "n": 7
+    },
+    {
+      "industry": "Tile Shop",
+      "n": 7
+    },
+    {
+      "industry": "Ceramics / Pottery Studio",
+      "n": 6
+    },
+    {
+      "industry": "Engineering",
+      "n": 6
+    },
+    {
+      "industry": "Crystal / Wellness Shop",
+      "n": 6
+    },
+    {
+      "industry": "Tax Accountant",
+      "n": 6
+    },
+    {
+      "industry": "Arborist",
+      "n": 6
+    },
+    {
+      "industry": "Juice Bar",
+      "n": 6
+    },
+    {
+      "industry": "Dry Cleaner",
+      "n": 6
+    },
+    {
+      "industry": "Upholstery",
+      "n": 6
+    },
+    {
+      "industry": "Pressure Cleaning",
+      "n": 6
+    },
+    {
+      "industry": "Lawn Mowing",
+      "n": 6
+    },
+    {
+      "industry": "Office Fitout",
+      "n": 6
+    },
+    {
+      "industry": "Security Doors",
+      "n": 5
+    },
+    {
+      "industry": "House Cleaning",
+      "n": 5
+    },
+    {
+      "industry": "Electricians",
+      "n": 5
+    },
+    {
+      "industry": "Remedial Massage",
+      "n": 5
+    },
+    {
+      "industry": "Dog Walking",
+      "n": 5
+    },
+    {
+      "industry": "Law Firm",
+      "n": 5
+    },
+    {
+      "industry": "Bathroom Renovations",
+      "n": 5
+    },
+    {
+      "industry": "Pizza Shop",
+      "n": 5
+    },
+    {
+      "industry": "Career Coach",
+      "n": 5
+    },
+    {
+      "industry": "Pet Sitting",
+      "n": 5
+    },
+    {
+      "industry": "Landscapers",
+      "n": 5
+    },
+    {
+      "industry": "Garden Maintenance",
+      "n": 5
+    },
+    {
+      "industry": "Fire Protection",
+      "n": 5
+    },
+    {
+      "industry": "Shoe Shop",
+      "n": 5
+    },
+    {
+      "industry": "3D Printing",
+      "n": 4
+    },
+    {
+      "industry": "Appliance Store",
+      "n": 4
+    },
+    {
+      "industry": "Mould Removal",
+      "n": 4
+    },
+    {
+      "industry": "Tree Lopping",
+      "n": 4
+    },
+    {
+      "industry": "Caterers",
+      "n": 4
+    },
+    {
+      "industry": "Photographers",
+      "n": 4
+    },
+    {
+      "industry": "Cabinet Maker",
+      "n": 4
+    },
+    {
+      "industry": "Roofing",
+      "n": 4
+    },
+    {
+      "industry": "Personal Stylist",
+      "n": 4
+    },
+    {
+      "industry": "Accountants",
+      "n": 4
+    },
+    {
+      "industry": "Wedding Photographer",
+      "n": 4
+    },
+    {
+      "industry": "Branding Agency",
+      "n": 4
+    },
+    {
+      "industry": "Wedding Planner",
+      "n": 4
+    },
+    {
+      "industry": "Marine Mechanic",
+      "n": 4
+    },
+    {
+      "industry": "Tax Agent",
+      "n": 4
+    },
+    {
+      "industry": "It Consultant",
+      "n": 4
+    },
+    {
+      "industry": "Mechanics",
+      "n": 4
+    },
+    {
+      "industry": "Shop Fitout",
+      "n": 4
+    },
+    {
+      "industry": "Laundromat",
+      "n": 4
+    },
+    {
+      "industry": "Termite Inspection",
+      "n": 4
+    },
+    {
+      "industry": "Vintage Clothing",
+      "n": 4
+    },
+    {
+      "industry": "Gp Clinic",
+      "n": 3
+    },
+    {
+      "industry": "Spanish Restaurant",
+      "n": 3
+    },
+    {
+      "industry": "Chiropractic Clinic",
+      "n": 3
+    },
+    {
+      "industry": "Steakhouse",
+      "n": 3
+    },
+    {
+      "industry": "Montessori School",
+      "n": 3
+    },
+    {
+      "industry": "Hvac",
+      "n": 3
+    },
+    {
+      "industry": "Decking",
+      "n": 3
+    },
+    {
+      "industry": "Mortgage Brokers",
+      "n": 3
+    },
+    {
+      "industry": "End Of Lease Cleaning",
+      "n": 3
+    },
+    {
+      "industry": "Home Renovations",
+      "n": 3
+    },
+    {
+      "industry": "Psychology / Counselling",
+      "n": 3
+    },
+    {
+      "industry": "Running Store",
+      "n": 3
+    },
+    {
+      "industry": "Pawn Shop",
+      "n": 3
+    },
+    {
+      "industry": "Custom Home Builder",
+      "n": 2
+    },
+    {
+      "industry": "Antique / Vintage Dealer",
+      "n": 2
+    },
+    {
+      "industry": "Kitchen Renovations",
+      "n": 2
+    },
+    {
+      "industry": "Butcher",
+      "n": 2
+    },
+    {
+      "industry": "beauty clinic",
+      "n": 2
+    },
+    {
+      "industry": "Greek Restaurant",
+      "n": 2
+    },
+    {
+      "industry": "Printing Services",
+      "n": 2
+    },
+    {
+      "industry": "Turkish Restaurant",
+      "n": 2
+    },
+    {
+      "industry": "Microblading",
+      "n": 2
+    },
+    {
+      "industry": "Quantity Surveyor",
+      "n": 2
+    },
+    {
+      "industry": "Real Estate Agents",
+      "n": 2
+    },
+    {
+      "industry": "Veterinary Clinic",
+      "n": 2
+    },
+    {
+      "industry": "Graphic Designer / Brand Studio",
+      "n": 2
+    },
+    {
+      "industry": "Roofers",
+      "n": 2
+    },
+    {
+      "industry": "Luggage Store",
+      "n": 2
+    },
+    {
+      "industry": "Lebanese Restaurant",
+      "n": 2
+    },
+    {
+      "industry": "Pool Builders",
+      "n": 2
+    },
+    {
+      "industry": "Mobile Car Detailing",
+      "n": 2
+    },
+    {
+      "industry": "Swimming Lessons",
+      "n": 2
+    },
+    {
+      "industry": "Cosmetic Dentist",
+      "n": 2
+    },
+    {
+      "industry": "Medical Clinic",
+      "n": 2
+    },
+    {
+      "industry": "CCTV & Security Systems Installer",
+      "n": 1
+    },
+    {
+      "industry": "Plumbing & Solar Installation",
+      "n": 1
+    },
+    {
+      "industry": "Balustrade & Fencing Fabrication",
+      "n": 1
+    },
+    {
+      "industry": "Plant Nursery & Landscaping",
+      "n": 1
+    },
+    {
+      "industry": "Air Conditioning Retailer / E-commerce",
+      "n": 1
+    },
+    {
+      "industry": "Bakery/Cafe",
+      "n": 1
+    },
+    {
+      "industry": "Spanish Tapas Bar",
+      "n": 1
+    },
+    {
+      "industry": "Financial Planner / Wealth Adviser",
+      "n": 1
+    },
+    {
+      "industry": "Bridal Studio",
+      "n": 1
+    },
+    {
+      "industry": "Natural Stone & Tile Supplier",
+      "n": 1
+    },
+    {
+      "industry": "Garage Door Installation & Repairs",
+      "n": 1
+    },
+    {
+      "industry": "Commercial HVAC Contractor",
+      "n": 1
+    },
+    {
+      "industry": "Real Estate Sales and Rentals",
+      "n": 1
+    },
+    {
+      "industry": "Cardiology Clinic",
+      "n": 1
+    },
+    {
+      "industry": "Astrology Services",
+      "n": 1
+    },
+    {
+      "industry": "Accounting & Tax",
+      "n": 1
+    },
+    {
+      "industry": "Audiology / Hearing Clinic",
+      "n": 1
+    },
+    {
+      "industry": "Professional Association",
+      "n": 1
+    },
+    {
+      "industry": "Resume Writing Services",
+      "n": 1
+    },
+    {
+      "industry": "Acupuncture / Complementary Medicine Clinic",
+      "n": 1
+    },
+    {
+      "industry": "Dog Day Care / Dog Boarding",
+      "n": 1
+    },
+    {
+      "industry": "Decking & Patio Builder",
+      "n": 1
+    },
+    {
+      "industry": "Motorcycle Parts & Accessories",
+      "n": 1
+    },
+    {
+      "industry": "Bird Control & Deterrent Supplier",
+      "n": 1
+    },
+    {
+      "industry": "Day Spa / Beauty & Skincare Salon",
+      "n": 1
+    },
+    {
+      "industry": "Locksmith & Electronic Security",
+      "n": 1
+    },
+    {
+      "industry": "Building Supplies & Hardware (Trade)",
+      "n": 1
+    },
+    {
+      "industry": "Perinatal Psychologist",
+      "n": 1
+    },
+    {
+      "industry": "Salesforce Consulting & Digital Transformation",
+      "n": 1
+    },
+    {
+      "industry": "Microbrewery / Gastropub",
+      "n": 1
+    },
+    {
+      "industry": "Lawyers & Solicitors",
+      "n": 1
+    },
+    {
+      "industry": "Remedial Building Consultancy",
+      "n": 1
+    },
+    {
+      "industry": "Accounting & Bookkeeping",
+      "n": 1
+    },
+    {
+      "industry": "Golf Course",
+      "n": 1
+    },
+    {
+      "industry": "Wedding Planners",
+      "n": 1
+    },
+    {
+      "industry": "Cosmetic Skin Clinic",
+      "n": 1
+    },
+    {
+      "industry": "Corporate & Event Photographer",
+      "n": 1
+    },
+    {
+      "industry": "Custom Software Development / IT Services",
+      "n": 1
+    },
+    {
+      "industry": "Tech Recruitment Agency",
+      "n": 1
+    },
+    {
+      "industry": "IT Recruitment Agency",
+      "n": 1
+    },
+    {
+      "industry": "Demolition & Asbestos Removal",
+      "n": 1
+    },
+    {
+      "industry": "Laser Engraving Machine Manufacturer",
+      "n": 1
+    },
+    {
+      "industry": "Pool Maintenance",
+      "n": 1
+    },
+    {
+      "industry": "Tiling & Waterproofing Contractor",
+      "n": 1
+    },
+    {
+      "industry": "Counsellor / Family Therapist",
+      "n": 1
+    },
+    {
+      "industry": "Residential Builder / Renovations",
+      "n": 1
+    },
+    {
+      "industry": "Business Brokerage",
+      "n": 1
+    },
+    {
+      "industry": "Tiles & Bathroomware Retailer",
+      "n": 1
+    },
+    {
+      "industry": "Legal Services",
+      "n": 1
+    },
+    {
+      "industry": "Engineering Software Vendor",
+      "n": 1
+    },
+    {
+      "industry": "CrossFit/Gym",
+      "n": 1
+    },
+    {
+      "industry": "Pool Maintenance & Servicing",
+      "n": 1
+    },
+    {
+      "industry": "Dancewear Retail",
+      "n": 1
+    },
+    {
+      "industry": "Building and Pest Inspections",
+      "n": 1
+    },
+    {
+      "industry": "Building & Landscape Design",
+      "n": 1
+    },
+    {
+      "industry": "Interior Design & Decoration",
+      "n": 1
+    },
+    {
+      "industry": "Traders Association",
+      "n": 1
+    },
+    {
+      "industry": "Glass Pool Fencing",
+      "n": 1
+    },
+    {
+      "industry": "Online Vinyl Record Store",
+      "n": 1
+    },
+    {
+      "industry": "Wine Retail / E-commerce",
+      "n": 1
+    },
+    {
+      "industry": "Aboriginal Traditional Owner Corporation",
+      "n": 1
+    },
+    {
+      "industry": "Pet Products / Dog Gear E-commerce",
+      "n": 1
+    },
+    {
+      "industry": "Industrial Pump & Water Treatment Supplier",
+      "n": 1
+    },
+    {
+      "industry": "Plastic & Reconstructive Surgeon",
+      "n": 1
+    },
+    {
+      "industry": "Advertising / Marketing Agency",
+      "n": 1
+    },
+    {
+      "industry": "Gutter Guard Installation & Cleaning",
+      "n": 1
+    },
+    {
+      "industry": "Business Coaching & Online Courses (electrical)",
+      "n": 1
+    },
+    {
+      "industry": "Cafe/F&B",
+      "n": 1
+    },
+    {
+      "industry": "Home Renovations & Extensions",
+      "n": 1
+    },
+    {
+      "industry": "School Photography",
+      "n": 1
+    },
+    {
+      "industry": "Epoxy Flooring & Concrete Polishing",
+      "n": 1
+    },
+    {
+      "industry": "Furniture Retailer",
+      "n": 1
+    },
+    {
+      "industry": "Event Lighting Hire",
+      "n": 1
+    },
+    {
+      "industry": "Charity / Non-profit (Water)",
+      "n": 1
+    },
+    {
+      "industry": "First Aid & Medical Supplies Retailer",
+      "n": 1
+    },
+    {
+      "industry": "Speech Therapist / Occupational Therapist",
+      "n": 1
+    },
+    {
+      "industry": "Personal Training",
+      "n": 1
+    },
+    {
+      "industry": "Workwear & Uniform Retailer",
+      "n": 1
+    },
+    {
+      "industry": "Floor Sanding & Polishing",
+      "n": 1
+    },
+    {
+      "industry": "Dog Training & Pet Sitting",
+      "n": 1
+    },
+    {
+      "industry": "Pilates Franchisor / Wellness Subscription Brand",
+      "n": 1
+    },
+    {
+      "industry": "Formwork & Construction Supplies Retailer",
+      "n": 1
+    },
+    {
+      "industry": "Video & Animation Production Studio",
+      "n": 1
+    },
+    {
+      "industry": "French Restaurant",
+      "n": 1
+    },
+    {
+      "industry": "Luxury Furniture Retailer",
+      "n": 1
+    },
+    {
+      "industry": "Function Centre",
+      "n": 1
+    },
+    {
+      "industry": "Plant Nursery / Indoor Plants Store",
+      "n": 1
+    },
+    {
+      "industry": "Computer Repair / IT Services",
+      "n": 1
+    },
+    {
+      "industry": "RSL Club / Hospitality Venue",
+      "n": 1
+    },
+    {
+      "industry": "Medical Aesthetics & Dermatology Clinic",
+      "n": 1
+    },
+    {
+      "industry": "Home Builder",
+      "n": 1
+    },
+    {
+      "industry": "Indian Restaurant & Buffet",
+      "n": 1
+    },
+    {
+      "industry": "Gin Distillery / Craft Spirits",
+      "n": 1
+    },
+    {
+      "industry": "Glass Pool Fencing & Balustrading",
+      "n": 1
+    },
+    {
+      "industry": "Flooring Retailer",
+      "n": 1
+    },
+    {
+      "industry": "Gym / Fitness Centre",
+      "n": 1
+    },
+    {
+      "industry": "Wedding & Event Services",
+      "n": 1
+    },
+    {
+      "industry": "Hotel / Accommodation",
+      "n": 1
+    },
+    {
+      "industry": "Ethiopian Restaurant",
+      "n": 1
+    },
+    {
+      "industry": "Function Venue",
+      "n": 1
+    },
+    {
+      "industry": "Construction & Property Development",
+      "n": 1
+    },
+    {
+      "industry": "Musical Instrument Store",
+      "n": 1
+    },
+    {
+      "industry": "Tyres",
+      "n": 1
+    },
+    {
+      "industry": "Printing Services and Graphic Design",
+      "n": 1
+    },
+    {
+      "industry": "Restaurant Group (non-trading brand)",
+      "n": 1
+    },
+    {
+      "industry": "Earthmoving & Plant Hire",
+      "n": 1
+    },
+    {
+      "industry": "Mountain Bike Shop",
+      "n": 1
+    },
+    {
+      "industry": "Diesel Fuel Injection Specialist",
+      "n": 1
+    },
+    {
+      "industry": "Remedial Massage & Naturopathy Clinic",
+      "n": 1
+    },
+    {
+      "industry": "Spa & Sauna Retailer",
+      "n": 1
+    },
+    {
+      "industry": "Flooring Retail & Installation",
+      "n": 1
+    },
+    {
+      "industry": "Hospitality & Catering Equipment Supplier",
+      "n": 1
+    },
+    {
+      "industry": "Paediatric Dentist",
+      "n": 1
+    },
+    {
+      "industry": "Brow Specialist",
+      "n": 1
+    },
+    {
+      "industry": "Sports Nutrition",
+      "n": 1
+    },
+    {
+      "industry": "Local Lifestyle Magazine / Media Publisher",
+      "n": 1
+    },
+    {
+      "industry": "Cleaning and Gardening Services",
+      "n": 1
+    },
+    {
+      "industry": "Residential Tiling & Paving",
+      "n": 1
+    },
+    {
+      "industry": "Juice Bar / Smoothie Bar",
+      "n": 1
+    },
+    {
+      "industry": "NDIS Children's Therapy Provider (Charity)",
+      "n": 1
+    },
+    {
+      "industry": "Stationery & Lifestyle Retail (national chain)",
+      "n": 1
+    },
+    {
+      "industry": "Home Renovation Builder",
+      "n": 1
+    },
+    {
+      "industry": "Kitchen & Bathroom Renovator",
+      "n": 1
+    },
+    {
+      "industry": "Diesel Mechanic",
+      "n": 1
+    },
+    {
+      "industry": "Building & Timber Supplies Retailer",
+      "n": 1
+    },
+    {
+      "industry": "Cosmetic & Laser Skin Clinic",
+      "n": 1
+    },
+    {
+      "industry": "Allied Health Clinic",
+      "n": 1
+    },
+    {
+      "industry": "Laser Tag Venue",
+      "n": 1
+    },
+    {
+      "industry": "Pub & Functions Venue",
+      "n": 1
+    },
+    {
+      "industry": "Timber Flooring Retailer & Installer",
+      "n": 1
+    },
+    {
+      "industry": "Escape Room / Entertainment",
+      "n": 1
+    },
+    {
+      "industry": "Men's Skin / Grooming Studio",
+      "n": 1
+    },
+    {
+      "industry": "Building Services Engineering",
+      "n": 1
+    },
+    {
+      "industry": "Marquee Hire",
+      "n": 1
+    },
+    {
+      "industry": "HSC Tutoring",
+      "n": 1
+    },
+    {
+      "industry": "Hearing Care & Audiology",
+      "n": 1
+    },
+    {
+      "industry": "Coding School",
+      "n": 1
+    },
+    {
+      "industry": "Air Conditioning Distributor",
+      "n": 1
+    },
+    {
+      "industry": "Custom Jewellery Design & Manufacturing",
+      "n": 1
+    },
+    {
+      "industry": "Bathroom & Balcony Waterproofing (franchise network)",
+      "n": 1
+    },
+    {
+      "industry": "Cosmetic Medicine Clinic",
+      "n": 1
+    },
+    {
+      "industry": "Naturopath / Holistic Health",
+      "n": 1
+    },
+    {
+      "industry": "Acupuncture / TCM Clinic",
+      "n": 1
+    },
+    {
+      "industry": "Commercial Security & CCTV Systems",
+      "n": 1
+    },
+    {
+      "industry": "Excavation & Earthmoving Contractor",
+      "n": 1
+    },
+    {
+      "industry": "Bakery / Cafe",
+      "n": 1
+    },
+    {
+      "industry": "Locksmiths",
+      "n": 1
+    },
+    {
+      "industry": "Plumbing and Gas Fitting Services",
+      "n": 1
+    },
+    {
+      "industry": "Mobile Mechanic",
+      "n": 1
+    },
+    {
+      "industry": "Montessori Childcare / Early Learning",
+      "n": 1
+    },
+    {
+      "industry": "Vehicle Inspection",
+      "n": 1
+    },
+    {
+      "industry": "Landscape Supplies",
+      "n": 1
+    },
+    {
+      "industry": "Shower Repairs & Waterproofing",
+      "n": 1
+    },
+    {
+      "industry": "Luxury Watch Accessories",
+      "n": 1
+    },
+    {
+      "industry": "Timber & Building Supplies",
+      "n": 1
+    },
+    {
+      "industry": "Computer Repairs",
+      "n": 1
+    },
+    {
+      "industry": "Solar Energy Installation & Battery Systems",
+      "n": 1
+    },
+    {
+      "industry": "Telescopes & Optics Retailer",
+      "n": 1
+    },
+    {
+      "industry": "Bar & Live Music Venue",
+      "n": 1
+    },
+    {
+      "industry": "Tyre & Wheel Distribution",
+      "n": 1
+    },
+    {
+      "industry": "Florists",
+      "n": 1
+    },
+    {
+      "industry": "Optometrist / Eyewear",
+      "n": 1
+    },
+    {
+      "industry": "Winery / Restaurant",
+      "n": 1
+    },
+    {
+      "industry": "Vein Clinic",
+      "n": 1
+    },
+    {
+      "industry": "Digital Marketing Agency",
+      "n": 1
+    },
+    {
+      "industry": "Specialty Coffee",
+      "n": 1
+    },
+    {
+      "industry": "Health Food Store / Organic Grocer",
+      "n": 1
+    },
+    {
+      "industry": "Holiday Apartments / Resort Accommodation",
+      "n": 1
+    },
+    {
+      "industry": "Gate & Garage Door Automation",
+      "n": 1
+    },
+    {
+      "industry": "Indoor Play Centre",
+      "n": 1
+    },
+    {
+      "industry": "Childcare / Early Learning Centre",
+      "n": 1
+    },
+    {
+      "industry": "Pub / Hotel",
+      "n": 1
+    },
+    {
+      "industry": "Wedding & Function Venue",
+      "n": 1
+    },
+    {
+      "industry": "Truck & Trailer Dealer",
+      "n": 1
+    },
+    {
+      "industry": "Automotive Spare Parts & Accessories Retail",
+      "n": 1
+    },
+    {
+      "industry": "New Home Building / Residential Construction",
+      "n": 1
+    },
+    {
+      "industry": "Family Photographer",
+      "n": 1
+    },
+    {
+      "industry": "Picture Framer / Art Supply",
+      "n": 1
+    },
+    {
+      "industry": "NDIS Provider",
+      "n": 1
+    },
+    {
+      "industry": "General Practice / Medical Centre",
+      "n": 1
+    },
+    {
+      "industry": "Pool Equipment Supplier",
+      "n": 1
+    },
+    {
+      "industry": "Electric Go-Kart Racing Venue",
+      "n": 1
+    },
+    {
+      "industry": "Security & Communications Solutions",
+      "n": 1
+    },
+    {
+      "industry": "Security Screens & Doors Manufacturer",
+      "n": 1
+    },
+    {
+      "industry": "Enterprise Talent-Management / Psychometric Assessment SaaS",
+      "n": 1
+    },
+    {
+      "industry": "Outdoor Structures \u2014 Decks, Patios, Carports & Pergolas",
+      "n": 1
+    },
+    {
+      "industry": "Bearings & Industrial Supplies",
+      "n": 1
+    },
+    {
+      "industry": "Motorcycle Rider Training",
+      "n": 1
+    },
+    {
+      "industry": "Accounting & Financial Planning Firm",
+      "n": 1
+    },
+    {
+      "industry": "Wellness Practitioner / Holistic Health Clinic",
+      "n": 1
+    },
+    {
+      "industry": "Rheumatologist",
+      "n": 1
+    },
+    {
+      "industry": "Specialty Coffee Roaster",
+      "n": 1
+    },
+    {
+      "industry": "Industrial Rope Access Services",
+      "n": 1
+    },
+    {
+      "industry": "Real Estate Agency (Property & Strata Management)",
+      "n": 1
+    },
+    {
+      "industry": "Bathroom Renovation & Tiling",
+      "n": 1
+    },
+    {
+      "industry": "Pharmaceutical Manufacturer",
+      "n": 1
+    },
+    {
+      "industry": "Jewellery Manufacturer / Retail Jeweller",
+      "n": 1
+    },
+    {
+      "industry": "Security Systems / Alarm Monitoring",
+      "n": 1
+    },
+    {
+      "industry": "Primary School",
+      "n": 1
+    },
+    {
+      "industry": "Orthopaedic Surgery & Occupational Therapy Clinic",
+      "n": 1
+    },
+    {
+      "industry": "Concrete Polishing & Coatings",
+      "n": 1
+    },
+    {
+      "industry": "Computer Repair Services",
+      "n": 1
+    },
+    {
+      "industry": "Industrial Parts & Bearings Supplier (ecommerce)",
+      "n": 1
+    },
+    {
+      "industry": "Scalp Micropigmentation Clinic",
+      "n": 1
+    },
+    {
+      "industry": "Medico-Legal Services",
+      "n": 1
+    },
+    {
+      "industry": "Solar Panel Installation",
+      "n": 1
+    },
+    {
+      "industry": "Sports Supplement Retailer",
+      "n": 1
+    },
+    {
+      "industry": "Web Design Agency",
+      "n": 1
+    },
+    {
+      "industry": "Financial Planning",
+      "n": 1
+    },
+    {
+      "industry": "Private / In-Home Tutoring",
+      "n": 1
+    },
+    {
+      "industry": "Hamptons Style Furniture & Homewares Retail",
+      "n": 1
+    },
+    {
+      "industry": "Home Security & Glass Installation",
+      "n": 1
+    },
+    {
+      "industry": "Insurance / Banking (enterprise)",
+      "n": 1
+    },
+    {
+      "industry": "Retail Butcher Chain",
+      "n": 1
+    },
+    {
+      "industry": "Removalist \u2014 Piano & Pool Table",
+      "n": 1
+    },
+    {
+      "industry": "Property & Commercial Law Firm",
+      "n": 1
+    },
+    {
+      "industry": "Martial Arts Equipment Retailer",
+      "n": 1
+    },
+    {
+      "industry": "Healthcare \u2014 Radiation Oncology Education",
+      "n": 1
+    },
+    {
+      "industry": "Investment Recovery / Financial Services",
+      "n": 1
+    },
+    {
+      "industry": "Wholesale / Warehousing Distribution",
+      "n": 1
+    },
+    {
+      "industry": "Hi-Fi / Audio Equipment Retailer",
+      "n": 1
+    },
+    {
+      "industry": "Gift Hamper E-commerce Retailer",
+      "n": 1
+    },
+    {
+      "industry": "Accommodation - Lakeside apartments",
+      "n": 1
+    },
+    {
+      "industry": "Personal Injury Lawyer",
+      "n": 1
+    },
+    {
+      "industry": "Commercial Plant Hire",
+      "n": 1
+    },
+    {
+      "industry": "Online Pet Supplies Retailer",
+      "n": 1
+    },
+    {
+      "industry": "Custom Furniture & Interior Design",
+      "n": 1
+    },
+    {
+      "industry": "TMJ / Jaw Pain Clinic",
+      "n": 1
+    },
+    {
+      "industry": "Podiatry",
+      "n": 1
+    },
+    {
+      "industry": "Bathroom Renovation",
+      "n": 1
+    },
+    {
+      "industry": "Outdoor Living Retailer",
+      "n": 1
+    },
+    {
+      "industry": "Town Planner / Urban Planning Consultant",
+      "n": 1
+    },
+    {
+      "industry": "Home Security - Security Screens & Doors Installer",
+      "n": 1
+    },
+    {
+      "industry": "Mechanic / Auto Repair",
+      "n": 1
+    },
+    {
+      "industry": "Performing Arts \u2014 Symphony Orchestra",
+      "n": 1
+    },
+    {
+      "industry": "Car Care Products (E-commerce Retailer)",
+      "n": 1
+    },
+    {
+      "industry": "Bridal Makeup Artist / MUA",
+      "n": 1
+    },
+    {
+      "industry": "Sports & Recreation Centre",
+      "n": 1
+    },
+    {
+      "industry": "Glamping / Tiny Home Accommodation",
+      "n": 1
+    },
+    {
+      "industry": "Sporting Goods E-commerce",
+      "n": 1
+    },
+    {
+      "industry": "Yacht & Boat Broker",
+      "n": 1
+    }
+  ],
+  "by_industry_min_n80": [
+    {
+      "industry": "Real Estate",
+      "n": 151,
+      "poor_pct": 41.1,
+      "mean_performance": 54.1,
+      "median_lcp_ms": 8551
+    },
+    {
+      "industry": "Dentist",
+      "n": 149,
+      "poor_pct": 36.9,
+      "mean_performance": 57.1,
+      "median_lcp_ms": 8779
+    },
+    {
+      "industry": "Physiotherapy",
+      "n": 118,
+      "poor_pct": 29.7,
+      "mean_performance": 59.1,
+      "median_lcp_ms": 8028
+    },
+    {
+      "industry": "Day Spa",
+      "n": 117,
+      "poor_pct": 28.2,
+      "mean_performance": 59.5,
+      "median_lcp_ms": 7336
+    },
+    {
+      "industry": "Mortgage Broker",
+      "n": 109,
+      "poor_pct": 33.0,
+      "mean_performance": 60.6,
+      "median_lcp_ms": 6563
+    },
+    {
+      "industry": "Car Mechanic",
+      "n": 100,
+      "poor_pct": 34.0,
+      "mean_performance": 61.4,
+      "median_lcp_ms": 6500
+    },
+    {
+      "industry": "Solar Installer",
+      "n": 101,
+      "poor_pct": 27.7,
+      "mean_performance": 61.4,
+      "median_lcp_ms": 7756
+    },
+    {
+      "industry": "Kitchen & Bathroom Renovation",
+      "n": 95,
+      "poor_pct": 25.3,
+      "mean_performance": 61.6,
+      "median_lcp_ms": 6932
+    },
+    {
+      "industry": "Chiropractor",
+      "n": 103,
+      "poor_pct": 24.3,
+      "mean_performance": 61.8,
+      "median_lcp_ms": 7515
+    },
+    {
+      "industry": "Cleaning Services",
+      "n": 132,
+      "poor_pct": 28.0,
+      "mean_performance": 62.5,
+      "median_lcp_ms": 6578
+    },
+    {
+      "industry": "Beauty Clinic / Skin Clinic",
+      "n": 99,
+      "poor_pct": 20.2,
+      "mean_performance": 62.6,
+      "median_lcp_ms": 6528
+    },
+    {
+      "industry": "Real Estate Agent",
+      "n": 118,
+      "poor_pct": 28.0,
+      "mean_performance": 62.7,
+      "median_lcp_ms": 6684
+    },
+    {
+      "industry": "Financial Planner",
+      "n": 176,
+      "poor_pct": 25.6,
+      "mean_performance": 62.9,
+      "median_lcp_ms": 6486
+    },
+    {
+      "industry": "Pool Builder",
+      "n": 110,
+      "poor_pct": 21.8,
+      "mean_performance": 63.0,
+      "median_lcp_ms": 8056
+    },
+    {
+      "industry": "Psychologist / Counsellor",
+      "n": 166,
+      "poor_pct": 15.7,
+      "mean_performance": 63.1,
+      "median_lcp_ms": 6926
+    },
+    {
+      "industry": "Gym",
+      "n": 101,
+      "poor_pct": 27.7,
+      "mean_performance": 63.1,
+      "median_lcp_ms": 6436
+    },
+    {
+      "industry": "Allied Health",
+      "n": 86,
+      "poor_pct": 20.9,
+      "mean_performance": 63.2,
+      "median_lcp_ms": 6574
+    },
+    {
+      "industry": "Air Conditioning",
+      "n": 169,
+      "poor_pct": 20.1,
+      "mean_performance": 63.3,
+      "median_lcp_ms": 6358
+    },
+    {
+      "industry": "Plumber",
+      "n": 147,
+      "poor_pct": 27.2,
+      "mean_performance": 63.7,
+      "median_lcp_ms": 6463
+    },
+    {
+      "industry": "Car Detailing",
+      "n": 116,
+      "poor_pct": 22.4,
+      "mean_performance": 63.7,
+      "median_lcp_ms": 6758
+    },
+    {
+      "industry": "Catering",
+      "n": 161,
+      "poor_pct": 26.7,
+      "mean_performance": 63.8,
+      "median_lcp_ms": 7381
+    },
+    {
+      "industry": "Signage / Printing",
+      "n": 96,
+      "poor_pct": 22.9,
+      "mean_performance": 64.0,
+      "median_lcp_ms": 6376
+    },
+    {
+      "industry": "Cafe",
+      "n": 102,
+      "poor_pct": 23.5,
+      "mean_performance": 64.0,
+      "median_lcp_ms": 7208
+    },
+    {
+      "industry": "Restaurant",
+      "n": 134,
+      "poor_pct": 26.9,
+      "mean_performance": 64.1,
+      "median_lcp_ms": 6056
+    },
+    {
+      "industry": "Fencing",
+      "n": 123,
+      "poor_pct": 20.3,
+      "mean_performance": 64.2,
+      "median_lcp_ms": 6890
+    },
+    {
+      "industry": "Landscaper",
+      "n": 106,
+      "poor_pct": 23.6,
+      "mean_performance": 64.6,
+      "median_lcp_ms": 6228
+    },
+    {
+      "industry": "Beauty Clinic",
+      "n": 93,
+      "poor_pct": 24.7,
+      "mean_performance": 64.6,
+      "median_lcp_ms": 5626
+    },
+    {
+      "industry": "Hair Salon",
+      "n": 98,
+      "poor_pct": 27.6,
+      "mean_performance": 64.6,
+      "median_lcp_ms": 5968
+    },
+    {
+      "industry": "Carpenter",
+      "n": 85,
+      "poor_pct": 17.6,
+      "mean_performance": 64.7,
+      "median_lcp_ms": 6049
+    },
+    {
+      "industry": "Removalist",
+      "n": 89,
+      "poor_pct": 21.3,
+      "mean_performance": 64.7,
+      "median_lcp_ms": 6181
+    },
+    {
+      "industry": "Pest Control",
+      "n": 90,
+      "poor_pct": 18.9,
+      "mean_performance": 64.9,
+      "median_lcp_ms": 5802
+    },
+    {
+      "industry": "Mechanic",
+      "n": 100,
+      "poor_pct": 23.0,
+      "mean_performance": 65.0,
+      "median_lcp_ms": 6976
+    },
+    {
+      "industry": "Photographer",
+      "n": 95,
+      "poor_pct": 22.1,
+      "mean_performance": 65.1,
+      "median_lcp_ms": 6888
+    },
+    {
+      "industry": "Electrician",
+      "n": 137,
+      "poor_pct": 16.8,
+      "mean_performance": 65.5,
+      "median_lcp_ms": 5565
+    },
+    {
+      "industry": "Lawyer",
+      "n": 114,
+      "poor_pct": 21.1,
+      "mean_performance": 65.8,
+      "median_lcp_ms": 6316
+    },
+    {
+      "industry": "Yoga Studio",
+      "n": 107,
+      "poor_pct": 24.3,
+      "mean_performance": 66.2,
+      "median_lcp_ms": 6182
+    },
+    {
+      "industry": "Web Designer",
+      "n": 169,
+      "poor_pct": 18.9,
+      "mean_performance": 66.3,
+      "median_lcp_ms": 5207
+    },
+    {
+      "industry": "Conveyancer",
+      "n": 95,
+      "poor_pct": 23.2,
+      "mean_performance": 66.6,
+      "median_lcp_ms": 5304
+    },
+    {
+      "industry": "Graphic Designer",
+      "n": 108,
+      "poor_pct": 18.5,
+      "mean_performance": 66.7,
+      "median_lcp_ms": 5803
+    },
+    {
+      "industry": "Massage Therapist",
+      "n": 80,
+      "poor_pct": 20.0,
+      "mean_performance": 66.8,
+      "median_lcp_ms": 5745
+    },
+    {
+      "industry": "Builder",
+      "n": 114,
+      "poor_pct": 17.5,
+      "mean_performance": 67.0,
+      "median_lcp_ms": 5603
+    },
+    {
+      "industry": "Accountant",
+      "n": 211,
+      "poor_pct": 14.7,
+      "mean_performance": 68.9,
+      "median_lcp_ms": 6069
+    },
+    {
+      "industry": "IT Consultant",
+      "n": 82,
+      "poor_pct": 15.9,
+      "mean_performance": 69.0,
+      "median_lcp_ms": 4662
+    },
+    {
+      "industry": "Psychologist",
+      "n": 81,
+      "poor_pct": 19.8,
+      "mean_performance": 70.0,
+      "median_lcp_ms": 5506
+    }
+  ],
+  "best_10_industries": [
+    {
+      "industry": "Psychologist",
+      "n": 81,
+      "poor_pct": 19.8,
+      "mean_performance": 70.0,
+      "median_lcp_ms": 5506
+    },
+    {
+      "industry": "IT Consultant",
+      "n": 82,
+      "poor_pct": 15.9,
+      "mean_performance": 69.0,
+      "median_lcp_ms": 4662
+    },
+    {
+      "industry": "Accountant",
+      "n": 211,
+      "poor_pct": 14.7,
+      "mean_performance": 68.9,
+      "median_lcp_ms": 6069
+    },
+    {
+      "industry": "Builder",
+      "n": 114,
+      "poor_pct": 17.5,
+      "mean_performance": 67.0,
+      "median_lcp_ms": 5603
+    },
+    {
+      "industry": "Massage Therapist",
+      "n": 80,
+      "poor_pct": 20.0,
+      "mean_performance": 66.8,
+      "median_lcp_ms": 5745
+    },
+    {
+      "industry": "Graphic Designer",
+      "n": 108,
+      "poor_pct": 18.5,
+      "mean_performance": 66.7,
+      "median_lcp_ms": 5803
+    },
+    {
+      "industry": "Conveyancer",
+      "n": 95,
+      "poor_pct": 23.2,
+      "mean_performance": 66.6,
+      "median_lcp_ms": 5304
+    },
+    {
+      "industry": "Web Designer",
+      "n": 169,
+      "poor_pct": 18.9,
+      "mean_performance": 66.3,
+      "median_lcp_ms": 5207
+    },
+    {
+      "industry": "Yoga Studio",
+      "n": 107,
+      "poor_pct": 24.3,
+      "mean_performance": 66.2,
+      "median_lcp_ms": 6182
+    },
+    {
+      "industry": "Lawyer",
+      "n": 114,
+      "poor_pct": 21.1,
+      "mean_performance": 65.8,
+      "median_lcp_ms": 6316
+    }
+  ],
+  "worst_10_industries": [
+    {
+      "industry": "Real Estate",
+      "n": 151,
+      "poor_pct": 41.1,
+      "mean_performance": 54.1,
+      "median_lcp_ms": 8551
+    },
+    {
+      "industry": "Dentist",
+      "n": 149,
+      "poor_pct": 36.9,
+      "mean_performance": 57.1,
+      "median_lcp_ms": 8779
+    },
+    {
+      "industry": "Physiotherapy",
+      "n": 118,
+      "poor_pct": 29.7,
+      "mean_performance": 59.1,
+      "median_lcp_ms": 8028
+    },
+    {
+      "industry": "Day Spa",
+      "n": 117,
+      "poor_pct": 28.2,
+      "mean_performance": 59.5,
+      "median_lcp_ms": 7336
+    },
+    {
+      "industry": "Mortgage Broker",
+      "n": 109,
+      "poor_pct": 33.0,
+      "mean_performance": 60.6,
+      "median_lcp_ms": 6563
+    },
+    {
+      "industry": "Car Mechanic",
+      "n": 100,
+      "poor_pct": 34.0,
+      "mean_performance": 61.4,
+      "median_lcp_ms": 6500
+    },
+    {
+      "industry": "Solar Installer",
+      "n": 101,
+      "poor_pct": 27.7,
+      "mean_performance": 61.4,
+      "median_lcp_ms": 7756
+    },
+    {
+      "industry": "Kitchen & Bathroom Renovation",
+      "n": 95,
+      "poor_pct": 25.3,
+      "mean_performance": 61.6,
+      "median_lcp_ms": 6932
+    },
+    {
+      "industry": "Chiropractor",
+      "n": 103,
+      "poor_pct": 24.3,
+      "mean_performance": 61.8,
+      "median_lcp_ms": 7515
+    },
+    {
+      "industry": "Cleaning Services",
+      "n": 132,
+      "poor_pct": 28.0,
+      "mean_performance": 62.5,
+      "median_lcp_ms": 6578
+    }
+  ],
+  "by_sector": [
+    {
+      "sector": "trades",
+      "n": 2049,
+      "poor_pct": 23.2,
+      "mean_performance": 63.4,
+      "median_lcp_ms": 6560
+    },
+    {
+      "sector": "other",
+      "n": 1766,
+      "poor_pct": 31.7,
+      "mean_performance": 60.4,
+      "median_lcp_ms": 7121
+    },
+    {
+      "sector": "professional services",
+      "n": 1560,
+      "poor_pct": 23.7,
+      "mean_performance": 64.0,
+      "median_lcp_ms": 6400
+    },
+    {
+      "sector": "health",
+      "n": 1498,
+      "poor_pct": 26.2,
+      "mean_performance": 61.3,
+      "median_lcp_ms": 6973
+    },
+    {
+      "sector": "fitness/wellness",
+      "n": 1142,
+      "poor_pct": 27.7,
+      "mean_performance": 62.7,
+      "median_lcp_ms": 6874
+    },
+    {
+      "sector": "creative/agency",
+      "n": 907,
+      "poor_pct": 24.1,
+      "mean_performance": 63.8,
+      "median_lcp_ms": 6214
+    },
+    {
+      "sector": "hospitality",
+      "n": 860,
+      "poor_pct": 28.3,
+      "mean_performance": 61.6,
+      "median_lcp_ms": 7533
+    },
+    {
+      "sector": "home services",
+      "n": 833,
+      "poor_pct": 23.8,
+      "mean_performance": 63.4,
+      "median_lcp_ms": 6234
+    },
+    {
+      "sector": "automotive",
+      "n": 723,
+      "poor_pct": 29.3,
+      "mean_performance": 60.9,
+      "median_lcp_ms": 6976
+    },
+    {
+      "sector": "retail/ecommerce",
+      "n": 652,
+      "poor_pct": 37.9,
+      "mean_performance": 56.9,
+      "median_lcp_ms": 8851
+    },
+    {
+      "sector": "education",
+      "n": 326,
+      "poor_pct": 31.0,
+      "mean_performance": 60.9,
+      "median_lcp_ms": 7122
+    },
+    {
+      "sector": "real estate",
+      "n": 305,
+      "poor_pct": 35.1,
+      "mean_performance": 58.3,
+      "median_lcp_ms": 7681
+    }
+  ],
+  "by_state_min_n100": [
+    {
+      "state": "NSW",
+      "n": 1091,
+      "meets_min_n": true,
+      "mean_performance": 61.5,
+      "median_performance": 61,
+      "poor_pct": 30.2
+    },
+    {
+      "state": "QLD",
+      "n": 793,
+      "meets_min_n": true,
+      "mean_performance": 60.1,
+      "median_performance": 59,
+      "poor_pct": 33.4
+    },
+    {
+      "state": "VIC",
+      "n": 758,
+      "meets_min_n": true,
+      "mean_performance": 60.1,
+      "median_performance": 59.0,
+      "poor_pct": 31.9
+    },
+    {
+      "state": "TAS",
+      "n": 141,
+      "meets_min_n": true,
+      "mean_performance": 64.5,
+      "median_performance": 63,
+      "poor_pct": 22.7
+    },
+    {
+      "state": "ACT",
+      "n": 131,
+      "meets_min_n": true,
+      "mean_performance": 61.7,
+      "median_performance": 59,
+      "poor_pct": 30.5
+    }
+  ],
+  "by_state_all_including_thin": [
+    {
+      "state": "NSW",
+      "n": 1091,
+      "meets_min_n": true,
+      "mean_performance": 61.5,
+      "median_performance": 61,
+      "poor_pct": 30.2
+    },
+    {
+      "state": "QLD",
+      "n": 793,
+      "meets_min_n": true,
+      "mean_performance": 60.1,
+      "median_performance": 59,
+      "poor_pct": 33.4
+    },
+    {
+      "state": "VIC",
+      "n": 758,
+      "meets_min_n": true,
+      "mean_performance": 60.1,
+      "median_performance": 59.0,
+      "poor_pct": 31.9
+    },
+    {
+      "state": "TAS",
+      "n": 141,
+      "meets_min_n": true,
+      "mean_performance": 64.5,
+      "median_performance": 63,
+      "poor_pct": 22.7
+    },
+    {
+      "state": "ACT",
+      "n": 131,
+      "meets_min_n": true,
+      "mean_performance": 61.7,
+      "median_performance": 59,
+      "poor_pct": 30.5
+    },
+    {
+      "state": "WA",
+      "n": 92,
+      "meets_min_n": false,
+      "mean_performance": 50.8,
+      "median_performance": 45.5,
+      "poor_pct": 56.5
+    },
+    {
+      "state": "SA",
+      "n": 27,
+      "meets_min_n": false,
+      "mean_performance": 43.5,
+      "median_performance": 36,
+      "poor_pct": 77.8
+    },
+    {
+      "state": "NT",
+      "n": 16,
+      "meets_min_n": false,
+      "mean_performance": 62.6,
+      "median_performance": 68.5,
+      "poor_pct": 25.0
+    }
+  ],
+  "n_domains_no_state_derived": 9572,
+  "melbourne_vs_rest_vic": {
+    "melbourne_metro_postcode_3000_3207": {
+      "n": 163,
+      "mean_performance": 53.7,
+      "poor_pct": 46.6
+    },
+    "rest_of_vic": {
+      "n": 54,
+      "mean_performance": 49.4,
+      "poor_pct": 61.1
+    },
+    "vic_state_word_only_no_postcode": {
+      "n": 541,
+      "mean_performance": 63.1,
+      "poor_pct": 24.6
+    }
+  },
+  "chart_data": {
+    "performance_histogram_10pt_bins": [
+      {
+        "bin": "0-10",
+        "n": 53
+      },
+      {
+        "bin": "10-20",
+        "n": 139
+      },
+      {
+        "bin": "20-30",
+        "n": 426
+      },
+      {
+        "bin": "30-40",
+        "n": 1169
+      },
+      {
+        "bin": "40-50",
+        "n": 1654
+      },
+      {
+        "bin": "50-60",
+        "n": 2474
+      },
+      {
+        "bin": "60-70",
+        "n": 2635
+      },
+      {
+        "bin": "70-80",
+        "n": 1416
+      },
+      {
+        "bin": "80-90",
+        "n": 1034
+      },
+      {
+        "bin": "90-100",
+        "n": 1621
+      }
+    ],
+    "by_platform": [
+      {
+        "platform": "WordPress",
+        "n": 5554,
+        "n_high_confidence": 5554,
+        "meets_min_n": true,
+        "poor_pct": 28.7,
+        "mean_performance": 59.6,
+        "median_performance": 59.0,
+        "median_lcp_ms": 7424
+      },
+      {
+        "platform": "Custom",
+        "n": 4004,
+        "n_high_confidence": 0,
+        "meets_min_n": true,
+        "poor_pct": 25.6,
+        "mean_performance": 64.9,
+        "median_performance": 64.0,
+        "median_lcp_ms": 6078
+      },
+      {
+        "platform": "Unknown",
+        "n": 1143,
+        "n_high_confidence": 0,
+        "meets_min_n": true,
+        "poor_pct": 19.3,
+        "mean_performance": 72.2,
+        "median_performance": 74,
+        "median_lcp_ms": 3896
+      },
+      {
+        "platform": "Wix",
+        "n": 707,
+        "n_high_confidence": 707,
+        "meets_min_n": true,
+        "poor_pct": 10.0,
+        "mean_performance": 66.1,
+        "median_performance": 67,
+        "median_lcp_ms": 6604
+      },
+      {
+        "platform": "Squarespace",
+        "n": 528,
+        "n_high_confidence": 528,
+        "meets_min_n": true,
+        "poor_pct": 47.2,
+        "mean_performance": 49.4,
+        "median_performance": 50.0,
+        "median_lcp_ms": 11074
+      },
+      {
+        "platform": "Shopify",
+        "n": 527,
+        "n_high_confidence": 527,
+        "meets_min_n": true,
+        "poor_pct": 45.9,
+        "mean_performance": 51.5,
+        "median_performance": 52,
+        "median_lcp_ms": 11145
+      },
+      {
+        "platform": "Webflow",
+        "n": 143,
+        "n_high_confidence": 143,
+        "meets_min_n": true,
+        "poor_pct": 28.7,
+        "mean_performance": 55.9,
+        "median_performance": 59,
+        "median_lcp_ms": 8441
+      },
+      {
+        "platform": "Framer",
+        "n": 15,
+        "n_high_confidence": 15,
+        "meets_min_n": false,
+        "poor_pct": 6.7,
+        "mean_performance": 72.8,
+        "median_performance": 69,
+        "median_lcp_ms": 5805
+      }
+    ],
+    "by_sector": [
+      {
+        "sector": "trades",
+        "n": 2049,
+        "poor_pct": 23.2,
+        "mean_performance": 63.4,
+        "median_lcp_ms": 6560
+      },
+      {
+        "sector": "other",
+        "n": 1766,
+        "poor_pct": 31.7,
+        "mean_performance": 60.4,
+        "median_lcp_ms": 7121
+      },
+      {
+        "sector": "professional services",
+        "n": 1560,
+        "poor_pct": 23.7,
+        "mean_performance": 64.0,
+        "median_lcp_ms": 6400
+      },
+      {
+        "sector": "health",
+        "n": 1498,
+        "poor_pct": 26.2,
+        "mean_performance": 61.3,
+        "median_lcp_ms": 6973
+      },
+      {
+        "sector": "fitness/wellness",
+        "n": 1142,
+        "poor_pct": 27.7,
+        "mean_performance": 62.7,
+        "median_lcp_ms": 6874
+      },
+      {
+        "sector": "creative/agency",
+        "n": 907,
+        "poor_pct": 24.1,
+        "mean_performance": 63.8,
+        "median_lcp_ms": 6214
+      },
+      {
+        "sector": "hospitality",
+        "n": 860,
+        "poor_pct": 28.3,
+        "mean_performance": 61.6,
+        "median_lcp_ms": 7533
+      },
+      {
+        "sector": "home services",
+        "n": 833,
+        "poor_pct": 23.8,
+        "mean_performance": 63.4,
+        "median_lcp_ms": 6234
+      },
+      {
+        "sector": "automotive",
+        "n": 723,
+        "poor_pct": 29.3,
+        "mean_performance": 60.9,
+        "median_lcp_ms": 6976
+      },
+      {
+        "sector": "retail/ecommerce",
+        "n": 652,
+        "poor_pct": 37.9,
+        "mean_performance": 56.9,
+        "median_lcp_ms": 8851
+      },
+      {
+        "sector": "education",
+        "n": 326,
+        "poor_pct": 31.0,
+        "mean_performance": 60.9,
+        "median_lcp_ms": 7122
+      },
+      {
+        "sector": "real estate",
+        "n": 305,
+        "poor_pct": 35.1,
+        "mean_performance": 58.3,
+        "median_lcp_ms": 7681
+      }
+    ]
+  },
+  "methodology": {
+    "sample_description": "Domains are Australian small/medium businesses gathered by Pryce Digital's own lead scraper (Google Places + ABR sourced), then run once each through Google Lighthouse via the PageSpeed Insights API. This is not a random sample of all Australian websites -- it is skewed toward small local service businesses in the industries we prospect (trades, health, hospitality, professional services, etc), and skewed away from large enterprise or purely e-commerce-at-scale sites.",
+    "strategy": "All runs use strategy='mobile' (mobile emulation, throttled network/CPU per Lighthouse defaults). No desktop-strategy top-level rows exist in this table, though a subset of runs carry a secondary desktop score+vitals block in the 'details' JSON, not analysed here.",
+    "single_run_caveat": "Each domain has a single Lighthouse run (we take the latest 'ok' run per domain when a domain was re-checked). Individual Lighthouse scores are known to be noisy run-to-run (typically +/- 5-10 performance points) due to lab network/CPU variance; aggregate stats (means, medians, pass rates across thousands of domains) are stable but a single domain's exact score should not be treated as precise.",
+    "date_range": [
+      "2026-05-25 06:47:53.351000",
+      "2026-09-05 12:15:34.984000"
+    ],
+    "lighthouse_versions": [
+      {
+        "version": "13.3.0",
+        "n": 12685
+      },
+      {
+        "version": "13.4.0",
+        "n": 7
+      },
+      {
+        "version": "13.0.1",
+        "n": 1
+      },
+      {
+        "version": "13.4.1",
+        "n": 1
+      }
+    ],
+    "platform_detection": "Platform is detected heuristically (HTML/header/asset fingerprinting) with a platform_confidence score. We only treat platform_confidence >= 0.7 as a confident CMS match; 'Custom' (0.4) means no fingerprint matched and is not proof of a hand-built site, and 'Unknown' (0.0) means detection failed outright.",
+    "state_derivation": "State is derived from a 4-digit postcode found in the free-text Lead.address field using official AU postcode ranges, falling back to a state-abbreviation word match (NSW/VIC/QLD/WA/SA/TAS/NT/ACT) when no postcode is present. Only states with n >= 100 domains are published individually.",
+    "field_data_caveat": "The has_field_data boolean is true for 12617 of 12621 domains (100.0%), but the actual CrUX field metric columns (field_lcp_ms) are only populated for 2887 domains (22.9%). has_field_data appears to default true rather than confirming a real Chrome UX Report match; only field_lcp_ms/field_cls/field_inp_ms being non-null should be treated as 'we have real-user data'."
+  },
+  "state_by_industry": {
+    "method": "Latest ok mobile-strategy SpeedCheckRun per domain with a non-null performance score (12,621 domains), joined to Lead on the website host (lower-cased, leading www. removed); where several Lead rows share a domain, one with a non-empty address (then a non-empty industry) is preferred. State is derived from the free-text Lead.address: a 4-digit postcode mapped with official AU postcode ranges (the one after a state abbreviation if present, else the last valid one), falling back to a case-insensitive state-abbreviation word match. Industry is the raw Lead.industry label, not the keyword sector groups. A state x industry cell, state total or industry total is published only when n >= 30. Poor = performance < 50; median LCP is lab LCP in seconds. Because of the address-preferring de-duplication, state totals here (3,301 sites with a derivable state) run slightly higher than by_state_min_n100 (3,049).",
+    "min_n": 30,
+    "n_domains_with_state": 3301,
+    "n_domains_with_state_and_industry": 3301,
+    "n_distinct_industries_with_state": 491,
+    "n_state_industry_cells_any_n": 1044,
+    "largest_cell": {
+      "state": "VIC",
+      "industry": "Plumber",
+      "n": 26
+    },
+    "result_note": "No state x industry cell reaches n >= 30: industry labels are too fine-grained (491 distinct labels across 3,301 state-matched sites, 1,044 cells). The largest cell is VIC Plumber at n = 26.",
+    "cells": [],
+    "state_totals": [
+      {
+        "state": "NSW",
+        "n": 1122,
+        "median_performance": 61.0,
+        "poor_pct": 29.9,
+        "median_lcp_s": 6.6
+      },
+      {
+        "state": "QLD",
+        "n": 868,
+        "median_performance": 59.0,
+        "poor_pct": 33.9,
+        "median_lcp_s": 6.9
+      },
+      {
+        "state": "VIC",
+        "n": 860,
+        "median_performance": 59.0,
+        "poor_pct": 31.3,
+        "median_lcp_s": 7.5
+      },
+      {
+        "state": "TAS",
+        "n": 153,
+        "median_performance": 63.0,
+        "poor_pct": 22.2,
+        "median_lcp_s": 6.9
+      },
+      {
+        "state": "ACT",
+        "n": 135,
+        "median_performance": 59.0,
+        "poor_pct": 31.9,
+        "median_lcp_s": 6.5
+      },
+      {
+        "state": "WA",
+        "n": 106,
+        "median_performance": 47.0,
+        "poor_pct": 52.8,
+        "median_lcp_s": 9.5
+      },
+      {
+        "state": "SA",
+        "n": 37,
+        "median_performance": 48.0,
+        "poor_pct": 51.4,
+        "median_lcp_s": 10.4
+      }
+    ],
+    "industry_totals": [
+      {
+        "industry": "Plumber",
+        "n": 42,
+        "median_performance": 58.5,
+        "poor_pct": 31.0,
+        "median_lcp_s": 8.9
+      },
+      {
+        "industry": "Dentist",
+        "n": 35,
+        "median_performance": 38.0,
+        "poor_pct": 60.0,
+        "median_lcp_s": 11.0
+      },
+      {
+        "industry": "Driving School",
+        "n": 33,
+        "median_performance": 57.0,
+        "poor_pct": 39.4,
+        "median_lcp_s": 9.2
+      }
+    ]
+  }
+}

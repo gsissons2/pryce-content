@@ -1,0 +1,85 @@
+/* Pryce content kit. Slide frames match the Framer "Carousels · posts 6–8" page. */
+:root{--acc:#EAFF00;--bg:#0B0B0B;--fg:#F4F1EA;--dim:#8A867D;--soft:#D9D5CA;--rule:rgba(244,241,234,0.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#0B0B0B}
+body{-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}
+p,h1,h2,span,div{font-kerning:normal}
+
+/* ---------- slide frame ---------- */
+.slide{position:relative;width:1080px;height:1350px;overflow:hidden;background-color:var(--bg);
+  background-image:linear-gradient(rgba(244,241,234,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(244,241,234,0.035) 1px,transparent 1px);
+  background-size:80px 80px;color:var(--fg);font-family:Geist,system-ui,sans-serif;
+  display:flex;flex-direction:column;justify-content:space-between;align-items:stretch;padding:88px 88px 80px}
+.slide.start{justify-content:flex-start}
+.mono{font-family:"Geist Mono",ui-monospace,monospace;font-weight:500;text-transform:uppercase}
+.s-head{display:flex;justify-content:space-between;align-items:center;font-size:24px;letter-spacing:.2em;line-height:1;color:var(--dim)}
+.s-foot{display:flex;flex-direction:column;gap:28px}
+.s-rule{position:relative;height:1px;background:var(--rule)}
+.s-rule:before,.s-rule:after{content:"";position:absolute;top:-6.5px;width:1px;height:14px;background:var(--acc)}
+.s-rule:before{left:0}.s-rule:after{right:0}
+.s-foot-row{display:flex;justify-content:space-between;align-items:center;font-size:22px;letter-spacing:.12em;line-height:1;color:var(--dim)}
+.kick{font-size:24px;letter-spacing:.18em;line-height:1;color:var(--acc)}
+.mart{font-family:"Martian Mono",ui-monospace,monospace;font-weight:800}
+
+/* hook */
+.hook{display:flex;flex-direction:column;gap:28px;padding-top:84px}
+.hook .kick{font-size:26px}
+.hook h1{font-size:84px;line-height:.98;letter-spacing:-.045em}
+.hook .sub{font-size:34px;line-height:1.3;color:var(--soft);text-wrap:pretty}
+.hook .disc{font-size:20px;letter-spacing:.14em;line-height:1;color:var(--dim)}
+.hook-phone{display:flex;justify-content:center;padding-top:64px}
+
+/* callouts */
+.mid{display:flex;align-items:center;gap:48px}
+.col{flex:1;min-width:0;display:flex;flex-direction:column;gap:36px}
+.col-h{display:flex;flex-direction:column;gap:18px}
+.col-h h2{font-size:46px;line-height:1;letter-spacing:-.04em}
+.list{display:flex;flex-direction:column}
+.item{display:flex;gap:20px;align-items:flex-start;padding:24px 0;border-top:1px solid var(--rule)}
+.item:last-child{border-bottom:1px solid var(--rule)}
+.item .n{font-size:30px;line-height:1.1;color:var(--acc)}
+.item .t{display:flex;flex-direction:column;gap:8px;flex:1;min-width:0}
+.item .tt{font-size:30px;font-weight:600;line-height:1.15}
+.item .tb{font-size:23px;line-height:1.35;color:var(--soft);text-wrap:pretty}
+
+/* side by side */
+.sbs{display:flex;justify-content:center;align-items:flex-start;gap:40px}
+.sbs .c{display:flex;flex-direction:column;gap:22px}
+.sbs .lbl{display:flex;flex-direction:column;gap:10px}
+.sbs .lbl .mono{font-size:24px;letter-spacing:.18em;line-height:1}
+.sbs .stat{font-size:30px;font-weight:600;line-height:1.15}
+
+/* cta */
+.cta{display:flex;flex-direction:column;gap:56px}
+.cta .t{display:flex;flex-direction:column;gap:28px}
+.cta .kick{font-size:26px}
+.cta h2{font-size:84px;line-height:.98;letter-spacing:-.045em}
+.cta .sub{font-size:34px;line-height:1.3;color:var(--soft);text-wrap:pretty}
+.card{background:var(--acc);border-radius:28px;padding:44px 48px;display:flex;flex-direction:column;gap:18px;color:var(--bg)}
+.card .mono{font-weight:600;font-size:22px;letter-spacing:.16em;line-height:1}
+.card .u{font-size:48px;letter-spacing:-.04em;line-height:1}
+
+/* ---------- phone ---------- */
+.bezel{position:relative;flex:none;padding:10px;background:#1A1A1A;
+  box-shadow:inset 0 0 0 1px rgba(244,241,234,0.16),0 30px 80px rgba(0,0,0,0.55),0 8px 24px rgba(0,0,0,0.4)}
+.scr{position:relative;overflow:hidden;background:#fff}
+.scr>.screen{position:absolute;left:0;top:0;transform-origin:0 0}
+.island{position:absolute;border-radius:999px;background:#000;z-index:20}
+.mk{position:absolute;z-index:30;width:48px;height:48px;border-radius:24px;background:var(--acc);display:flex;align-items:center;justify-content:center;
+  font:700 22px/1 "Geist Mono",monospace;color:var(--bg);box-shadow:0 0 0 4px rgba(11,11,11,.85),0 6px 16px rgba(0,0,0,.35)}
+
+/* ---------- phone screen (390×844) ---------- */
+.screen{width:390px;height:844px;overflow:hidden;display:flex;flex-direction:column;align-items:stretch;position:relative;background:var(--sbg,#fff);color:var(--ink,#111)}
+.screen *{flex-shrink:0}
+.row{display:flex;align-items:center}
+.sb{display:flex;justify-content:space-between;align-items:center;height:50px;padding:14px 26px 0 42px;width:100%}
+.sb .tm{font:600 17px/1 Inter,sans-serif}
+.hdr{display:flex;justify-content:space-between;align-items:center;width:100%}
+.grow{flex:1 1 auto!important}
+.ovl{position:relative;width:100%;overflow:hidden;background-size:cover;background-position:center;display:flex;flex-direction:column}
+.ovl>.shade{position:absolute;inset:0;z-index:0}
+.ovl>*:not(.shade){position:relative;z-index:1}
+.grp{display:flex;flex-direction:column;width:100%}
+.ph-img{width:100%;background-size:cover;background-position:center;overflow:hidden}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%}
+.txt{display:block}
