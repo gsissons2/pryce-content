@@ -15,7 +15,7 @@ Every 15 minutes GitHub runs **Publish**:
 7. Commits the changed spec files to `main` as `publish: <ids> [skip ci]`.
 8. Opens a GitHub issue for any slot it has given up on.
 
-A slot whose time passed while the workflow was off (or before you merged) posts on the next run.
+A slot whose time passed while the workflow was off (or before you merged) posts on the next run, as long as it is no more than 6 hours late. Older slots are dropped and never posted late. To post one anyway, give it a new time in a PR.
 
 ## What each platform gets
 
@@ -91,6 +91,7 @@ python -m unittest tests.test_publish
 
 ## Other workflows
 
-- **Render preview** (every PR touching `queue/` or `screens/`): renders changed specs, commits previews to `previews/pr-<n>/` on the `media` branch, and posts one comment with the slides inline (via raw.githubusercontent.com), video links, checks and caption warnings. PRs never deploy Pages. The PR goes red if a render check fails.
+- **Render preview** (every PR touching `queue/`, `screens/` or `assets/photos/`): renders changed specs, commits previews to `previews/pr-<n>/` on the `media` branch, and posts one comment with the slides inline (via raw.githubusercontent.com), video links, checks and caption warnings. PRs never deploy Pages. The PR goes red if a render check fails. A first job saves 400 px previews of new manifest photos and commits them to the PR branch.
 - **Token check** (weekly, Monday morning): prints who each credential belongs to, refreshes the Instagram token, and opens an issue if a token expires within 10 days.
+- **Redeploy media** (manual): publishes the `media` branch to Pages again. Use it if a Publish run failed at the Pages step.
 - **Media cleanup** (monthly): on the `media` branch, deletes `media/` folders older than 45 days and `previews/` older than 14 days, squashes the branch to one commit so old videos stop taking space, force-pushes only `media`, and redeploys Pages. Preview links on old PRs stop working after that.
