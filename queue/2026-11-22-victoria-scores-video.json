@@ -9,7 +9,11 @@
  "captions": {
   "instagram": "We tested 12,621 Australian small-business websites on a simulated mid-range phone.\n\nVictoria’s 758 sites averaged 60 out of 100, just under the national 62. Tasmania topped the country at 64.5. Zoom into inner Melbourne (163 sites) and the average drops to 53.7, with 46.6% scoring poor.\n\nA reminder that the busiest postcodes do not always have the fastest sites.\n\nFree review at prycedigital.com/book\n\n#webdesign #smallbusiness #melbourne #australia",
   "tiktok": "Inner-Melbourne small-business sites averaged 53.7 out of 100 in our test. #webdesign #smallbusiness #melbourne",
-  "linkedin": "We tested 12,621 Australian small-business websites with Google Lighthouse on a simulated mid-range phone.\n\nVictoria’s 758 sites averaged 60 out of 100, just under the national 62. Tasmania topped the country at 64.5, NSW and the ACT sat around 61.\n\nThe number that stood out to me is local: across 163 inner-Melbourne sites (postcodes 3000 to 3207), the average was 53.7 and 46.6% scored poor, under 50 out of 100. The busiest postcodes do not always have the fastest sites.\n\nFull method: prycedigital.com/research"
+  "linkedin": "We tested 12,621 Australian small-business websites with Google Lighthouse on a simulated mid-range phone.\n\nVictoria’s 758 sites averaged 60 out of 100, just under the national 62. Tasmania topped the country at 64.5, NSW and the ACT sat around 61.\n\nThe number that stood out to me is local: across 163 inner-Melbourne sites (postcodes 3000 to 3207), the average was 53.7 and 46.6% scored poor, under 50 out of 100. The busiest postcodes do not always have the fastest sites.\n\nFull method: prycedigital.com/research",
+  "youtube": {
+   "title": "Victoria’s small-business websites, scored out of 100",
+   "description": "From Pryce Digital’s test of 12,621 Australian small-business websites with Google Lighthouse. prycedigital.com/research"
+  }
  },
  "sources": [
   "Pryce Digital Lighthouse study 2026, 12,621 Australian small-business sites (prycedigital.com/research)",

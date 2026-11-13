@@ -9,7 +9,11 @@
  "captions": {
   "instagram": "We tested 12,621 Australian small-business websites with Google Lighthouse on a simulated mid-range phone.\n\nOn that lab test, only 11.7% showed their main content within Google’s 2.5-second mark. But Google also has real-visitor data for about 23% of these sites, and among those, 59.9% passed.\n\nThe lab test is deliberately tough. It is a warning light, not a verdict. The honest check is your own homepage on a real phone.\n\nFree review at prycedigital.com/book\n\n#webdesign #smallbusiness #pagespeed #australia",
   "tiktok": "Lab test says 11.7% of sites were fast enough. Real visitors tell a kinder story. #webdesign #smallbusiness #pagespeed",
-  "linkedin": "We tested 12,621 Australian small-business websites with Google Lighthouse on a simulated mid-range phone.\n\nOn that lab test, only 11.7% showed their main content within Google’s 2.5-second mark. It is easy to stop there and panic. But Google also publishes real-visitor data for about 23% of these sites (2,887 of them), and among those, 59.9% passed.\n\nThe lab test is close to a worst case, not what every visitor sees. I think a lab score is best read as a warning light, not a verdict. The real check is simple: open your own homepage on a real phone, on mobile data, and watch what loads first.\n\nFull method: prycedigital.com/research"
+  "linkedin": "We tested 12,621 Australian small-business websites with Google Lighthouse on a simulated mid-range phone.\n\nOn that lab test, only 11.7% showed their main content within Google’s 2.5-second mark. It is easy to stop there and panic. But Google also publishes real-visitor data for about 23% of these sites (2,887 of them), and among those, 59.9% passed.\n\nThe lab test is close to a worst case, not what every visitor sees. I think a lab score is best read as a warning light, not a verdict. The real check is simple: open your own homepage on a real phone, on mobile data, and watch what loads first.\n\nFull method: prycedigital.com/research",
+  "youtube": {
+   "title": "Lab test vs real visitors: are small-business sites slow?",
+   "description": "From Pryce Digital’s test of 12,621 Australian small-business websites with Google Lighthouse. prycedigital.com/research"
+  }
  },
  "sources": [
   "Pryce Digital Lighthouse study 2026, 12,621 Australian small-business sites (prycedigital.com/research)",
