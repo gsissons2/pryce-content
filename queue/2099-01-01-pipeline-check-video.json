@@ -1,0 +1,101 @@
+{
+  "id": "pipeline-check-video",
+  "format": "stat-video",
+  "schedule": {},
+  "captions": {
+    "instagram": "We tested 12,621 Australian small-business websites on a simulated mid-range phone. The median Squarespace site took 11 seconds to show its main content. Google's 'good' bar is 2.5 seconds.\n\nIs yours one of them? Free review at prycedigital.com/book\n\n#webdesign #smallbusiness #pagespeed #australia",
+    "tiktok": "11 seconds. That's how long the median Squarespace site took to load on a phone. #webdesign #smallbusiness",
+    "linkedin": "We tested 12,621 Australian small-business websites with Google Lighthouse on a simulated mid-range phone.\n\nMedian time to show the main content: Squarespace 11.1 s, Shopify 11.1 s, WordPress 7.4 s, Wix 6.6 s. Google's 'good' bar is 2.5 s.\n\n47.2% of Squarespace sites scored 'poor'.\n\nFull method: prycedigital.com/research",
+    "youtube": {
+      "title": "The median Squarespace site takes 11 seconds to load on a phone",
+      "description": "From Pryce Digital's test of 12,621 Australian small-business websites with Google Lighthouse. prycedigital.com/research"
+    }
+  },
+  "sources": [
+    "Pryce Digital Lighthouse study, 12,621 Australian small-business sites (prycedigital.com/research)"
+  ],
+  "alt": [],
+  "data": {
+    "footer": "12,621 Australian small-business sites",
+    "slides": [
+      {
+        "type": "bignum",
+        "kicker": "Google's lab test · Squarespace",
+        "value": "11",
+        "unit": "seconds.",
+        "body": "The median time a Squarespace site took to show its main content on a phone."
+      },
+      {
+        "type": "statement",
+        "kicker": "The study",
+        "title": "We tested 12,621 Australian small-business websites.",
+        "facts": [
+          {
+            "label": "Tool",
+            "value": "Google Lighthouse"
+          },
+          {
+            "label": "Device",
+            "value": "A simulated mid-range phone"
+          }
+        ],
+        "foot": "prycedigital.com/research"
+      },
+      {
+        "type": "bars",
+        "kicker": "Median, Google's lab test",
+        "title": "Time to show the main content",
+        "unit": " s",
+        "max": 12,
+        "bars": [
+          {
+            "label": "Squarespace",
+            "value": 11.1,
+            "highlight": true
+          },
+          {
+            "label": "Shopify",
+            "value": 11.1,
+            "highlight": true
+          },
+          {
+            "label": "WordPress",
+            "value": 7.4
+          },
+          {
+            "label": "Wix",
+            "value": 6.6
+          }
+        ],
+        "marker": {
+          "value": 2.5,
+          "note": "Google's \"good\" bar is 2.5 seconds. Not one platform's median comes close."
+        },
+        "foot": "Bars to scale, 12 s full width"
+      },
+      {
+        "type": "percent",
+        "kicker": "528 Squarespace sites",
+        "value": "47.2%",
+        "body": "scored \"poor\" in Google's lab test. That's nearly half.",
+        "foot": "\"Poor\" = performance score under 50"
+      },
+      {
+        "type": "loading",
+        "title": "A Book Now button that hasn't loaded can't be tapped.",
+        "body": "Every second the page is blank is a second someone can go back to Google and pick the next result.",
+        "foot": "Illustration"
+      },
+      {
+        "type": "cta",
+        "cta": {
+          "kicker": "Is yours one of them?",
+          "headline": "Find out in 15 minutes.",
+          "sub": "A free review of your homepage on a phone. Plain English, no obligation.",
+          "label": "Book a free review",
+          "url": "prycedigital.com/book"
+        }
+      }
+    ]
+  }
+}
