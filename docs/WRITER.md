@@ -43,7 +43,7 @@ LinkedIn caps at 5 posts a week (more cuts reach). Raise video volume only when 
 - Photos: reuse `assets/photos/` where they fit, but not the same photo two weeks running. To add one:
   1. Find it on unsplash.com with web search or web fetch (the shell cannot reach Unsplash). Unsplash License only, no people's faces as the main subject, nothing with a real business name or logo in shot.
   2. Add `"<kit>/<short-name>.jpg": "https://images.unsplash.com/photo-...?fm=jpg&q=82&w=1400"` to `assets/photos/manifest.json`.
-  3. Commit, push the branch and open the PR as a draft early. Within about two minutes the Render preview workflow commits a 400 px preview of each new photo to the branch ("Photo previews for new manifest entries").
+  3. Commit, push the branch and open the PR as a draft early. Within about two minutes the Render preview workflow commits a 400 px preview of each new photo to the branch ("Photo previews for new manifest entries [skip ci]"; it starts no new preview run, the earlier run already used the full-size photos).
   4. `git pull`, look at each preview yourself, drop any that do not fit, then render.
 
 ## Data posts
