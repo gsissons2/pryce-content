@@ -1,5 +1,5 @@
 {
-  "_note": "Unsplash License photos. CI downloads full-resolution versions over the local previews. Add new photos here, then run the fetch-photos workflow.",
+  "_note": "Unsplash License photos. CI downloads full-resolution versions over the local previews. To add one: put it here and push the branch. The Render preview workflow saves a 400 px preview and commits it to the PR branch.",
   "cafe/interior-white.jpg": "https://images.unsplash.com/photo-1613274554329-70f997f5789f?fm=jpg&q=82&w=1400",
   "cafe/brunch-benedict.jpg": "https://images.unsplash.com/photo-1773091839506-26ecff84172c?fm=jpg&q=82&w=1400",
   "stock/handshake-office.jpg": "https://images.unsplash.com/photo-1698047682091-782b1e5c6536?fm=jpg&q=82&w=1400",

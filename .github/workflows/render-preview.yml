@@ -5,6 +5,7 @@ on:
     paths:
       - 'queue/**'
       - 'screens/**'
+      - 'assets/photos/**'
 
 concurrency:
   group: preview-${{ github.event.pull_request.number }}
@@ -17,6 +18,37 @@ permissions:
   issues: write
 
 jobs:
+  # The Claude workspace cannot download from Unsplash, so new manifest photos get their
+  # 400 px previews here, committed to the PR branch. Pushes made with the workflow token do not
+  # start another run.
+  photos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    env:
+      HEAD_REF: ${{ github.head_ref }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Save previews for new photos
+        run: |
+          pip install -q pillow
+          python engine/fetch_photos.py --previews
+
+      - name: Commit them to the PR branch
+        run: |
+          git add assets/photos
+          if git diff --cached --quiet; then echo "No new photos."; exit 0; fi
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -q -m "Photo previews for new manifest entries"
+          git push origin "HEAD:refs/heads/$HEAD_REF"
+
   preview:
     runs-on: ubuntu-latest
     timeout-minutes: 45

@@ -8,9 +8,9 @@ This is the instruction file for the weekly writing run (a scheduled Claude task
 2. Read `docs/SPEC.md`, `docs/FORMATS.md`, `docs/BLOCKS.md`, `data/README.md`, and the last 4 weeks of `queue/` so nothing repeats (same business type two weeks in a row, same stat angle within a month).
 3. If `data/performance.json` exists, weight next week's mix toward the formats and topics with the best saves, shares and watch time. Never drop a format entirely on one bad week.
 4. Write the specs for the week (mix below) into `queue/`.
-5. Run `python engine/fetch_photos.py` then `python engine/render.py queue/<new files> --out out/`. Fix every error and every warning by editing the spec, never the templates. Re-render until clean.
+5. If you need new photos, get them first (see Photos below). Then run `python engine/render.py queue/<new files> --out out/`. Fix every error and every warning by editing the spec, never the templates. Re-render until clean.
 6. Look at every rendered slide and the video cover frames yourself. If anything looks wrong (marker on top of text, awkward line break, photo that does not fit the business), fix it.
-7. Commit the specs (not `out/`), push the branch, open a PR titled `Posts for week of <date>`. The PR body is a table: date, time, platforms, format, hook. The render-preview workflow adds the images.
+7. Commit the specs (not `out/`), push the branch, open a PR titled `Posts for week of <date>` (or mark the draft ready). The PR body is a table: date, time, platforms, format, hook. The render-preview workflow adds the images.
 8. Stop. Do not merge.
 
 ## Weekly mix (start here, adjust with data)
@@ -40,7 +40,11 @@ LinkedIn caps at 5 posts a week (more cuts reach). Raise video volume only when 
 - The "before" problems must be things real small-business sites actually do: photo sliders, PDF menus, hidden phone numbers, stock photos, long forms, booking engines that drop the dates, slow loading, no prices, pop-ups. Do not invent absurd problems to make the fix look better.
 - The "after" fixes must be things Pryce would actually build.
 - Four items a side at most. Each item title fits on one line where possible (about 24 characters), the body on two lines.
-- Photos: reuse `assets/photos/` where they fit. To add one, find an Unsplash photo, add it to `assets/photos/manifest.json` and save a 400 px preview at the same path.
+- Photos: reuse `assets/photos/` where they fit, but not the same photo two weeks running. To add one:
+  1. Find it on unsplash.com with web search or web fetch (the shell cannot reach Unsplash). Unsplash License only, no people's faces as the main subject, nothing with a real business name or logo in shot.
+  2. Add `"<kit>/<short-name>.jpg": "https://images.unsplash.com/photo-...?fm=jpg&q=82&w=1400"` to `assets/photos/manifest.json`.
+  3. Commit, push the branch and open the PR as a draft early. Within about two minutes the Render preview workflow commits a 400 px preview of each new photo to the branch ("Photo previews for new manifest entries").
+  4. `git pull`, look at each preview yourself, drop any that do not fit, then render.
 
 ## Data posts
 
