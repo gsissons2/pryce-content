@@ -541,6 +541,11 @@ class TestRun(unittest.TestCase):
         self.queue.mkdir()
         self.calls = []
         self.host = FakeHost()
+        # Most tests use slots up to two days before NOW, so lift the lateness cutoff here.
+        # test_late_slots_are_dropped checks the real cutoff.
+        patcher = mock.patch.object(runmod, "MAX_LATE", runmod.timedelta(days=30))
+        patcher.start()
+        self.addCleanup(patcher.stop)
 
     def add(self, spec, render=True):
         path = self.queue / f"{spec['id']}.json"
@@ -589,6 +594,24 @@ class TestRun(unittest.TestCase):
         later = datetime(2026, 11, 22, tzinfo=timezone.utc)
         self.assertEqual([d[2] for d in runmod.due_slots(runmod.load_specs(self.queue), later)],
                          ["instagram", "tiktok"])
+
+    def test_late_slots_are_dropped(self):
+        mock.patch.object(runmod, "MAX_LATE", runmod.timedelta(hours=runmod.MAX_LATE_HOURS)).start()
+        self.addCleanup(mock.patch.stopall)
+        self.add(make_spec(schedule={
+            "instagram": "2026-11-20T08:30:00+11:00",   # 2.5 h before NOW: still due
+            "tiktok": "2026-11-20T04:30:00+11:00",      # 6.5 h before NOW: dropped
+            "linkedin": "2026-11-19T19:00:00+11:00",    # 16 h before NOW: dropped
+        }))
+        err = io.StringIO()
+        with contextlib.redirect_stderr(err):
+            due = runmod.due_slots(runmod.load_specs(self.queue), NOW)
+        self.assertEqual([d[2] for d in due], ["instagram"])
+        self.assertIn("not posting late", err.getvalue())
+        with contextlib.redirect_stderr(io.StringIO()):
+            summary = self.go()
+        self.assertEqual([c[0] for c in self.calls], ["instagram"])
+        self.assertEqual([p["platform"] for p in summary["published"]], ["instagram"])
 
     def test_bad_time_and_unknown_platform_are_skipped(self):
         self.add(make_spec(schedule={"instagram": "next tuesday", "myspace": "2026-11-01T00:00:00Z",

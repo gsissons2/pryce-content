@@ -20,10 +20,10 @@ import json
 import os
 import subprocess
 import sys
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 
-from .common import (MAX_FAILURES, PLATFORMS, Assets, PermanentError, PublishError, SkipForNow, UncertainError,
+from .common import (MAX_FAILURES, MAX_LATE_HOURS, PLATFORMS, Assets, PermanentError, PublishError, SkipForNow, UncertainError,
                      iso, kind_of, now_utc, parse_time)
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -81,8 +81,15 @@ def given_up(spec: dict, platform: str) -> bool:
     return failure_count(spec, platform) >= MAX_FAILURES or (isinstance(f, dict) and bool(f.get("gave_up")))
 
 
+MAX_LATE = timedelta(hours=MAX_LATE_HOURS)
+
+
 def due_slots(specs: list[tuple[Path, dict]], now: datetime, only: str | None = None) -> list[tuple]:
-    """(path, spec, platform, when) for every slot to try now, oldest first."""
+    """(path, spec, platform, when) for every slot to try now, oldest first.
+
+    A slot more than MAX_LATE in the past is dropped with a note, never posted late. This covers
+    a platform that was not configured yet, a long Actions outage, or a post merged after its time.
+    """
     due = []
     for path, spec in specs:
         published = spec.get("published") or {}
@@ -100,6 +107,10 @@ def due_slots(specs: list[tuple[Path, dict]], now: datetime, only: str | None = 
                 print(f"! {spec['id']} {platform}: bad schedule time ({e}), skipped", file=sys.stderr)
                 continue
             if when <= now:
+                if now - when > MAX_LATE:
+                    print(f"- {spec['id']} {platform}: missed its slot ({when_raw}) by more than "
+                          f"{MAX_LATE_HOURS} h, not posting late", file=sys.stderr)
+                    continue
                 due.append((path, spec, platform, when))
     due.sort(key=lambda d: (d[3], d[1]["id"], d[2]))
     return due

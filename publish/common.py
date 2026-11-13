@@ -10,6 +10,8 @@ PLATFORMS = ("instagram", "tiktok", "youtube", "linkedin")
 CAROUSEL_FORMATS = {"redesign-carousel", "stat-carousel"}
 VIDEO_FORMATS = {"redesign-video", "stat-video"}
 MAX_FAILURES = 3
+# A slot more than this late is dropped, not posted late (a backlog must never all go out at once).
+MAX_LATE_HOURS = 6
 
 
 class PublishError(Exception):

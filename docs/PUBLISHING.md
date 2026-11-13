@@ -6,7 +6,7 @@ Merging a spec into `main` approves it. From then on the Publish workflow posts 
 
 Every 15 minutes GitHub runs **Publish**:
 
-1. A quick check job reads every `queue/*.json` on `main` (not `queue/examples/`) and lists due slots: schedule time is now or earlier, the platform is not in `published`, and it has not failed 3 times or been given up. Nothing due: done in about 20 seconds.
+1. A quick check job reads every `queue/*.json` on `main` (not `queue/examples/`) and lists due slots: schedule time is now or earlier, the platform is not in `published`, it has not failed 3 times or been given up, and it is no more than 6 hours late (older slots are dropped, never posted late, so adding a platform's keys later cannot set off a backlog). Nothing due: done in about 20 seconds.
 2. Otherwise the publish job checks out the `media` branch into `_media` (creating it if missing).
 3. **Stage:** any due spec whose files are not already in `_media/media/<id>/`, or whose spec or screens changed since, is rendered and its files copied in (slides, PDF, video, cover).
 4. **Deploy:** if `_media` changed, it commits and pushes the `media` branch and deploys it to GitHub Pages at `https://gsissons2.github.io/pryce-content/`. It also redeploys if staged files are not being served.
@@ -43,7 +43,7 @@ LinkedIn's document or video title is `data.hook`. TikTok photo title is the fir
 
 - **Normal failure** (network, platform error, render failed, Pages slow): recorded in `failed.<platform>` and tried again on the next run, 15 minutes later. After 3 failures it gives up and opens an issue titled `Publish failed: <id> on <platform>`.
 - **Permanent failure** (YouTube on a carousel, more than 10 slides, file over 25 MB, unknown format): gives up at once.
-- **Skip, not a failure**: Instagram daily limit used up, or a platform's secrets are not set yet. Nothing is written, it tries again next run.
+- **Skip, not a failure**: Instagram daily limit used up, or a platform's secrets are not set yet. Nothing is written, it tries again next run, for up to 6 hours after the slot.
 
 The shape is in `docs/SPEC.md`: `at` and `error` hold the latest failure, `history` has one entry per failure, `gave_up: true` appears when it stops.
 
