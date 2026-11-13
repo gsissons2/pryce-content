@@ -1,0 +1,40 @@
+name: Redeploy media
+
+# Manual only. Publishes the current `media` branch to GitHub Pages again.
+# Use it if a Publish run failed at the Pages step, or to check hosting works.
+on:
+  workflow_dispatch:
+
+# Same group as Publish and Media cleanup, so it never overlaps a publish.
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: https://gsissons2.github.io/pryce-content/
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: media
+          path: _media
+
+      - name: Drop git metadata
+        run: rm -rf _media/.git
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _media
+
+      - uses: actions/deploy-pages@v4
