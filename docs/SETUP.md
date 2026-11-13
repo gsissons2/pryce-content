@@ -9,12 +9,12 @@ Public means anyone can read the repo, including queued posts before they go out
 
 **Where secrets go:** in `pryce-content` on GitHub, Settings, Secrets and variables, Actions. **Secrets** tab for secrets, **Variables** tab for variables. Names must match exactly.
 
-## A. Repo and Pages
+## A. Repo and Pages (done 13 Nov 2026)
 
-1. **[Claude does this]** Create the public repo `gsissons2/pryce-content` and push the code.
-2. **[Claude does this]** Create the `media` branch (it holds the images and videos, separate from the code).
-3. **[Claude does this]** Settings, Pages, Source: **GitHub Actions**. The Publish workflow deploys the `media` branch there, at `https://gsissons2.github.io/pryce-content/`.
-4. **[Graham]** Quick check on your phone: Settings, Pages shows Source "GitHub Actions". Nothing else to do.
+- Public repo `gsissons2/pryce-content` created and code pushed.
+- `media` branch created (it holds the images and videos, separate from the code).
+- Settings, Pages, Source: **GitHub Actions**. Tested with the Redeploy media workflow: media serves at `https://gsissons2.github.io/pryce-content/`.
+- Weekly writer set up as a scheduled Claude task, Fridays 14:36 Melbourne.
 
 ## B. TikTok and YouTube (Zernio)
 
