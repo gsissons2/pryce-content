@@ -1,0 +1,92 @@
+{
+ "business": "Kestrel Ridge Motel",
+ "state": "after",
+ "theme": {
+  "bg": "#EEF1EE",
+  "ink": "#1C2B26",
+  "muted": "#63706A",
+  "accent": "#2E6E5A",
+  "accent2": "#C86A2B",
+  "box": "#F5F3EC",
+  "line": "#E1E6DF",
+  "display": "'DM Serif Display'"
+ },
+ "blocks": [
+  {
+   "type": "photoOverlay",
+   "id": "photo-header",
+   "height": 250,
+   "photo": "motel/room-queen-wide.jpg",
+   "shade": "linear-gradient(180deg, rgba(20,22,18,0.55) 0%, rgba(20,22,18,0.05) 45%, rgba(20,22,18,0.65) 100%)",
+   "blocks": [
+    {
+     "type": "status",
+     "color": "#FFFFFF"
+    },
+    {
+     "type": "header",
+     "height": 52,
+     "logo": "Kestrel Ridge Motel",
+     "logoFont": "'DM Serif Display'",
+     "logoSize": 23,
+     "color": "#FFFFFF"
+    },
+    {
+     "type": "spacer"
+    },
+    {
+     "type": "caption",
+     "text": "Alpine motel · 12 rooms · Park at your door"
+    }
+   ]
+  },
+  {
+   "type": "group",
+   "padding": "16px 16px 0",
+   "gap": 20,
+   "blocks": [
+    {
+     "type": "bookingCard",
+     "id": "booking",
+     "dates": [
+      [
+       "CHECK IN",
+       "Fri 20 Nov"
+      ],
+      [
+       "CHECK OUT",
+       "Sat 21 Nov"
+      ]
+     ],
+     "guests": [
+      "GUESTS",
+      "2 adults"
+     ],
+     "room": "Queen room, 1 night",
+     "roomSub": "Incl. GST · free cancellation",
+     "price": "$145",
+     "button": "Book these dates",
+     "note": "Your dates carry straight through. No re-typing."
+    },
+    {
+     "type": "roomCards",
+     "id": "rooms",
+     "title": "Rooms",
+     "link": "See all 3",
+     "rooms": [
+      {
+       "photo": "motel/room-green.jpg",
+       "name": "Queen",
+       "price": "from $145"
+      },
+      {
+       "photo": "motel/room-lamp.jpg",
+       "name": "Twin",
+       "price": "from $135"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

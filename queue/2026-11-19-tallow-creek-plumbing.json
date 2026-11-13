@@ -1,0 +1,95 @@
+{
+ "id": "2026-11-19-tallow-creek-plumbing",
+ "format": "redesign-carousel",
+ "schedule": {
+  "instagram": "2026-11-19T19:00:00+11:00",
+  "tiktok": "2026-11-19T19:30:00+11:00"
+ },
+ "captions": {
+  "instagram": "Concept redesign of a fictional plumber. Not a client project.\n\nWhen a tap is leaking, people want to call you, now. A lot of trade sites open with a stock handshake photo and a ten-field quote form that promises a reply in a few days.\n\nSo we led with an available-now line, real job photos, a three-field price request and a call button that stays on screen the whole way down.\n\nDoes your site do this? Free review at prycedigital.com/book\n\n#webdesign #smallbusiness #plumber #trades #melbourne",
+  "tiktok": "Leaking tap, and the site wants a ten-field form. Concept redesign of a fictional plumber, not a client project. #webdesign #plumber #trades",
+  "linkedin": "Concept redesign: a fictional plumber’s homepage, rebuilt for the phone.\n\nThe old version opens with a stock handshake photo and a ten-field quote form that promises a reply in two to three days. When someone has no hot water, that is two to three days too slow.\n\nThe new one leads with an available-now line, shows real job photos, cuts the form to three fields, and keeps a call button on screen the whole way down.\n\nNot a client project. If your trade site does any of this, I am happy to take a look: prycedigital.com/book"
+ },
+ "alt": [
+  "Title slide: A leaking tap, and this site wants a form. A phone shows a plumber homepage with a stock photo and a long form.",
+  "Before: the plumber homepage with numbered problems, stock handshake photo, long quote form, reply in two to three days.",
+  "After: the redesign with an available-now line, real job photos, a three-field price request and a call button.",
+  "Before and after phones side by side.",
+  "Call to action: book a free review at prycedigital.com/book."
+ ],
+ "data": {
+  "business": "Tallow Creek Plumbing",
+  "post": "08",
+  "hook": "A leaking tap, and the site wants a form.",
+  "hookSub": "We would make it one tap to call. Here is the redesign.",
+  "before": {
+   "screen": "screens/tallowcreek-before.json",
+   "title": "A form, not a phone call.",
+   "stat": "Form reply: 2 to 3 days",
+   "items": [
+    {
+     "title": "Stock photo hero",
+     "body": "A handshake image, not real work.",
+     "mark": "stock-hero",
+     "anchor": {
+      "x": 0.5,
+      "y": 0.4
+     }
+    },
+    {
+     "title": "Ten-field quote form",
+     "body": "Too much to fill in on a phone.",
+     "mark": "quote-form",
+     "anchor": {
+      "x": 0.5,
+      "y": 0.1
+     }
+    },
+    {
+     "title": "Reply in 2 to 3 days",
+     "body": "Slow when water is running now."
+    }
+   ]
+  },
+  "after": {
+   "screen": "screens/tallowcreek-after.json",
+   "title": "Calling takes one tap.",
+   "stat": "Reply: about 15 min",
+   "items": [
+    {
+     "title": "Available now, up top",
+     "body": "They see you can come today.",
+     "mark": "available"
+    },
+    {
+     "title": "Real jobs, real photos",
+     "body": "Actual work, not stock images.",
+     "mark": "job-photos",
+     "anchor": {
+      "x": 0.5,
+      "y": 0.5
+     }
+    },
+    {
+     "title": "Three fields, not ten",
+     "body": "A price request in 20 seconds.",
+     "mark": "quote-form",
+     "anchor": {
+      "x": 0.5,
+      "y": 0.1
+     }
+    },
+    {
+     "title": "Call button that follows",
+     "body": "One tap to call, always on screen.",
+     "mark": "call",
+     "anchor": {
+      "x": 0.5,
+      "y": 0.5
+     }
+    }
+   ]
+  },
+  "cta": "review"
+ }
+}

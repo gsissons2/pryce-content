@@ -1,0 +1,100 @@
+{
+ "id": "2026-11-20-kestrel-ridge-motel-video",
+ "format": "redesign-video",
+ "schedule": {
+  "instagram": "2026-11-20T12:30:00+11:00",
+  "tiktok": "2026-11-20T12:45:00+11:00",
+  "youtube": "2026-11-20T18:00:00+11:00"
+ },
+ "captions": {
+  "instagram": "Concept redesign of a fictional motel. Not a client project.\n\nA lot of small accommodation sites run a six-step booking engine that hides the rate until step three, then forgets the dates you typed in. People give up and ring the one up the road.\n\nSo we put the nightly rate up front, carried the chosen dates straight through to booking, and showed real rooms instead of a form.\n\nDoes your site do this? Free review at prycedigital.com/book\n\n#webdesign #smallbusiness #motel #hospitality #melbourne",
+  "tiktok": "Six steps just to see a room rate. Concept redesign of a fictional motel, not a client project. #webdesign #motel #smallbusiness",
+  "linkedin": "Concept redesign: a fictional country motel homepage, rebuilt for the phone.\n\nThe old version is a six-step booking engine. It hides the nightly rate until step three, then asks you to type your dates in again. Every extra step is a chance to leave.\n\nThe new one shows the nightly rate up front, carries your chosen dates straight through to booking, and shows real rooms instead of a form.\n\nNot a client project. If your booking page does any of this, I am happy to take a look: prycedigital.com/book",
+  "youtube": {
+   "title": "Motel website redesign: show the rate up front",
+   "description": "Concept redesign of a fictional motel homepage for the phone. Not a client project. Free review: prycedigital.com/book"
+  }
+ },
+ "alt": [
+  "Title slide: Six taps just to see one room rate. A phone shows a motel booking engine with a step bar.",
+  "Before: the motel homepage with numbered problems, a six-step booking wizard, the rate hidden until step three.",
+  "After: the redesign with the nightly rate up front, dates that carry through, and real room photos.",
+  "Before and after phones side by side.",
+  "Call to action: book a free review at prycedigital.com/book."
+ ],
+ "data": {
+  "business": "Kestrel Ridge Motel",
+  "post": "09",
+  "hook": "Six taps to see one room rate.",
+  "hookSub": "This motel hides its price. Here is a page that does not.",
+  "before": {
+   "screen": "screens/kestrel-before.json",
+   "title": "Six steps to a price.",
+   "stat": "Price: hidden till step 3",
+   "items": [
+    {
+     "title": "Six steps to a price",
+     "body": "A booking wizard before any rate.",
+     "mark": "steps",
+     "anchor": {
+      "x": 0.5,
+      "y": 0.5
+     }
+    },
+    {
+     "title": "No price until step 3",
+     "body": "Dates typed in for nothing.",
+     "mark": "engine-note",
+     "anchor": {
+      "x": 0.5,
+      "y": 0.5
+     }
+    },
+    {
+     "title": "Re-typing your dates",
+     "body": "The engine forgets your pick.",
+     "mark": "engine-card",
+     "anchor": {
+      "x": 0.5,
+      "y": 0.1
+     }
+    }
+   ]
+  },
+  "after": {
+   "screen": "screens/kestrel-after.json",
+   "title": "Price up front.",
+   "stat": "Price: first thing you see",
+   "items": [
+    {
+     "title": "Price up front",
+     "body": "The nightly rate shows first.",
+     "mark": "rate",
+     "anchor": {
+      "x": 0.9,
+      "y": 0.5
+     }
+    },
+    {
+     "title": "Dates stay put",
+     "body": "Choose once, no re-typing later.",
+     "mark": "dates",
+     "anchor": {
+      "x": 0.5,
+      "y": 0.5
+     }
+    },
+    {
+     "title": "Rooms you can see",
+     "body": "Real room photos, not a form.",
+     "mark": "rooms",
+     "anchor": {
+      "x": 0.5,
+      "y": 0.2
+     }
+    }
+   ]
+  },
+  "cta": "review"
+ }
+}

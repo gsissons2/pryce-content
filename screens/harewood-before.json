@@ -1,0 +1,62 @@
+{
+ "business": "Harewood Lane Cafe",
+ "state": "before",
+ "theme": {
+  "bg": "#FFFFFF",
+  "ink": "#232323",
+  "muted": "#8A8A8A",
+  "accent": "#B4542E",
+  "line": "#E7E2DB",
+  "display": "'Playfair Display'"
+ },
+ "blocks": [
+  {
+   "type": "photoOverlay",
+   "id": "slider",
+   "height": 640,
+   "photo": "cafe/interior-white.jpg",
+   "shade": "linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.12) 35%, rgba(0,0,0,0.22) 65%, rgba(0,0,0,0.72) 100%)",
+   "blocks": [
+    {
+     "type": "status",
+     "color": "#FFFFFF"
+    },
+    {
+     "type": "header",
+     "height": 56,
+     "logo": "Harewood Lane",
+     "logoFont": "'Playfair Display'",
+     "logoItalic": true,
+     "logoSize": 22,
+     "color": "#FFFFFF"
+    },
+    {
+     "type": "spacer"
+    },
+    {
+     "type": "sliderCaption",
+     "kicker": "WELCOME TO",
+     "title": "Harewood Lane",
+     "tag": "Specialty coffee  ·  All-day kitchen  ·  Thornbury"
+    },
+    {
+     "type": "sliderControls",
+     "dots": 4,
+     "active": 1
+    }
+   ]
+  },
+  {
+   "type": "pdfStrip",
+   "id": "menu-pdf",
+   "color": "#B4542E",
+   "text": "VIEW OUR MENU (PDF, 6.2 MB)"
+  },
+  {
+   "type": "igLoading",
+   "id": "instagram",
+   "title": "Follow us on Instagram",
+   "sub": "Loading feed…"
+  }
+ ]
+}

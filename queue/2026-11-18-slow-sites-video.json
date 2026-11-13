@@ -1,0 +1,84 @@
+{
+ "id": "2026-11-18-slow-sites-video",
+ "format": "stat-video",
+ "schedule": {
+  "instagram": "2026-11-18T12:30:00+11:00",
+  "tiktok": "2026-11-18T12:45:00+11:00",
+  "youtube": "2026-11-18T18:00:00+11:00"
+ },
+ "captions": {
+  "instagram": "We tested 12,621 Australian small-business websites on a simulated mid-range phone.\n\n74.3% took more than 4 seconds to show their main content. 32.2%, nearly one in three, took more than 10 seconds. The median site took 6.9 seconds. Google calls 2.5 seconds good.\n\nA Book Now button that has not loaded yet cannot be tapped.\n\nFree review at prycedigital.com/book\n\n#webdesign #smallbusiness #pagespeed #australia",
+  "tiktok": "Nearly 1 in 3 of these sites took over 10 seconds to load on a phone. #webdesign #smallbusiness #pagespeed",
+  "linkedin": "We tested 12,621 Australian small-business websites with Google Lighthouse on a simulated mid-range phone.\n\n74.3% took more than 4 seconds to show their main content. 32.2%, nearly one in three, took more than 10 seconds. The median was 6.9 seconds. Google’s good mark is 2.5.\n\nThese are lab numbers on a deliberately tough test, so treat them as a warning light. But the point holds: a Book Now or Call button that has not loaded yet cannot be tapped, and every blank second is a chance for someone to go back to Google.\n\nFull method: prycedigital.com/research",
+  "youtube": {
+   "title": "1 in 3 small-business sites took over 10 seconds to load",
+   "description": "From Pryce Digital’s test of 12,621 Australian small-business websites with Google Lighthouse. prycedigital.com/research"
+  }
+ },
+ "sources": [
+  "Pryce Digital Lighthouse study 2026, 12,621 Australian small-business sites (prycedigital.com/research)",
+  "page_weight.lcp_gt_4s_pct, lcp_gt_10s_pct and core_web_vitals.lab.lcp_ms, data/lighthouse-2026.json"
+ ],
+ "alt": [],
+ "data": {
+  "footer": "12,621 Australian small-business sites",
+  "videoLabel": "Research",
+  "slides": [
+   {
+    "type": "bignum",
+    "kicker": "Google’s lab test",
+    "value": "1 in 3",
+    "unit": "over 10 seconds.",
+    "body": "32.2% of sites took more than 10 seconds to show their main content, on a simulated mid-range phone."
+   },
+   {
+    "type": "statement",
+    "kicker": "The study",
+    "size": 64,
+    "title": "We tested 12,621 Australian websites.",
+    "facts": [
+     {
+      "label": "Tool",
+      "value": "Google Lighthouse"
+     },
+     {
+      "label": "Device",
+      "value": "A simulated mid-range phone"
+     }
+    ],
+    "foot": "prycedigital.com/research"
+   },
+   {
+    "type": "bars",
+    "kicker": "Share of 12,621 sites, Google’s lab test",
+    "title": "Time to show the main content",
+    "unit": "%",
+    "max": 100,
+    "bars": [
+     {
+      "label": "Took over 4 seconds",
+      "value": 74.3
+     },
+     {
+      "label": "Took over 10 seconds",
+      "value": 32.2,
+      "highlight": true
+     }
+    ],
+    "foot": "Google’s good mark is 2.5 s · the median site took 6.9 s"
+   },
+   {
+    "type": "loading",
+    "title": "A Book Now button that has not loaded cannot be tapped.",
+    "body": "Every blank second is a chance for someone to hit back and pick the next result.",
+    "button": "Order now",
+    "status": "Still loading · 6.9 s",
+    "foot": "Illustration"
+   },
+   {
+    "type": "cta",
+    "cta": "review"
+   }
+  ]
+ }
+}

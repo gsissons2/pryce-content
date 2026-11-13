@@ -1,0 +1,93 @@
+{
+ "business": "Kestrel Ridge Motel",
+ "state": "before",
+ "theme": {
+  "bg": "#EDEDED",
+  "ink": "#333333",
+  "muted": "#777777",
+  "accent": "#3E6FA8",
+  "line": "#DADADA",
+  "display": "Roboto"
+ },
+ "blocks": [
+  {
+   "type": "group",
+   "id": "engine-header",
+   "bg": "#243140",
+   "blocks": [
+    {
+     "type": "status",
+     "color": "#FFFFFF"
+    },
+    {
+     "type": "header",
+     "height": 52,
+     "padX": 16,
+     "logo": "Kestrel Ridge Motel",
+     "logoFont": "Roboto",
+     "logoWeight": 700,
+     "logoSize": 16,
+     "color": "#FFFFFF",
+     "right": "AUD $  ▾      EN  ▾",
+     "rightColor": "rgba(255,255,255,0.75)"
+    }
+   ]
+  },
+  {
+   "type": "steps",
+   "id": "steps",
+   "items": [
+    "1 Dates",
+    "2 Room",
+    "3 Rate",
+    "4 Extras",
+    "5 Details",
+    "6 Pay"
+   ],
+   "active": 0,
+   "activeColor": "#243140"
+  },
+  {
+   "type": "engineForm",
+   "id": "engine",
+   "title": "Check Availability",
+   "buttonBg": "#3E6FA8",
+   "button": "CHECK AVAILABILITY",
+   "rows": [
+    [
+     {
+      "label": "Arrival Date *",
+      "placeholder": "dd/mm/yyyy",
+      "icon": "calendar"
+     }
+    ],
+    [
+     {
+      "label": "Departure Date *",
+      "placeholder": "dd/mm/yyyy",
+      "icon": "calendar"
+     }
+    ],
+    [
+     {
+      "label": "Adults",
+      "value": "2",
+      "icon": "chevron"
+     },
+     {
+      "label": "Children",
+      "value": "0",
+      "icon": "chevron"
+     }
+    ],
+    [
+     {
+      "label": "Promo / Group Code"
+     }
+    ]
+   ],
+   "note": "Room rates are displayed once you have selected your room type and any extras.",
+   "secure": "Secure online reservations"
+  }
+ ]
+}

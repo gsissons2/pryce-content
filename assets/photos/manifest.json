@@ -2,6 +2,8 @@
   "_note": "Unsplash License photos. CI downloads full-resolution versions over the local previews. To add one: put it here and push the branch. The Render preview workflow saves a 400 px preview and commits it to the PR branch.",
   "cafe/interior-white.jpg": "https://images.unsplash.com/photo-1613274554329-70f997f5789f?fm=jpg&q=82&w=1400",
   "cafe/brunch-benedict.jpg": "https://images.unsplash.com/photo-1773091839506-26ecff84172c?fm=jpg&q=82&w=1400",
+  "cafe/bakery-counter.jpg": "https://images.unsplash.com/photo-1720091382934-fc9fdff94857?fm=jpg&q=82&w=1400",
+  "cafe/bakery-bread.jpg": "https://images.unsplash.com/photo-1558465984-9a9302b5b0bc?fm=jpg&q=82&w=1400",
   "stock/handshake-office.jpg": "https://images.unsplash.com/photo-1698047682091-782b1e5c6536?fm=jpg&q=82&w=1400",
   "trades/copper-bath-tap.jpg": "https://images.unsplash.com/photo-1631215750638-bdde5f616128?fm=jpg&q=82&w=800",
   "trades/hot-tap.jpg": "https://images.unsplash.com/photo-1626880494339-5a5d5ec8f17a?fm=jpg&q=82&w=800",
