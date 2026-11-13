@@ -1,0 +1,84 @@
+{
+ "business": "Thistle & Crumb Bakehouse",
+ "state": "after",
+ "theme": {
+  "bg": "#F6F1E6",
+  "ink": "#2A2620",
+  "muted": "#786E60",
+  "accent": "#6A4E7C",
+  "line": "#E7DECC",
+  "display": "Fraunces"
+ },
+ "blocks": [
+  {
+   "type": "status",
+   "color": "#2A2620"
+  },
+  {
+   "type": "header",
+   "height": 52,
+   "logo": "Thistle & Crumb",
+   "logoFont": "Fraunces",
+   "logoWeight": 600,
+   "logoSize": 24,
+   "logoLs": -0.02,
+   "color": "#6A4E7C"
+  },
+  {
+   "type": "group",
+   "padding": "8px 20px 0",
+   "gap": 16,
+   "blocks": [
+    {
+     "type": "openRow",
+     "id": "open-now",
+     "pill": "Baking now · sold out by 1pm",
+     "pillBg": "#EBE3F0",
+     "dot": "#2F8F55",
+     "sub": "Wed to Sun, 7am start"
+    },
+    {
+     "type": "h1",
+     "text": "Wood-fired sourdough and pastries in Castlemaine.",
+     "size": 32
+    },
+    {
+     "type": "photo",
+     "id": "photo",
+     "photo": "cafe/bakery-bread.jpg",
+     "height": 186
+    },
+    {
+     "type": "button",
+     "id": "order",
+     "text": "Order a loaf for pickup"
+    },
+    {
+     "type": "menuList",
+     "id": "menu",
+     "title": "On the shelf today",
+     "link": "Full list",
+     "items": [
+      [
+       "Country sourdough",
+       "$9"
+      ],
+      [
+       "Seeded rye",
+       "$10"
+      ],
+      [
+       "Butter croissant",
+       "$6"
+      ]
+     ]
+    },
+    {
+     "type": "map",
+     "id": "map",
+     "title": "Find the bakery"
+    }
+   ]
+  }
+ ]
+}

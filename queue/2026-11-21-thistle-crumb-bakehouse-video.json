@@ -1,0 +1,105 @@
+{
+ "id": "2026-11-21-thistle-crumb-bakehouse-video",
+ "format": "redesign-video",
+ "schedule": {
+  "instagram": "2026-11-21T12:30:00+11:00",
+  "tiktok": "2026-11-21T12:45:00+11:00",
+  "youtube": "2026-11-21T18:00:00+11:00"
+ },
+ "captions": {
+  "instagram": "Concept redesign of a fictional bakery. Not a client project.\n\nSome bakery sites still take orders with a PDF you download, print, fill in and email back. Meanwhile the one thing people want, what is baked today, is stuck in a loading Instagram feed.\n\nSo we led with baking-now hours, one tap to reserve a loaf, today’s shelf as real text and a map one scroll down.\n\nDoes your site do this? Free review at prycedigital.com/book\n\n#webdesign #smallbusiness #bakery #websitedesign #melbourne",
+  "tiktok": "A bakery taking orders by PDF in 2026. Concept redesign of a fictional bakery, not a client project. #webdesign #bakery #smallbusiness",
+  "linkedin": "Concept redesign: a fictional country bakery homepage, rebuilt for the phone.\n\nThe old version opens with a full-screen slider, takes orders through a PDF you download and email back, and leaves today’s bakes in a loading Instagram feed.\n\nThe new one leads with baking-now hours, lets you reserve a loaf in one tap, lists today’s shelf as real text, and puts the map one scroll down.\n\nNot a client project. If your site does any of this, I am happy to take a look: prycedigital.com/book",
+  "youtube": {
+   "title": "Bakery website redesign: reserve a loaf in one tap",
+   "description": "Concept redesign of a fictional bakery homepage for the phone. Not a client project. Free review: prycedigital.com/book"
+  }
+ },
+ "alt": [
+  "Title slide: This bakery still takes orders by PDF. A phone shows a bakery homepage with a full-screen slider.",
+  "Before: the bakery homepage with numbered problems, a giant slider, a PDF order form, an Instagram feed loading.",
+  "After: the redesign with baking-now hours, a reserve button, today’s shelf as text and a map.",
+  "Before and after phones side by side.",
+  "Call to action: book a free review at prycedigital.com/book."
+ ],
+ "data": {
+  "business": "Thistle & Crumb Bakehouse",
+  "post": "10",
+  "hook": "This bakery still takes orders by PDF.",
+  "hookSub": "We would make it one tap. Here is the redesign.",
+  "before": {
+   "screen": "screens/thistlecrumb-before.json",
+   "title": "Pretty, but hard work.",
+   "stat": "Orders: download a form",
+   "items": [
+    {
+     "title": "Giant hero slider",
+     "body": "Three photos to swipe past first.",
+     "mark": "slider",
+     "anchor": {
+      "x": 0.77,
+      "y": 0.4
+     }
+    },
+    {
+     "title": "Orders via a PDF",
+     "body": "Download, print, fill in, email.",
+     "mark": "order-pdf",
+     "anchor": {
+      "x": 0.86,
+      "y": 0.5
+     }
+    },
+    {
+     "title": "What’s baked today?",
+     "body": "No list, just a feed loading.",
+     "mark": "instagram",
+     "anchor": {
+      "x": 0.82,
+      "y": 0.4
+     }
+    }
+   ]
+  },
+  "after": {
+   "screen": "screens/thistlecrumb-after.json",
+   "title": "Ordering in one tap.",
+   "stat": "Orders: tap to reserve",
+   "items": [
+    {
+     "title": "Baking now, up top",
+     "body": "Hours and today’s bake, first.",
+     "mark": "open-now"
+    },
+    {
+     "title": "Reserve a loaf",
+     "body": "One tap to hold bread for pickup.",
+     "mark": "order",
+     "anchor": {
+      "x": 0.92,
+      "y": 0.5
+     }
+    },
+    {
+     "title": "Today’s shelf as text",
+     "body": "What’s baked, in plain words.",
+     "mark": "menu",
+     "anchor": {
+      "x": 0.6,
+      "y": 0.08
+     }
+    },
+    {
+     "title": "Find the bakery",
+     "body": "A map, no leaving the page.",
+     "mark": "map",
+     "anchor": {
+      "x": 0.5,
+      "y": 0.6
+     }
+    }
+   ]
+  },
+  "cta": "review"
+ }
+}

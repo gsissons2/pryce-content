@@ -1,0 +1,95 @@
+{
+ "id": "2026-11-22-victoria-scores-video",
+ "format": "stat-video",
+ "schedule": {
+  "instagram": "2026-11-22T12:30:00+11:00",
+  "tiktok": "2026-11-22T12:45:00+11:00",
+  "youtube": "2026-11-22T18:00:00+11:00"
+ },
+ "captions": {
+  "instagram": "We tested 12,621 Australian small-business websites on a simulated mid-range phone.\n\nVictoria’s 758 sites averaged 60 out of 100, just under the national 62. Tasmania topped the country at 64.5. Zoom into inner Melbourne (163 sites) and the average drops to 53.7, with 46.6% scoring poor.\n\nA reminder that the busiest postcodes do not always have the fastest sites.\n\nFree review at prycedigital.com/book\n\n#webdesign #smallbusiness #melbourne #australia",
+  "tiktok": "Inner-Melbourne small-business sites averaged 53.7 out of 100 in our test. #webdesign #smallbusiness #melbourne",
+  "linkedin": "We tested 12,621 Australian small-business websites with Google Lighthouse on a simulated mid-range phone.\n\nVictoria’s 758 sites averaged 60 out of 100, just under the national 62. Tasmania topped the country at 64.5, NSW and the ACT sat around 61.\n\nThe number that stood out to me is local: across 163 inner-Melbourne sites (postcodes 3000 to 3207), the average was 53.7 and 46.6% scored poor, under 50 out of 100. The busiest postcodes do not always have the fastest sites.\n\nFull method: prycedigital.com/research"
+ },
+ "sources": [
+  "Pryce Digital Lighthouse study 2026, 12,621 Australian small-business sites (prycedigital.com/research)",
+  "by_state_min_n100, overall_scores and melbourne_vs_rest_vic, data/lighthouse-2026.json"
+ ],
+ "alt": [],
+ "data": {
+  "footer": "12,621 Australian small-business sites",
+  "videoLabel": "Research",
+  "slides": [
+   {
+    "type": "bignum",
+    "kicker": "Victoria · Google’s lab test",
+    "value": "60",
+    "unit": "out of 100.",
+    "body": "The average performance score for 758 Victorian small-business sites. The national average was 62."
+   },
+   {
+    "type": "statement",
+    "kicker": "The study",
+    "size": 64,
+    "title": "We tested 12,621 Australian websites.",
+    "facts": [
+     {
+      "label": "Victoria",
+      "value": "758 sites measured"
+     },
+     {
+      "label": "Scored with",
+      "value": "Google Lighthouse"
+     }
+    ],
+    "foot": "prycedigital.com/research"
+   },
+   {
+    "type": "bars",
+    "kicker": "Average performance score",
+    "title": "How states compare",
+    "unit": "",
+    "max": 100,
+    "bars": [
+     {
+      "label": "Tasmania",
+      "value": 64.5
+     },
+     {
+      "label": "ACT",
+      "value": 61.7
+     },
+     {
+      "label": "NSW",
+      "value": 61.5
+     },
+     {
+      "label": "Victoria",
+      "value": 60.1,
+      "highlight": true
+     },
+     {
+      "label": "Queensland",
+      "value": 60.1
+     }
+    ],
+    "marker": {
+     "value": 62.0,
+     "note": "The national average across all 12,621 sites was 62."
+    },
+    "foot": "States with 100 or more sites"
+   },
+   {
+    "type": "percent",
+    "kicker": "Inner Melbourne",
+    "value": "46.6%",
+    "body": "of 163 inner-Melbourne sites scored poor, under 50 out of 100. Their average was 53.7.",
+    "foot": "Google’s lab test · poor = score under 50"
+   },
+   {
+    "type": "cta",
+    "cta": "review"
+   }
+  ]
+ }
+}

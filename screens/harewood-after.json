@@ -1,0 +1,84 @@
+{
+ "business": "Harewood Lane Cafe",
+ "state": "after",
+ "theme": {
+  "bg": "#FBF4EA",
+  "ink": "#2A2320",
+  "muted": "#7A6E63",
+  "accent": "#B4542E",
+  "line": "#ECDFCE",
+  "display": "Fraunces"
+ },
+ "blocks": [
+  {
+   "type": "status",
+   "color": "#2A2320"
+  },
+  {
+   "type": "header",
+   "height": 52,
+   "logo": "Harewood Lane",
+   "logoFont": "Fraunces",
+   "logoWeight": 600,
+   "logoSize": 25,
+   "logoLs": -0.02,
+   "color": "#B4542E"
+  },
+  {
+   "type": "group",
+   "padding": "8px 20px 0",
+   "gap": 16,
+   "blocks": [
+    {
+     "type": "openRow",
+     "id": "open-now",
+     "pill": "Open now · until 4pm",
+     "pillBg": "#F1E4D4",
+     "dot": "#2F8F55",
+     "sub": "7 days, 7am–4pm"
+    },
+    {
+     "type": "h1",
+     "text": "All-day brunch and small-batch coffee in Thornbury.",
+     "size": 32
+    },
+    {
+     "type": "photo",
+     "id": "photo",
+     "photo": "cafe/brunch-benedict.jpg",
+     "height": 186
+    },
+    {
+     "type": "button",
+     "id": "order",
+     "text": "Order for pickup"
+    },
+    {
+     "type": "menuList",
+     "id": "menu",
+     "title": "Today’s menu",
+     "link": "Full menu",
+     "items": [
+      [
+       "Harewood big breakfast",
+       "$24"
+      ],
+      [
+       "Buttermilk hotcakes, rhubarb",
+       "$19"
+      ],
+      [
+       "Mushroom toast, feta",
+       "$18"
+      ]
+     ]
+    },
+    {
+     "type": "map",
+     "id": "map",
+     "title": "Find us"
+    }
+   ]
+  }
+ ]
+}

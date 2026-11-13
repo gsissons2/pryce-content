@@ -1,0 +1,110 @@
+{
+ "id": "2026-11-17-harewood-lane-cafe-video",
+ "format": "redesign-video",
+ "schedule": {
+  "instagram": "2026-11-17T12:30:00+11:00",
+  "tiktok": "2026-11-17T12:45:00+11:00",
+  "youtube": "2026-11-17T18:00:00+11:00",
+  "linkedin": "2026-11-17T08:15:00+11:00"
+ },
+ "captions": {
+  "instagram": "Concept redesign of a fictional cafe. Not a client project.\n\nPlenty of cafe sites open with a photo slider, hide the menu in a PDF and leave the hours at the very bottom. People just want to know: are you open, what is on, how do I order.\n\nSo we put today’s hours and an open-now line at the top, one button to order, the menu as real text and the map one scroll down.\n\nDoes your site do this? Free review at prycedigital.com/book\n\n#webdesign #smallbusiness #melbourne #cafe #websitedesign",
+  "tiktok": "Can you tell if this cafe is open? Concept redesign of a fictional cafe, not a client project. #webdesign #cafe #smallbusiness",
+  "linkedin": "Concept redesign: a fictional Melbourne cafe homepage, rebuilt for the phone.\n\nThe old version looks lovely and answers nothing. Four photos to swipe, the menu in a 6 MB PDF, an Instagram feed loading before anything useful, and the opening hours at the very bottom.\n\nThe new one leads with today’s hours and an open-now line, has one button to order, shows the menu as real text, and keeps the map one scroll down.\n\nNot a client project. If your site does any of this, I am happy to take a look: prycedigital.com/book",
+  "youtube": {
+   "title": "Cafe homepage redesign: hours first, menu as text",
+   "description": "Concept redesign of a fictional cafe homepage for the phone. Not a client project. Free review: prycedigital.com/book"
+  }
+ },
+ "alt": [
+  "Title slide: Great photos, but where are the hours? A phone shows a cafe homepage filled by a photo slider.",
+  "Before: the cafe homepage with numbered problems, photo slider, PDF menu, an Instagram feed loading, hours at the bottom.",
+  "After: the redesign with open-now hours at the top, an order button, the menu as text and a map.",
+  "Before and after phones side by side.",
+  "Call to action: book a free review at prycedigital.com/book."
+ ],
+ "data": {
+  "business": "Harewood Lane Cafe",
+  "post": "07",
+  "hook": "Great photos, but where are the hours?",
+  "hookSub": "This cafe makes you dig for the basics. Here is the fix.",
+  "before": {
+   "screen": "screens/harewood-before.json",
+   "title": "Looks lovely, says nothing.",
+   "stat": "Hours: bottom of the page",
+   "items": [
+    {
+     "title": "Big slider, no info",
+     "body": "Four photos to swipe before a single word.",
+     "mark": "slider",
+     "anchor": {
+      "x": 0.77,
+      "y": 0.4
+     }
+    },
+    {
+     "title": "Menu hidden in a PDF",
+     "body": "Slow to open, tiny to read on a phone.",
+     "mark": "menu-pdf",
+     "anchor": {
+      "x": 0.86,
+      "y": 0.5
+     }
+    },
+    {
+     "title": "Feed loads first",
+     "body": "Spinners where the useful part should be.",
+     "mark": "instagram",
+     "anchor": {
+      "x": 0.82,
+      "y": 0.4
+     }
+    },
+    {
+     "title": "Hours? Keep scrolling",
+     "body": "Opening times sit right at the bottom."
+    }
+   ]
+  },
+  "after": {
+   "screen": "screens/harewood-after.json",
+   "title": "Answers up top.",
+   "stat": "Hours: top of the screen",
+   "items": [
+    {
+     "title": "Open now, up top",
+     "body": "Today’s hours are the first thing you see.",
+     "mark": "open-now"
+    },
+    {
+     "title": "One button to order",
+     "body": "Pickup in two taps, nothing to hunt for.",
+     "mark": "order",
+     "anchor": {
+      "x": 0.92,
+      "y": 0.5
+     }
+    },
+    {
+     "title": "Menu as real text",
+     "body": "Loads instantly and Google can read it.",
+     "mark": "menu",
+     "anchor": {
+      "x": 0.6,
+      "y": 0.08
+     }
+    },
+    {
+     "title": "Map one scroll down",
+     "body": "Directions without leaving the page.",
+     "mark": "map",
+     "anchor": {
+      "x": 0.5,
+      "y": 0.6
+     }
+    }
+   ]
+  },
+  "cta": "review"
+ }
+}

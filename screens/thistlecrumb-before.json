@@ -1,0 +1,62 @@
+{
+ "business": "Thistle & Crumb Bakehouse",
+ "state": "before",
+ "theme": {
+  "bg": "#FFFFFF",
+  "ink": "#232323",
+  "muted": "#8A8A8A",
+  "accent": "#6A4E7C",
+  "line": "#E7E2DB",
+  "display": "'Playfair Display'"
+ },
+ "blocks": [
+  {
+   "type": "photoOverlay",
+   "id": "slider",
+   "height": 640,
+   "photo": "cafe/bakery-counter.jpg",
+   "shade": "linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.12) 35%, rgba(0,0,0,0.22) 65%, rgba(0,0,0,0.72) 100%)",
+   "blocks": [
+    {
+     "type": "status",
+     "color": "#FFFFFF"
+    },
+    {
+     "type": "header",
+     "height": 56,
+     "logo": "Thistle & Crumb",
+     "logoFont": "'Playfair Display'",
+     "logoItalic": true,
+     "logoSize": 21,
+     "color": "#FFFFFF"
+    },
+    {
+     "type": "spacer"
+    },
+    {
+     "type": "sliderCaption",
+     "kicker": "EST. 2015",
+     "title": "Thistle & Crumb",
+     "tag": "Wood-fired sourdough  ·  Castlemaine"
+    },
+    {
+     "type": "sliderControls",
+     "dots": 4,
+     "active": 1
+    }
+   ]
+  },
+  {
+   "type": "pdfStrip",
+   "id": "order-pdf",
+   "color": "#6A4E7C",
+   "text": "DOWNLOAD ORDER FORM (PDF)"
+  },
+  {
+   "type": "igLoading",
+   "id": "instagram",
+   "title": "See today’s bakes on Instagram",
+   "sub": "Loading feed…"
+  }
+ ]
+}
