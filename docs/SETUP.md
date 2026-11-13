@@ -18,15 +18,16 @@ Public means anyone can read the repo, including queued posts before they go out
 
 ## B. TikTok and YouTube (Zernio)
 
-TikTok and YouTube keep posts private for apps that have not passed their audit. Zernio's apps have, so we post through it.
+TikTok and YouTube keep posts private for apps that have not passed their audit. Zernio's apps have, so we post through it. Free plan: first 2 connected accounts, 60 API calls a minute (we use a handful a day).
 
-1. **[Graham]** Sign up at zernio.com. The free plan covers your first 2 connected accounts.
-2. **[Graham]** Connect TikTok, log in as **@prycedigital**, allow.
-3. **[Graham]** Connect YouTube, log in with the Google account that owns the **@prycedigital** channel, allow.
-4. **[Graham]** In Zernio settings, create an API key. Add it as secret `ZERNIO_API_KEY`.
-5. **[Graham]** Get the account ids: Actions, Token check, Run workflow. Open the run, then "Check and refresh tokens". It prints lines like `Zernio: tiktok @prycedigital id=...`.
-6. **[Graham]** Add secrets `ZERNIO_TIKTOK_ACCOUNT_ID` and `ZERNIO_YOUTUBE_ACCOUNT_ID` with those ids.
-7. Optional: TikTok posts go out as `PUBLIC_TO_EVERYONE`. If a post fails with a privacy error, add variable `ZERNIO_TIKTOK_PRIVACY` with a level TikTok allows for the account.
+1. **[Graham]** Sign up at zernio.com and create an API key (done 14 Nov 2026).
+2. **[Graham]** In the Zernio dashboard, connect TikTok (log in as **@prycedigital**) and YouTube (the Google account that owns the **@prycedigital** channel). Allow everything it asks for.
+3. **[Graham]** Add the key as secret `ZERNIO_API_KEY` (Settings, Secrets and variables, Actions, New repository secret).
+4. **[Graham]** Run Actions, Token check, Run workflow. In the log you want `Zernio: tiktok @prycedigital id=...`, `Zernio: youtube ... id=...` and a line of TikTok privacy levels that includes `PUBLIC_TO_EVERYONE`. Any problem opens an issue with what to fix.
+
+That is all. The account ids are looked up from the key on every run, so there are no ids to copy. Optional variables: `ZERNIO_TIKTOK_USERNAME` / `ZERNIO_YOUTUBE_USERNAME` only if you ever connect a second TikTok or YouTube account, and `ZERNIO_TIKTOK_PRIVACY` only if Token check says TikTok does not offer `PUBLIC_TO_EVERYONE`.
+
+If a TikTok post is still processing when the run finishes (TikTok can take hours), it is recorded as sent with a note and no link, and is never sent twice. The link shows in the Zernio dashboard.
 
 ## C. Instagram (@madebypryce)
 
@@ -69,8 +70,8 @@ Every 60 days: redo steps 5, 6 and 7. Self-serve LinkedIn tokens cannot be refre
 | Name | Type | What |
 |---|---|---|
 | `ZERNIO_API_KEY` | secret | Zernio API key |
-| `ZERNIO_TIKTOK_ACCOUNT_ID` | secret | Zernio id for TikTok @prycedigital |
-| `ZERNIO_YOUTUBE_ACCOUNT_ID` | secret | Zernio id for YouTube @prycedigital |
+| `ZERNIO_TIKTOK_USERNAME` | variable, optional | only if Zernio has more than one TikTok account |
+| `ZERNIO_YOUTUBE_USERNAME` | variable, optional | only if Zernio has more than one YouTube account |
 | `IG_ACCESS_TOKEN` | secret | Instagram token (60 days, refreshed weekly) |
 | `IG_USER_ID` | secret | Instagram account id (`user_id`) |
 | `LINKEDIN_ACCESS_TOKEN` | secret | LinkedIn token (60 days, cannot refresh) |

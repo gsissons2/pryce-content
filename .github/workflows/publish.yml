@@ -122,8 +122,9 @@ jobs:
           LINKEDIN_PERSON_URN: ${{ secrets.LINKEDIN_PERSON_URN }}
           LINKEDIN_TOKEN_EXPIRES: ${{ vars.LINKEDIN_TOKEN_EXPIRES }}
           ZERNIO_API_KEY: ${{ secrets.ZERNIO_API_KEY }}
-          ZERNIO_TIKTOK_ACCOUNT_ID: ${{ secrets.ZERNIO_TIKTOK_ACCOUNT_ID }}
-          ZERNIO_YOUTUBE_ACCOUNT_ID: ${{ secrets.ZERNIO_YOUTUBE_ACCOUNT_ID }}
+          # Optional. Account ids are looked up from the key; these only pick one if several are connected.
+          ZERNIO_TIKTOK_USERNAME: ${{ vars.ZERNIO_TIKTOK_USERNAME }}
+          ZERNIO_YOUTUBE_USERNAME: ${{ vars.ZERNIO_YOUTUBE_USERNAME }}
           ZERNIO_TIKTOK_PRIVACY: ${{ vars.ZERNIO_TIKTOK_PRIVACY }}
         run: |
           args=(--summary "$RUNNER_TEMP/publish-summary.json")

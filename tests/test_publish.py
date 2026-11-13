@@ -3,6 +3,7 @@
 Run: python -m unittest tests.test_publish -v
 """
 import contextlib
+import requests
 import io
 import json
 import os
@@ -334,15 +335,20 @@ class TestZernio(Base):
         res = zernio.publish_tiktok(http(), make_spec(), a)
         call = self.t.calls[0]
         self.assertEqual(call["headers"]["Authorization"], "Bearer zkey")
+        self.assertEqual(call["headers"]["Idempotency-Key"], "pryce-2026-11-17-fernleaf-cafe-tiktok-1")
         body = call["json"]
-        self.assertEqual(body["platforms"], [{"platform": "tiktok", "accountId": "tt1"}])
+        target = body["platforms"][0]
+        self.assertEqual((target["platform"], target["accountId"]), ("tiktok", "tt1"))
         self.assertEqual([m["type"] for m in body["mediaItems"]], ["image"] * 5)
         self.assertEqual(body["mediaItems"][0]["url"], a.urls["slide-01.jpg"])
-        s = body["tiktokSettings"]
-        self.assertEqual(s["media_type"], "photo")
-        self.assertEqual(s["privacy_level"], "PUBLIC_TO_EVERYONE")
-        self.assertTrue(s["content_preview_confirmed"] and s["express_consent_given"])
+        s = target["platformSpecificData"]
+        self.assertEqual(s["mediaType"], "photo")
+        self.assertEqual(s["photoCoverIndex"], 0)
+        self.assertEqual(s["privacyLevel"], "PUBLIC_TO_EVERYONE")
+        self.assertTrue(s["contentPreviewConfirmed"] and s["expressConsentGiven"] and s["allowComment"])
+        self.assertNotIn("allowDuet", s)   # TikTok has no duet or stitch on photo posts
         self.assertIn("#webdesign", s["description"])
+        self.assertNotIn("tiktokSettings", body)
         self.assertEqual(body["content"], "Can you tell if this café is open?")
         self.assertIs(body["publishNow"], True)
         self.assertNotIn("scheduledFor", body)
@@ -352,17 +358,39 @@ class TestZernio(Base):
     def test_tiktok_video_waits_for_publishing(self):
         a = make_assets(self.tmp, "video")
         self.t.on("POST", r"/api/v1/posts$", R(201, {"post": {"_id": "P2", "status": "publishing",
-                                                             "platforms": [{"platform": "tiktok", "status": "publishing"}]}}))
+                                                             "platforms": [{"platform": "tiktok", "status": "processing"}]}}))
         self.t.on("GET", r"/api/v1/posts/P2$",
-                  R(200, {"post": {"_id": "P2", "platforms": [{"platform": "tiktok", "status": "publishing"}]}}),
+                  R(200, {"post": {"_id": "P2", "platforms": [{"platform": "tiktok", "status": "uploading"}]}}),
                   R(200, {"post": {"_id": "P2", "platforms": [{"platform": "tiktok", "status": "published",
                                                                "platformPostUrl": "https://www.tiktok.com/v/2"}]}}))
         res = zernio.publish_tiktok(http(), make_spec(fmt="redesign-video"), a)
         body = self.t.calls[0]["json"]
+        s = body["platforms"][0]["platformSpecificData"]
         self.assertEqual(body["mediaItems"], [{"type": "video", "url": a.urls["video.mp4"]}])
-        self.assertNotEqual(body["tiktokSettings"].get("media_type"), "photo")
+        self.assertEqual(s["mediaType"], "video")
+        self.assertTrue(s["allowDuet"] and s["allowStitch"])
         self.assertIn("#webdesign", body["content"])
         self.assertEqual(res["url"], "https://www.tiktok.com/v/2")
+
+    def test_still_processing_is_recorded_not_resent(self):
+        self.t.on("POST", r"/api/v1/posts$", R(201, {"post": {"_id": "P4", "platforms": [
+            {"platform": "tiktok", "status": "uploading"}]}}))
+        self.t.on("GET", r"/api/v1/posts/P4$", R(200, {"post": {"_id": "P4", "platforms": [
+            {"platform": "tiktok", "status": "uploading"}]}}))
+        res = zernio.publish_tiktok(http(), make_spec(fmt="redesign-video"), make_assets(self.tmp, "video"))
+        self.assertEqual(res["id"], "P4")
+        self.assertIsNone(res["url"])
+        self.assertEqual(res["zernio_status"], "uploading")
+        self.assertIn("still processing", res["note"])
+        self.assertEqual(len(self.t.find("POST", r"/posts$")), 1)
+
+    def test_failure_after_accept_raises(self):
+        self.t.on("POST", r"/api/v1/posts$", R(201, {"post": {"_id": "P5", "platforms": [
+            {"platform": "tiktok", "status": "pending"}]}}))
+        self.t.on("GET", r"/api/v1/posts/P5$", R(200, {"post": {"_id": "P5", "platforms": [
+            {"platform": "tiktok", "status": "failed", "errorMessage": "video too short"}]}}))
+        with self.assertRaisesRegex(PublishError, "video too short"):
+            zernio.publish_tiktok(http(), make_spec(fmt="redesign-video"), make_assets(self.tmp, "video"))
 
     def test_youtube_short(self):
         a = make_assets(self.tmp, "video")
@@ -378,6 +406,7 @@ class TestZernio(Base):
         self.assertLessEqual(len(psd["title"]), 100)
         self.assertEqual(psd["visibility"], "public")
         self.assertIs(psd["madeForKids"], False)
+        self.assertIs(psd["containsSyntheticMedia"], False)
         self.assertEqual(body["content"], "Concept redesign.")
         self.assertTrue(any("title cut" in w for w in res["warnings"]))
         self.assertEqual(res["url"], "https://youtube.com/shorts/abc")
@@ -388,9 +417,71 @@ class TestZernio(Base):
         self.assertFalse(self.t.calls)
 
     def test_failed_status_raises(self):
-        self.t.on("POST", r"/api/v1/posts$", R(207, {"post": {"_id": "P3", "status": "failed", "platforms": [
-            {"platform": "tiktok", "status": "failed", "errorMessage": "privacy level not allowed"}]}}))
+        self.t.on("POST", r"/api/v1/posts$", R(207, {"error": "No platform published", "post": {
+            "_id": "P3", "status": "failed", "platforms": [{"platform": "tiktok", "status": "failed"}]},
+            "platformResults": [{"platform": "tiktok", "status": "failed", "error": "privacy level not allowed"}]}))
         with self.assertRaisesRegex(PublishError, "privacy level not allowed"):
+            zernio.publish_tiktok(http(), make_spec(), make_assets(self.tmp))
+
+    def test_account_ids_come_from_the_key(self):
+        rows = {"accounts": [
+            {"_id": "acc-ig", "platform": "instagram", "username": "madebypryce", "isActive": True},
+            {"_id": "acc-tt", "platform": "tiktok", "username": "prycedigital", "isActive": True},
+            {"_id": "acc-yt", "platform": "youtube", "username": "prycedigital", "isActive": True}]}
+        self.t.on("GET", r"/api/v1/accounts$", R(200, rows))
+        self.t.on("POST", r"/api/v1/posts$", self.published("tiktok"))
+        with mock.patch.dict(os.environ, {"ZERNIO_TIKTOK_ACCOUNT_ID": "", "ZERNIO_YOUTUBE_ACCOUNT_ID": ""}):
+            zernio.publish_tiktok(http(), make_spec(), make_assets(self.tmp))
+        self.assertEqual(self.t.find("POST", r"/posts$")[0]["json"]["platforms"][0]["accountId"], "acc-tt")
+
+    def test_no_account_connected_is_a_skip(self):
+        self.t.on("GET", r"/api/v1/accounts$", R(200, {"accounts": [
+            {"_id": "acc-yt", "platform": "youtube", "username": "prycedigital", "isActive": True}]}))
+        with mock.patch.dict(os.environ, {"ZERNIO_TIKTOK_ACCOUNT_ID": ""}), self.assertRaises(SkipForNow):
+            zernio.publish_tiktok(http(), make_spec(), make_assets(self.tmp))
+        self.assertFalse(self.t.find("POST", r"/posts$"))
+
+    def test_pick_account_rules(self):
+        rows = [{"_id": "a", "platform": "tiktok", "username": "one", "isActive": True},
+                {"_id": "b", "platform": "tiktok", "username": "Two", "isActive": True},
+                {"_id": "c", "platform": "youtube", "username": "x", "isActive": True, "needsReconnection": True}]
+        with self.assertRaisesRegex(PermanentError, "ZERNIO_TIKTOK_USERNAME"):
+            zernio.pick_account(rows, "tiktok")
+        self.assertEqual(zernio.pick_account(rows, "tiktok", "@two"), "b")
+        with self.assertRaisesRegex(PublishError, "reconnecting"):
+            zernio.pick_account(rows, "youtube")
+
+    def test_idempotency_key_changes_after_a_failure(self):
+        spec = make_spec()
+        self.assertEqual(zernio.idempotency_key(spec, "tiktok"), "pryce-2026-11-17-fernleaf-cafe-tiktok-1")
+        spec["failed"] = {"tiktok": {"at": "t", "error": "e", "history": [{"at": "t", "error": "e"}]}}
+        self.assertEqual(zernio.idempotency_key(spec, "tiktok"), "pryce-2026-11-17-fernleaf-cafe-tiktok-2")
+
+    def test_lost_answer_is_resent_with_the_same_key(self):
+        def timeout(kw):
+            raise requests.exceptions.ReadTimeout("slow")
+        self.t.on("POST", r"/api/v1/posts$", timeout, R(200, {"post": {"_id": "P1", "status": "published",
+                  "platforms": [{"platform": "tiktok", "status": "published", "platformPostUrl": "https://t/1"}]}}))
+        res = zernio.publish_tiktok(http(), make_spec(), make_assets(self.tmp))
+        posts = self.t.find("POST", r"/posts$")
+        self.assertEqual(len(posts), 2)
+        self.assertEqual(posts[0]["headers"]["Idempotency-Key"], posts[1]["headers"]["Idempotency-Key"])
+        self.assertEqual(res["url"], "https://t/1")
+
+    def test_two_lost_answers_are_uncertain(self):
+        self.t.on("POST", r"/api/v1/posts$", R(502, {"error": "bad gateway"}))
+        with self.assertRaises(UncertainError):
+            zernio.publish_tiktok(http(), make_spec(), make_assets(self.tmp))
+        self.assertEqual(len(self.t.find("POST", r"/posts$")), 2)
+
+    def test_conflicts(self):
+        self.t.on("POST", r"/api/v1/posts$",
+                  R(409, {"code": "idempotency_conflict"}, {"Retry-After": "5"}), self.published("tiktok"))
+        res = zernio.publish_tiktok(http(), make_spec(), make_assets(self.tmp))
+        self.assertEqual(res["id"], "P1")
+        self.t.routes.clear()
+        self.t.on("POST", r"/api/v1/posts$", R(409, {"error": "Duplicate content"}))
+        with self.assertRaisesRegex(PermanentError, "duplicate"):
             zernio.publish_tiktok(http(), make_spec(), make_assets(self.tmp))
 
 
@@ -855,7 +946,7 @@ class TestRun(unittest.TestCase):
                          "[dry-run] POST https://rupload.facebook.com/ig-api-upload/", '"Authorization": "OAuth ***"',
                          "[dry-run] POST https://api.linkedin.com/rest/documents?action=initializeUpload",
                          "[dry-run] POST https://api.linkedin.com/rest/videos?action=finalizeUpload",
-                         "[dry-run] POST https://zernio.com/api/v1/posts", '"media_type": "photo"',
+                         "[dry-run] POST https://zernio.com/api/v1/posts", '"mediaType": "photo"', '"Idempotency-Key"',
                          '"platform": "youtube"', '"Authorization": "Bearer ***"'):
             self.assertIn(expected, text)
         self.assertNotIn("igtoken", text)

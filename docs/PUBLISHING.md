@@ -65,7 +65,7 @@ Nothing is cut silently. Over-limit text is trimmed at a word with "…" and a w
 1. Open the issue. It names the spec, the platform and the last error.
 2. Check the platform itself. Did it post anyway? This matters most for "may or may not have posted".
 3. **It did post:** on `main`, edit the spec and remove that platform from `schedule`. Close the issue.
-4. **It did not post and you want it to:** fix the cause (see below), then on `main` delete `failed.<platform>` from the spec. The next run posts it, straight away if its time has passed. Close the issue.
+4. **It did not post and you want it to:** fix the cause (see below), then on `main` delete `failed.<platform>` from the spec. The next run posts it, straight away if its slot was less than 6 hours ago; otherwise give it a new time in `schedule` too. Close the issue.
 
 | Error says | Fix |
 |---|---|
@@ -75,7 +75,11 @@ Nothing is cut silently. Over-limit text is trimmed at a word with "…" and a w
 | `Instagram daily publishing limit used up` | Nothing. It waits and retries |
 | `GitHub Pages ... still not ready` | Open the run and check the deploy-pages step. Settings, Pages must say Source: GitHub Actions |
 | `render failed` | The spec does not render on `main`. Fix it in a PR, the preview shows the problem |
-| Zernio `privacy level` | Set variable `ZERNIO_TIKTOK_PRIVACY` |
+| Zernio `privacy level` | Run Token check, it lists the levels TikTok allows. Set variable `ZERNIO_TIKTOK_PRIVACY` to one |
+| `no TikTok account connected in Zernio yet` (skip, not a failure) | Connect it in the Zernio dashboard |
+| `needs reconnecting in the Zernio dashboard` | Reconnect that account in Zernio |
+| Zernio `refused it as a duplicate` | Same post went out in the last 24 h. Check the account before retrying |
+| Published entry has `note: accepted by Zernio, still processing` | Not an error. TikTok is still processing; the link is in the Zernio dashboard |
 | Zernio `HTTP 402` | Zernio plan limit. Check the Zernio dashboard |
 | `Could not push` (red run) | Check `queue/` on `main` now, before the next run |
 

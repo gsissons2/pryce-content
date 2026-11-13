@@ -30,6 +30,9 @@ jobs:
           LINKEDIN_PERSON_URN: ${{ secrets.LINKEDIN_PERSON_URN }}
           LINKEDIN_TOKEN_EXPIRES: ${{ vars.LINKEDIN_TOKEN_EXPIRES }}
           ZERNIO_API_KEY: ${{ secrets.ZERNIO_API_KEY }}
+          ZERNIO_TIKTOK_USERNAME: ${{ vars.ZERNIO_TIKTOK_USERNAME }}
+          ZERNIO_YOUTUBE_USERNAME: ${{ vars.ZERNIO_YOUTUBE_USERNAME }}
+          ZERNIO_TIKTOK_PRIVACY: ${{ vars.ZERNIO_TIKTOK_PRIVACY }}
         run: python -m publish.tokens --warn-days 10 --issue-body "$RUNNER_TEMP/token-issue.md"
 
       - name: Open or update the warning issue

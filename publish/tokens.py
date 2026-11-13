@@ -13,12 +13,9 @@ import sys
 from datetime import date
 from pathlib import Path
 
-from . import instagram, linkedin
-from .common import PublishError
+from . import instagram, linkedin, zernio
+from .common import PublishError, SkipForNow
 from .http import Http
-
-ZERNIO_ACCOUNTS = "https://zernio.com/api/v1/accounts"
-
 
 def whoami(http: Http) -> list[str]:
     """Read-only identity checks. Returns problems found."""
@@ -46,14 +43,36 @@ def whoami(http: Http) -> list[str]:
         except PublishError as e:
             problems.append(f"LinkedIn token check failed: {e}")
     if os.environ.get("ZERNIO_API_KEY"):
+        key = os.environ["ZERNIO_API_KEY"]
         try:
-            r = http.request("GET", ZERNIO_ACCOUNTS,
-                             headers={"Authorization": f"Bearer {os.environ['ZERNIO_API_KEY']}"})
-            body = http.check(r, "Zernio accounts").json()
-            rows = body if isinstance(body, list) else (body.get("accounts") or body.get("data") or [])
+            rows = zernio.accounts(http, key)
             for a in rows:
+                state = "" if a.get("isActive", True) and not a.get("needsReconnection") else " (NEEDS RECONNECTING)"
                 print(f"Zernio: {a.get('platform')} @{a.get('username') or a.get('displayName')} "
-                      f"id={a.get('_id') or a.get('id')}")
+                      f"id={a.get('_id') or a.get('id')}{state}")
+            for platform in ("tiktok", "youtube"):
+                username = os.environ.get(f"ZERNIO_{platform.upper()}_USERNAME", "").strip() or None
+                try:
+                    acc = os.environ.get(f"ZERNIO_{platform.upper()}_ACCOUNT_ID", "").strip() or \
+                        zernio.pick_account(rows, platform, username)
+                except SkipForNow as e:
+                    problems.append(f"Zernio: {e}. Connect it in the Zernio dashboard (docs/SETUP.md).")
+                    continue
+                except PublishError as e:
+                    problems.append(str(e))
+                    continue
+                if platform == "tiktok":
+                    r = http.request("GET", f"{zernio.BASE}/accounts/{acc}/tiktok/creator-info",
+                                     headers={"Authorization": f"Bearer {key}"}, params={"mediaType": "video"})
+                    info = http.check(r, "Zernio TikTok creator info").json()
+                    levels = [str(x.get("value")) for x in info.get("privacyLevels") or [] if isinstance(x, dict)]
+                    can = (info.get("creator") or {}).get("canPostMore")
+                    print(f"Zernio: TikTok privacy levels {', '.join(levels) or '(none listed)'}; "
+                          f"can post now: {can}")
+                    if levels and zernio.TIKTOK_PRIVACY not in levels:
+                        problems.append(f"TikTok does not offer privacy level {zernio.TIKTOK_PRIVACY} for this "
+                                        f"account (it offers {', '.join(levels)}). Set variable "
+                                        "ZERNIO_TIKTOK_PRIVACY to one of those.")
         except PublishError as e:
             problems.append(f"Zernio key check failed: {e}")
     return problems
