@@ -1,0 +1,78 @@
+{
+ "business": "Tern Flat Holiday Park",
+ "state": "before",
+ "theme": {
+  "bg": "#FFFFFF",
+  "ink": "#222222",
+  "muted": "#777777",
+  "accent": "#1C6E8C",
+  "line": "#DDDDDD",
+  "display": "Montserrat"
+ },
+ "blocks": [
+  {
+   "type": "photoOverlay",
+   "id": "hero",
+   "height": 340,
+   "photo": "motel/park-coast.jpg",
+   "shade": "rgba(0,0,0,0.46)",
+   "blocks": [
+    {
+     "type": "status",
+     "color": "#FFFFFF"
+    },
+    {
+     "type": "header",
+     "height": 52,
+     "logo": "TERN FLAT HOLIDAY PARK",
+     "logoFont": "Montserrat",
+     "logoWeight": 700,
+     "logoSize": 14,
+     "logoLs": 0.06,
+     "color": "#FFFFFF"
+    },
+    {
+     "type": "spacer"
+    },
+    {
+     "type": "sliderCaption",
+     "kicker": "WELCOME TO",
+     "title": "Tern Flat",
+     "tag": "Holiday Park · Inverloch"
+    },
+    {
+     "type": "spacer",
+     "h": 34
+    }
+   ]
+  },
+  {
+   "type": "pdfStrip",
+   "id": "rates-pdf",
+   "text": "TARIFFS & PARK MAP (PDF)",
+   "color": "#1C6E8C",
+   "bg": "#EEF5F7"
+  },
+  {
+   "type": "group",
+   "padding": "22px 20px 4px",
+   "blocks": [
+    {
+     "type": "h1",
+     "text": "Book Your Stay",
+     "size": 22,
+     "weight": 700,
+     "font": "Montserrat",
+     "color": "#1C6E8C",
+     "ls": 0
+    }
+   ]
+  },
+  {
+   "type": "igLoading",
+   "id": "calendar",
+   "title": "Check availability",
+   "sub": "Loading booking calendar…"
+  }
+ ]
+}

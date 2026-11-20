@@ -1,0 +1,103 @@
+{
+ "business": "Kingfern Electrical",
+ "state": "after",
+ "theme": {
+  "bg": "#F4F2EC",
+  "ink": "#14213D",
+  "muted": "#5C6370",
+  "accent": "#C98A00",
+  "line": "#E1DDD3",
+  "display": "Archivo"
+ },
+ "blocks": [
+  {
+   "type": "status",
+   "color": "#14213D"
+  },
+  {
+   "type": "header",
+   "id": "header",
+   "height": 58,
+   "logo": "Kingfern Electrical",
+   "logoFont": "Archivo",
+   "logoWeight": 800,
+   "logoSize": 19,
+   "logoLs": -0.01,
+   "color": "#14213D",
+   "sub": "REC 12345 · Licensed and insured",
+   "subColor": "#5C6370"
+  },
+  {
+   "type": "group",
+   "padding": "6px 20px 0",
+   "gap": 16,
+   "blocks": [
+    {
+     "type": "chip",
+     "id": "available",
+     "text": "Answering calls now",
+     "bg": "#14213D",
+     "dot": "#F2B33D"
+    },
+    {
+     "type": "group",
+     "gap": 10,
+     "blocks": [
+      {
+       "type": "h1",
+       "text": "Power out? Switch keeps tripping?",
+       "size": 31,
+       "weight": 800,
+       "lh": 1.04
+      },
+      {
+       "type": "para",
+       "text": "Licensed electricians across Coburg, Brunswick and Pascoe Vale."
+      }
+     ]
+    },
+    {
+     "type": "jobPhotos",
+     "id": "job-photos",
+     "height": 128,
+     "photos": [
+      "trades/pendant-lights.jpg",
+      "trades/power-point.jpg",
+      "trades/edison-pendants.jpg"
+     ]
+    },
+    {
+     "type": "menuList",
+     "id": "services",
+     "title": "What we do",
+     "link": "All services",
+     "items": [
+      [
+       "Switchboard upgrades",
+       "→"
+      ],
+      [
+       "Lights and downlights",
+       "→"
+      ],
+      [
+       "Power points and wiring",
+       "→"
+      ],
+      [
+       "Safety checks",
+       "→"
+      ]
+     ]
+    },
+    {
+     "type": "stickyCall",
+     "id": "call",
+     "text": "Call 0491 570 156",
+     "bg": "#14213D",
+     "glass": "rgba(244,242,236,0.92)"
+    }
+   ]
+  }
+ ]
+}

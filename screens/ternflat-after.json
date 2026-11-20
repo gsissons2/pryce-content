@@ -1,0 +1,93 @@
+{
+ "business": "Tern Flat Holiday Park",
+ "state": "after",
+ "theme": {
+  "bg": "#EEF3F1",
+  "ink": "#13302B",
+  "muted": "#5A6F69",
+  "accent": "#1F6F5C",
+  "accent2": "#D9622B",
+  "box": "#F4F7F5",
+  "line": "#D9E3DF",
+  "display": "Archivo"
+ },
+ "blocks": [
+  {
+   "type": "photoOverlay",
+   "id": "photo-header",
+   "height": 220,
+   "photo": "motel/park-coast.jpg",
+   "shade": "linear-gradient(180deg, rgba(20,22,18,0.55) 0%, rgba(20,22,18,0.05) 45%, rgba(20,22,18,0.65) 100%)",
+   "blocks": [
+    {
+     "type": "status",
+     "color": "#FFFFFF"
+    },
+    {
+     "type": "header",
+     "height": 52,
+     "logo": "Tern Flat",
+     "logoFont": "Archivo",
+     "logoWeight": 800,
+     "logoSize": 24,
+     "color": "#FFFFFF"
+    },
+    {
+     "type": "spacer"
+    },
+    {
+     "type": "caption",
+     "text": "Holiday park · Inverloch · Beach path from the gate"
+    }
+   ]
+  },
+  {
+   "type": "group",
+   "padding": "16px 16px 0",
+   "gap": 20,
+   "blocks": [
+    {
+     "type": "bookingCard",
+     "id": "booking",
+     "dates": [
+      [
+       "ARRIVE",
+       "Sat 2 Jan"
+      ],
+      [
+       "LEAVE",
+       "Tue 5 Jan"
+      ]
+     ],
+     "guests": [
+      "GUESTS",
+      "2 adults, 2 kids"
+     ],
+     "room": "Powered site, 3 nights",
+     "roomSub": "Ensuite sites available",
+     "price": "",
+     "button": "Book this site",
+     "note": "Availability shown live. No PDF to download."
+    },
+    {
+     "type": "roomCards",
+     "id": "sites",
+     "title": "Ways to stay",
+     "link": "See all",
+     "rooms": [
+      {
+       "photo": "motel/park-cabin.jpg",
+       "name": "Cabin",
+       "price": "Sleeps 4"
+      },
+      {
+       "photo": "motel/park-tent.jpg",
+       "name": "Tent site",
+       "price": "Unpowered"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

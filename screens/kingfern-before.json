@@ -1,0 +1,119 @@
+{
+ "business": "Kingfern Electrical",
+ "state": "before",
+ "theme": {
+  "bg": "#FFFFFF",
+  "ink": "#222222",
+  "muted": "#666666",
+  "accent": "#1B3A6B",
+  "line": "#E3E3E3",
+  "display": "Montserrat"
+ },
+ "blocks": [
+  {
+   "type": "status",
+   "color": "#111111"
+  },
+  {
+   "type": "header",
+   "id": "header",
+   "height": 64,
+   "padX": 16,
+   "border": "#E3E3E3",
+   "burgerColor": "#333333",
+   "logoParts": [
+    {
+     "text": "KINGFERN",
+     "w": 700,
+     "size": 18,
+     "fam": "Roboto",
+     "ls": 0.06,
+     "color": "#1B3A6B"
+    },
+    {
+     "text": "ELECTRICAL SERVICES",
+     "w": 400,
+     "size": 9,
+     "fam": "Roboto",
+     "ls": 0.22,
+     "color": "#7A7A7A"
+    }
+   ]
+  },
+  {
+   "type": "stockHero",
+   "id": "stock-hero",
+   "height": 280,
+   "photo": "stock/lightbulb.jpg",
+   "overlay": "rgba(27,58,107,0.38)",
+   "title": "Powering your future",
+   "sub": "Quality electrical solutions for all your needs",
+   "button": "LEARN MORE",
+   "buttonBg": "#E8A600"
+  },
+  {
+   "type": "group",
+   "id": "about",
+   "padding": "22px 20px 0",
+   "gap": 12,
+   "blocks": [
+    {
+     "type": "h1",
+     "text": "Welcome to Kingfern Electrical",
+     "size": 21,
+     "weight": 700,
+     "font": "Montserrat",
+     "color": "#1B3A6B",
+     "ls": 0
+    },
+    {
+     "type": "para",
+     "font": "'Open Sans'",
+     "size": 14,
+     "color": "#555555",
+     "text": "We are a family owned and operated business committed to providing quality, reliable electrical solutions for residential, commercial and industrial customers. Our experienced team takes pride in every job, big or small, and we always aim to exceed our customers’ expectations."
+    }
+   ]
+  },
+  {
+   "type": "group",
+   "padding": "36px 20px 0",
+   "blocks": [
+    {
+     "type": "button",
+     "id": "contact",
+     "text": "CONTACT US",
+     "bg": "#1B3A6B",
+     "radius": 3,
+     "font": "Montserrat",
+     "size": 13,
+     "height": 48,
+     "arrow": false
+    }
+   ]
+  },
+  {
+   "type": "group",
+   "padding": "30px 20px 0",
+   "gap": 8,
+   "blocks": [
+    {
+     "type": "h1",
+     "text": "Our Services",
+     "size": 18,
+     "weight": 700,
+     "font": "Montserrat",
+     "color": "#1B3A6B",
+     "ls": 0
+    },
+    {
+     "type": "para",
+     "font": "'Open Sans'",
+     "size": 13,
+     "color": "#777777",
+     "text": "Residential · Commercial · Industrial · Maintenance"
+    }
+   ]
+  }
+ ]
+}

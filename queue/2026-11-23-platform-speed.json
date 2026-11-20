@@ -1,0 +1,102 @@
+{
+ "id": "2026-11-23-platform-speed",
+ "format": "stat-carousel",
+ "schedule": {
+  "instagram": "2026-11-23T19:00:00+11:00",
+  "tiktok": "2026-11-23T19:30:00+11:00",
+  "linkedin": "2026-11-23T08:15:00+11:00"
+ },
+ "captions": {
+  "instagram": "We tested 12,621 Australian small-business websites with Google’s lab test, on a simulated mid-range phone.\n\nThe median Squarespace and Shopify sites took 11.1 seconds to show their main content. WordPress took 7.4 and Wix 6.6. Google calls 2.5 seconds good.\n\n47.2% of Squarespace sites and 45.9% of Shopify sites scored poor.\n\nThe platform is not the whole story, though. What sits on the homepage matters on all of them.\n\nFree review at prycedigital.com/book\n\n#webdesign #smallbusiness #pagespeed #squarespace #shopify",
+  "tiktok": "11 seconds to show the main content on a phone. That was the median Squarespace and Shopify site in our test. #webdesign #smallbusiness #pagespeed",
+  "linkedin": "We ran Google Lighthouse on 12,621 Australian small-business websites, one mobile run each on a simulated mid-range phone.\n\nMedian time to show the main content, by platform:\nShopify 11.1 s\nSquarespace 11.1 s\nWebflow 8.4 s\nWordPress 7.4 s\nWix 6.6 s\n\nGoogle’s good mark is 2.5 seconds. 47.2% of Squarespace sites and 45.9% of Shopify sites scored poor, under 50 out of 100.\n\nTwo caveats. It is a lab test and deliberately tough, so read it as a warning light, not what every visitor sees. And the platform is detected from each site’s code, so it is a strong guess rather than a census.\n\nThe platform is not the whole story either. Full-size photos, apps and widgets on the homepage slow a site down on any of them.\n\nFull method: prycedigital.com/research"
+ },
+ "alt": [
+  "11 seconds: the median time Squarespace and Shopify sites took to show their main content in Google’s lab test.",
+  "Bar chart of median time to show the main content: Shopify 11.1 s, Squarespace 11.1 s, WordPress 7.4 s, Wix 6.6 s, against Google’s 2.5-second mark.",
+  "47.2% of 528 Squarespace sites scored poor in Google’s lab test. Shopify was close behind at 45.9%.",
+  "Why so slow? Common causes: full-size photos, apps and widgets, and video or sliders up top.",
+  "Call to action: book a free review at prycedigital.com/book."
+ ],
+ "sources": [
+  "Pryce Digital Lighthouse study 2026, 12,621 Australian small-business sites (prycedigital.com/research)",
+  "by_platform median_lcp_ms, poor_pct and n (platforms with 80 or more sites), data/lighthouse-2026.json"
+ ],
+ "data": {
+  "footer": "12,621 Australian small-business sites",
+  "slides": [
+   {
+    "type": "bignum",
+    "kicker": "Google’s lab test · by platform",
+    "value": "11",
+    "unit": "seconds.",
+    "body": "The median time Squarespace and Shopify sites took to show their main content on a simulated mid-range phone."
+   },
+   {
+    "type": "bars",
+    "kicker": "Median, Google’s lab test",
+    "title": "Time to show the main content",
+    "unit": " s",
+    "max": 12,
+    "bars": [
+     {
+      "label": "Shopify",
+      "value": 11.1,
+      "highlight": true
+     },
+     {
+      "label": "Squarespace",
+      "value": 11.1,
+      "highlight": true
+     },
+     {
+      "label": "WordPress",
+      "value": 7.4
+     },
+     {
+      "label": "Wix",
+      "value": 6.6
+     }
+    ],
+    "marker": {
+     "value": 2.5,
+     "note": "Google’s good mark is 2.5 seconds."
+    },
+    "foot": "Platform detected from each site’s code"
+   },
+   {
+    "type": "percent",
+    "kicker": "528 Squarespace sites",
+    "value": "47.2%",
+    "body": "scored poor, under 50 out of 100. Shopify was close behind at 45.9%.",
+    "foot": "Google’s lab test · poor = score under 50"
+   },
+   {
+    "type": "list",
+    "kicker": "Common causes",
+    "title": "Why so slow?",
+    "size": 84,
+    "items": [
+     {
+      "title": "Full-size photos",
+      "body": "Big images loaded before anyone scrolls."
+     },
+     {
+      "title": "Apps and widgets",
+      "body": "Chat, pop-ups and tracking scripts all at once."
+     },
+     {
+      "title": "Video and sliders up top",
+      "body": "Heavy media before the first line of text."
+     }
+    ],
+    "foot": "Common causes, not measured per site"
+   },
+   {
+    "type": "cta",
+    "cta": "review"
+   }
+  ]
+ },
+ "published": {}
+}

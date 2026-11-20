@@ -1,0 +1,100 @@
+{
+ "id": "2026-11-26-fennelby-restaurant-video",
+ "format": "redesign-video",
+ "schedule": {
+  "instagram": "2026-11-26T12:30:00+11:00",
+  "tiktok": "2026-11-26T12:45:00+11:00",
+  "youtube": "2026-11-26T18:00:00+11:00",
+  "linkedin": "2026-11-26T08:15:00+11:00"
+ },
+ "captions": {
+  "instagram": "Concept redesign of a fictional restaurant. Not a client project.\n\nPlenty of restaurant sites open with a photo slider, then ask you to email a booking request and wait for someone to write back. By the time they reply, Friday at 7 may be gone.\n\nSo we put tonight’s hours under the name and a booking card right up top: pick a date, a time and how many, then tap Book. The menu sits one scroll down as plain text.\n\nDoes your site do this? Free review at prycedigital.com/book\n\n#webdesign #smallbusiness #restaurant #hospitality #melbourne",
+  "tiktok": "This restaurant still takes bookings by email. Concept redesign of a fictional restaurant, not a client project. #webdesign #restaurant #hospitality",
+  "linkedin": "Concept redesign: a fictional restaurant’s homepage, rebuilt around booking a table.\n\nThe old version opens with a five-photo slider. Below it, a note asks guests to email their preferred date, time and party size, then wait for someone to confirm. The hours are on another page.\n\nThe new one shows tonight’s hours under the name and puts a booking card first: date, time, how many people, one button. The menu sits one scroll down as plain text.\n\nNot a client project. If your restaurant site works like the old version, I am happy to take a look: prycedigital.com/book",
+  "youtube": {
+   "title": "Restaurant website redesign concept: book a table in two taps",
+   "description": "Concept redesign of a fictional restaurant’s homepage for the phone. Not a client project. Free review: prycedigital.com/book"
+  }
+ },
+ "alt": [],
+ "data": {
+  "business": "Fennelby",
+  "post": "12",
+  "hook": "Table for Friday? Email and wait.",
+  "hookSub": "This restaurant still takes bookings by email. Here’s the fix.",
+  "before": {
+   "screen": "screens/fennelby-before.json",
+   "title": "Lovely room. Can I book?",
+   "stat": "Booking: email and wait",
+   "items": [
+    {
+     "title": "Slider before anything",
+     "body": "Five photos to swipe. No hours, no menu.",
+     "mark": "slider",
+     "anchor": {
+      "x": 0.86,
+      "y": 0.28
+     }
+    },
+    {
+     "title": "Booking by email",
+     "body": "Write a request, then wait for a reply.",
+     "mark": "booking-note",
+     "anchor": {
+      "x": 0.8,
+      "y": 1.1
+     }
+    },
+    {
+     "title": "No times to pick",
+     "body": "No way to see if Friday at 7 is free.",
+     "mark": "email",
+     "anchor": {
+      "x": 0.9,
+      "y": 0.5
+     }
+    },
+    {
+     "title": "Hours on another page",
+     "body": "Open tonight? Tap Contact to find out."
+    }
+   ]
+  },
+  "after": {
+   "screen": "screens/fennelby-after.json",
+   "title": "Two taps. Booked.",
+   "stat": "Booking: two taps",
+   "items": [
+    {
+     "title": "Open tonight, up top",
+     "body": "The hours sit under the name.",
+     "mark": "open-now",
+     "anchor": {
+      "x": 0.8,
+      "y": 0.5
+     }
+    },
+    {
+     "title": "Date, time, party size",
+     "body": "All on the homepage, ready to change.",
+     "mark": "dates",
+     "anchor": {
+      "x": 0.96,
+      "y": 0.5
+     }
+    },
+    {
+     "title": "One button to book",
+     "body": "Confirmed on the spot. No emails.",
+     "mark": "book",
+     "anchor": {
+      "x": 0.93,
+      "y": 0.5
+     }
+    }
+   ]
+  },
+  "cta": "review"
+ },
+ "published": {}
+}
