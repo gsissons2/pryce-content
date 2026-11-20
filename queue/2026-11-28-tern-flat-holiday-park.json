@@ -1,0 +1,87 @@
+{
+ "id": "2026-11-28-tern-flat-holiday-park",
+ "format": "redesign-carousel",
+ "schedule": {
+  "instagram": "2026-11-28T19:00:00+11:00",
+  "tiktok": "2026-11-28T19:30:00+11:00"
+ },
+ "captions": {
+  "instagram": "Concept redesign of a fictional holiday park. Not a client project.\n\nSummer holidays are close, and a lot of caravan park sites still keep their rates in a PDF and their availability in a booking widget that is slow to load on a phone.\n\nSo we put a booking card under the hero photo: dates, guests, site type, one button. Cabins and tent sites sit right below with photos.\n\nDoes your site do this? Free review at prycedigital.com/book\n\n#webdesign #smallbusiness #caravanpark #holidaypark #hospitality",
+  "tiktok": "January rates? Open the PDF. Concept redesign of a fictional holiday park, not a client project. #caravanpark #webdesign #holidaypark",
+  "linkedin": "Concept redesign: a fictional holiday park’s homepage, rebuilt for summer bookings.\n\nThe old version has a great view, then a booking calendar that keeps spinning and the rates in a downloadable PDF. Families planning January are left pinching and zooming.\n\nThe new one puts a booking card under the photo: dates, guests, site type and one button. Cabins and tent sites sit just below with photos.\n\nNot a client project. If your park’s site works like the old version, I am happy to take a look: prycedigital.com/book"
+ },
+ "alt": [
+  "Title slide: January rates? Open the PDF. A phone shows a holiday park homepage with a coastal photo.",
+  "Before: the holiday park homepage with numbered problems: rates in a PDF, a booking calendar still loading, and site types not explained.",
+  "After: the redesign with a booking card for dates, guests and site type, a book button, and photo cards for a cabin and a tent site.",
+  "Before and after phones side by side.",
+  "Call to action: book a free review at prycedigital.com/book."
+ ],
+ "data": {
+  "business": "Tern Flat Holiday Park",
+  "post": "14",
+  "hook": "January rates? Open the PDF.",
+  "hookSub": "Rates in a PDF, a calendar that won’t load. Here’s the fix.",
+  "before": {
+   "screen": "screens/ternflat-before.json",
+   "title": "Great view. Now what?",
+   "stat": "Rates: in a PDF",
+   "items": [
+    {
+     "title": "Rates in a PDF",
+     "body": "Download it, then pinch and zoom.",
+     "mark": "rates-pdf",
+     "anchor": {
+      "x": 0.93,
+      "y": 0.5
+     }
+    },
+    {
+     "title": "Calendar still loading",
+     "body": "The booking widget spins and spins.",
+     "mark": "calendar",
+     "anchor": {
+      "x": 0.92,
+      "y": 0.22
+     }
+    },
+    {
+     "title": "Site types unexplained",
+     "body": "Powered, ensuite, cabin? No photos."
+    }
+   ]
+  },
+  "after": {
+   "screen": "screens/ternflat-after.json",
+   "title": "Pick dates. Book a site.",
+   "stat": "Booking: on the homepage",
+   "items": [
+    {
+     "title": "Dates on the homepage",
+     "body": "Pick them once and see what’s free.",
+     "mark": "dates"
+    },
+    {
+     "title": "No download needed",
+     "body": "Availability shows right on the page.",
+     "mark": "book",
+     "anchor": {
+      "x": 0.93,
+      "y": 0.5
+     }
+    },
+    {
+     "title": "Every option pictured",
+     "body": "Cabin or tent site, side by side.",
+     "mark": "sites",
+     "anchor": {
+      "x": 0.5,
+      "y": 0.45
+     }
+    }
+   ]
+  },
+  "cta": "review"
+ },
+ "published": {}
+}

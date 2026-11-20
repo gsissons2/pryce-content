@@ -1,0 +1,102 @@
+{
+ "business": "Fennelby",
+ "state": "after",
+ "theme": {
+  "bg": "#F5EFE6",
+  "ink": "#2A1E17",
+  "muted": "#7A6A5C",
+  "accent": "#7A2E1F",
+  "accent2": "#7A2E1F",
+  "box": "#F3ECE1",
+  "line": "#E3D8C8",
+  "display": "'DM Serif Display'"
+ },
+ "blocks": [
+  {
+   "type": "photoOverlay",
+   "id": "photo-header",
+   "height": 220,
+   "photo": "cafe/restaurant-plates.jpg",
+   "shade": "linear-gradient(180deg, rgba(20,22,18,0.55) 0%, rgba(20,22,18,0.05) 45%, rgba(20,22,18,0.65) 100%)",
+   "blocks": [
+    {
+     "type": "status",
+     "color": "#FFFFFF"
+    },
+    {
+     "type": "header",
+     "height": 52,
+     "logo": "Fennelby",
+     "logoFont": "'DM Serif Display'",
+     "logoSize": 26,
+     "color": "#FFFFFF"
+    },
+    {
+     "type": "spacer"
+    },
+    {
+     "type": "caption",
+     "text": "Modern Italian · Fitzroy North · Wed to Sun"
+    }
+   ]
+  },
+  {
+   "type": "group",
+   "padding": "16px 16px 0",
+   "gap": 14,
+   "blocks": [
+    {
+     "type": "openRow",
+     "id": "open-now",
+     "pill": "Open tonight",
+     "pillBg": "#EADFCF",
+     "dot": "#3E8E5A",
+     "sub": "5:30 to 10pm"
+    },
+    {
+     "type": "bookingCard",
+     "id": "booking",
+     "dates": [
+      [
+       "DATE",
+       "Fri 27 Nov"
+      ],
+      [
+       "TIME",
+       "7:30 pm"
+      ]
+     ],
+     "guests": [
+      "PEOPLE",
+      "2 people"
+     ],
+     "room": "Table for 2, Friday",
+     "roomSub": "Dining room or courtyard",
+     "price": "",
+     "button": "Book this table",
+     "note": "Confirmed on the spot. No emails back and forth."
+    },
+    {
+     "type": "menuList",
+     "id": "menu",
+     "title": "On the menu tonight",
+     "link": "Full menu",
+     "items": [
+      [
+       "Pappardelle, slow-cooked beef ragù",
+       ""
+      ],
+      [
+       "Burrata, heirloom tomatoes",
+       ""
+      ],
+      [
+       "Tiramisu",
+       ""
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

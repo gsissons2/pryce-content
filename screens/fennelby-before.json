@@ -1,0 +1,111 @@
+{
+ "business": "Fennelby",
+ "state": "before",
+ "theme": {
+  "bg": "#F7F4EF",
+  "ink": "#222222",
+  "muted": "#666666",
+  "accent": "#222222",
+  "line": "#DDDDDD",
+  "display": "'DM Serif Display'"
+ },
+ "blocks": [
+  {
+   "type": "photoOverlay",
+   "id": "slider",
+   "height": 470,
+   "photo": "cafe/restaurant-dining.jpg",
+   "shade": "linear-gradient(180deg, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.3) 35%, rgba(0,0,0,0.5) 100%)",
+   "blocks": [
+    {
+     "type": "status",
+     "color": "#FFFFFF"
+    },
+    {
+     "type": "header",
+     "height": 52,
+     "logo": "FENNELBY",
+     "logoFont": "Montserrat",
+     "logoWeight": 600,
+     "logoSize": 17,
+     "logoLs": 0.32,
+     "color": "#FFFFFF"
+    },
+    {
+     "type": "spacer"
+    },
+    {
+     "type": "sliderCaption",
+     "kicker": "WELCOME TO",
+     "title": "Fennelby",
+     "tag": "Modern Italian · Fitzroy North"
+    },
+    {
+     "type": "sliderControls",
+     "dots": 5,
+     "active": 0
+    }
+   ]
+  },
+  {
+   "type": "group",
+   "padding": "26px 24px 0",
+   "gap": 12,
+   "blocks": [
+    {
+     "type": "h1",
+     "text": "Reservations",
+     "size": 26,
+     "weight": 400,
+     "color": "#222222",
+     "ls": 0
+    },
+    {
+     "type": "para",
+     "id": "booking-note",
+     "font": "'Open Sans'",
+     "size": 14,
+     "color": "#555555",
+     "text": "To make a booking, please email us your preferred date, time and number of guests. A member of our team will be in touch to confirm."
+    },
+    {
+     "type": "spacer",
+     "h": 18
+    },
+    {
+     "type": "button",
+     "id": "email",
+     "text": "EMAIL TO BOOK",
+     "bg": "#222222",
+     "radius": 0,
+     "font": "Montserrat",
+     "size": 13,
+     "height": 48,
+     "arrow": false
+    }
+   ]
+  },
+  {
+   "type": "group",
+   "padding": "32px 24px 0",
+   "gap": 10,
+   "blocks": [
+    {
+     "type": "h1",
+     "text": "Our Story",
+     "size": 22,
+     "weight": 400,
+     "color": "#222222",
+     "ls": 0
+    },
+    {
+     "type": "para",
+     "font": "'Open Sans'",
+     "size": 14,
+     "color": "#555555",
+     "text": "Inspired by long Sunday lunches, our kitchen celebrates seasonal produce and the simple pleasures of Italian cooking."
+    }
+   ]
+  }
+ ]
+}

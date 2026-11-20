@@ -1,0 +1,86 @@
+{
+ "id": "2026-11-27-quincewood-cottage-video",
+ "format": "redesign-video",
+ "schedule": {
+  "instagram": "2026-11-27T12:30:00+11:00",
+  "tiktok": "2026-11-27T12:45:00+11:00",
+  "youtube": "2026-11-27T18:00:00+11:00"
+ },
+ "captions": {
+  "instagram": "Concept redesign of a fictional B&B. Not a client project.\n\nA lot of small accommodation sites still use an enquiry form: name, email, dates, guests, then wait to hear back about availability. Someone planning a weekend away just wants to know if Saturday is free.\n\nSo we put a live booking card under the photo: pick the dates, see if the room is free, book it. The rooms sit right below with photos.\n\nDoes your site do this? Free review at prycedigital.com/book\n\n#webdesign #smallbusiness #bnb #hospitality #daylesford",
+  "tiktok": "Is Saturday free? This B&B makes you ask. Concept redesign of a fictional B&B, not a client project. #bnb #webdesign #hospitality",
+  "linkedin": "Concept redesign: a fictional country B&B’s homepage.\n\nThe old version has a lovely photo of the cottage, then an enquiry form. Six fields, and a promise to get back to you about availability. Someone planning a weekend away has to ask, wait and hope.\n\nThe new one puts a booking card under the photo. Pick the dates, see straight away whether the room is free, and book it. Photos of each room sit just below.\n\nNot a client project. If your accommodation site still runs on an enquiry form, I am happy to take a look: prycedigital.com/book",
+  "youtube": {
+   "title": "B&B website redesign concept: live dates, not an enquiry form",
+   "description": "Concept redesign of a fictional bed and breakfast’s homepage for the phone. Not a client project. Free review: prycedigital.com/book"
+  }
+ },
+ "alt": [],
+ "data": {
+  "business": "Quincewood Cottage",
+  "post": "13",
+  "hook": "Saturday free? Ask and wait.",
+  "hookSub": "This B&B makes guests ask before they can book. Here’s the redesign.",
+  "before": {
+   "screen": "screens/quincewood-before.json",
+   "title": "Ask first. Maybe stay.",
+   "stat": "Availability: ask and wait",
+   "items": [
+    {
+     "title": "No live availability",
+     "body": "Guests can’t see if Saturday is free.",
+     "mark": "enquiry-form",
+     "anchor": {
+      "x": 0.9,
+      "y": 0.04
+     }
+    },
+    {
+     "title": "A six-field form",
+     "body": "A lot of typing just to ask a question.",
+     "mark": "enquiry-form",
+     "anchor": {
+      "x": 0.9,
+      "y": 0.62
+     }
+    },
+    {
+     "title": "Then wait for a reply",
+     "body": "Meanwhile, they keep looking elsewhere."
+    }
+   ]
+  },
+  "after": {
+   "screen": "screens/quincewood-after.json",
+   "title": "Saturday? Yes or no.",
+   "stat": "Availability: live",
+   "items": [
+    {
+     "title": "Dates in, answer out",
+     "body": "Free or not, shown straight away.",
+     "mark": "dates"
+    },
+    {
+     "title": "Book on the spot",
+     "body": "One button, confirmed there and then.",
+     "mark": "book",
+     "anchor": {
+      "x": 0.93,
+      "y": 0.5
+     }
+    },
+    {
+     "title": "See the rooms first",
+     "body": "A photo of each room before booking.",
+     "mark": "rooms",
+     "anchor": {
+      "x": 0.5,
+      "y": 0.45
+     }
+    }
+   ]
+  },
+  "cta": "review"
+ },
+ "published": {}
+}

@@ -1,0 +1,83 @@
+{
+ "id": "2026-11-25-seo-vs-speed",
+ "format": "stat-carousel",
+ "schedule": {
+  "instagram": "2026-11-25T19:00:00+11:00",
+  "tiktok": "2026-11-25T19:30:00+11:00",
+  "linkedin": "2026-11-25T08:15:00+11:00"
+ },
+ "captions": {
+  "instagram": "We tested 12,621 Australian small-business websites with Google Lighthouse on a simulated mid-range phone.\n\n65.9% scored good, 90 or more, for SEO. Only 12.8% scored good for performance, the speed score. 27.3% scored poor on speed, under 50.\n\nPlenty of sites get the basics right for Google and still keep people waiting on a phone.\n\nFree review at prycedigital.com/book\n\n#webdesign #smallbusiness #seo #pagespeed",
+  "tiktok": "Easy for Google to read, slow to open on a phone. 65.9% scored good for SEO, only 12.8% for speed. #seo #webdesign #smallbusiness",
+  "linkedin": "In our test of 12,621 Australian small-business websites (Google Lighthouse, one mobile run each), the four category scores told very different stories.\n\nShare of sites scoring good, 90 or more:\nSEO 65.9%\nBest practices 51.6%\nAccessibility 36.9%\nPerformance 12.8%\n\nThe SEO score checks the basics Google needs to read a page. The performance score is about how fast the page shows up on a phone, and that is the one most sites miss: 27.3% scored poor, under 50.\n\nIt is a lab test on a simulated mid-range phone, so it runs tough. Still, a page that ranks and then opens slowly loses people at the door.\n\nFull method: prycedigital.com/research"
+ },
+ "alt": [
+  "Only 12.8% of 12,621 sites scored good, 90 or more, for performance in Google’s lab test.",
+  "Bar chart, share scoring good in each Lighthouse category: SEO 65.9%, best practices 51.6%, accessibility 36.9%, performance 12.8%.",
+  "What it means: the SEO score checks the basics Google needs to read a page; the performance score is about how fast it shows up on a phone.",
+  "27.3% scored poor on performance, under 50 out of 100. The median score was 61.",
+  "Call to action: book a free review at prycedigital.com/book."
+ ],
+ "sources": [
+  "Pryce Digital Lighthouse study 2026, 12,621 Australian small-business sites (prycedigital.com/research)",
+  "overall_scores good_pct, poor_pct and median for performance, accessibility, best_practices and seo, data/lighthouse-2026.json"
+ ],
+ "data": {
+  "footer": "12,621 Australian small-business sites",
+  "slides": [
+   {
+    "type": "bignum",
+    "kicker": "Google’s lab test · speed score",
+    "value": "12.8%",
+    "unit": "scored good.",
+    "body": "Only 12.8% of sites scored 90 or more out of 100 for performance, on a simulated mid-range phone."
+   },
+   {
+    "type": "bars",
+    "kicker": "Share scoring good, 90 or more",
+    "title": "Most pass on SEO. Few pass on speed.",
+    "unit": "%",
+    "max": 100,
+    "bars": [
+     {
+      "label": "SEO",
+      "value": 65.9
+     },
+     {
+      "label": "Best practices",
+      "value": 51.6
+     },
+     {
+      "label": "Accessibility",
+      "value": 36.9
+     },
+     {
+      "label": "Performance (speed)",
+      "value": 12.8,
+      "highlight": true
+     }
+    ],
+    "foot": "Google Lighthouse categories"
+   },
+   {
+    "type": "statement",
+    "kicker": "What that means",
+    "title": "Google can read the page. People still wait for it.",
+    "body": "The SEO score checks the basics, like titles and links. The performance score is how fast the page shows up on a phone.",
+    "foot": "prycedigital.com/research"
+   },
+   {
+    "type": "percent",
+    "kicker": "Performance score",
+    "value": "27.3%",
+    "body": "scored poor, under 50 out of 100. The median site scored 61.",
+    "foot": "Google’s lab test · poor = score under 50"
+   },
+   {
+    "type": "cta",
+    "cta": "review"
+   }
+  ]
+ },
+ "published": {}
+}

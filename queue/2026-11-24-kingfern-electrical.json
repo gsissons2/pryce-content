@@ -1,0 +1,109 @@
+{
+ "id": "2026-11-24-kingfern-electrical",
+ "format": "redesign-carousel",
+ "schedule": {
+  "instagram": "2026-11-24T19:00:00+11:00",
+  "tiktok": "2026-11-24T19:30:00+11:00"
+ },
+ "captions": {
+  "instagram": "Concept redesign of a fictional electrician. Not a client project.\n\nWhen the power is out, you want two things fast: proof the electrician is licensed and a number to call. A lot of trade sites open with a stock light bulb, a long about-us paragraph and a Contact button that leads to another page.\n\nSo we put the licence number under the name, swapped the bulb for real job photos, listed the services in four short lines and kept a call button on screen the whole way down.\n\nDoes your site do this? Free review at prycedigital.com/book\n\n#webdesign #smallbusiness #electrician #trades #melbourne",
+  "tiktok": "Is this sparky licensed? The site won’t say. Concept redesign of a fictional electrician, not a client project. #webdesign #electrician #trades",
+  "linkedin": "Concept redesign: a fictional electrician’s homepage, rebuilt for the phone.\n\nThe old version opens with a stock photo of a light bulb, then a long paragraph about being family owned and committed to quality. There is no licence number anywhere, and the phone number sits behind a Contact button.\n\nThe new one puts the licence number right under the business name, shows real job photos, lists the services in four plain lines, and keeps a call button on screen the whole way down.\n\nNot a client project. If your trade site does any of this, I am happy to take a look: prycedigital.com/book"
+ },
+ "alt": [
+  "Title slide: Licensed? No way to tell. No licence number, and the phone number is a page away. A phone shows an electrician homepage with a stock light bulb photo.",
+  "Before: the electrician homepage with numbered problems: stock light bulb photo, a long about-us paragraph, no licence number, and the phone number behind a Contact button.",
+  "After: the redesign with the licence number under the name, real job photos, a short list of services and a call button that stays on screen.",
+  "Before and after phones side by side.",
+  "Call to action: book a free review at prycedigital.com/book."
+ ],
+ "data": {
+  "business": "Kingfern Electrical",
+  "post": "11",
+  "hook": "Licensed? No way to tell.",
+  "hookSub": "No licence number, and the phone number is a page away. Here’s the fix.",
+  "before": {
+   "screen": "screens/kingfern-before.json",
+   "title": "Nice bulb. Who are you?",
+   "stat": "Licence number: nowhere",
+   "items": [
+    {
+     "title": "Stock photo up top",
+     "body": "A glowing bulb says nothing about the work.",
+     "mark": "stock-hero",
+     "anchor": {
+      "x": 0.86,
+      "y": 0.2
+     }
+    },
+    {
+     "title": "A wall of about-us text",
+     "body": "Long paragraphs nobody reads on a phone.",
+     "mark": "about",
+     "anchor": {
+      "x": 0.72,
+      "y": 1.1
+     }
+    },
+    {
+     "title": "No licence number",
+     "body": "Nothing shows they are licensed."
+    },
+    {
+     "title": "Phone behind a button",
+     "body": "Contact opens another page, then a form.",
+     "mark": "contact",
+     "anchor": {
+      "x": 0.92,
+      "y": 0.5
+     }
+    }
+   ]
+  },
+  "after": {
+   "screen": "screens/kingfern-after.json",
+   "title": "Proof first, then one tap.",
+   "stat": "Licence number: up top",
+   "items": [
+    {
+     "title": "Licence number up top",
+     "body": "REC 12345, right under the name.",
+     "mark": "header",
+     "anchor": {
+      "x": 0.8,
+      "y": 0.7
+     }
+    },
+    {
+     "title": "Real jobs, real photos",
+     "body": "Their own work, not a stock bulb.",
+     "mark": "job-photos",
+     "anchor": {
+      "x": 0.5,
+      "y": 0.5
+     }
+    },
+    {
+     "title": "Services in plain words",
+     "body": "Four short lines, no paragraph.",
+     "mark": "services",
+     "anchor": {
+      "x": 0.62,
+      "y": 0.1
+     }
+    },
+    {
+     "title": "Sticky call button",
+     "body": "One tap to call from anywhere on the page.",
+     "mark": "call",
+     "anchor": {
+      "x": 0.9,
+      "y": 0.32
+     }
+    }
+   ]
+  },
+  "cta": "review"
+ },
+ "published": {}
+}
