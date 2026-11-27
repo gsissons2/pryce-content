@@ -1,0 +1,99 @@
+{
+ "id": "2026-12-05-halfmoon-bend-motel",
+ "format": "redesign-carousel",
+ "schedule": {
+  "instagram": "2026-12-05T19:00:00+11:00",
+  "tiktok": "2026-12-05T19:30:00+11:00"
+ },
+ "captions": {
+  "instagram": "Concept. Not a client project. Halfmoon Bend is a fictional motel.\n\nIt’s 7pm on a road trip and you want a bed tonight. This motel’s homepage won’t say if there’s a room. You type your dates into a booking form, it sends you to a different website, and the dates are gone. Nothing says what happens if you arrive late.\n\nSo we put “Rooms free tonight” on the photo, filled in tonight’s dates, kept the booking on the same site and explained late check-in in one line.\n\nCan a tired driver book your place in a minute? Free review at prycedigital.com/book\n\n#motel #accommodation #hospitality #webdesign #smallbusiness",
+  "tiktok": "Room tonight? This motel’s site won’t say. Concept. Not a client project. #motel #webdesign #hospitality"
+ },
+ "alt": [
+  "Title slide: Room tonight? Search first. A phone shows a motel homepage with a generic booking form.",
+  "Before: the motel homepage with numbered problems: no answer about tonight until you search dates, booking that sends you to another website, and no word on late check-in.",
+  "After: the redesign with Rooms free tonight on the photo, tonight’s dates already filled in, booking on the same site, and a line about late check-in.",
+  "Before and after phones side by side.",
+  "Call to action: book a free review at prycedigital.com/book."
+ ],
+ "data": {
+  "business": "Halfmoon Bend Motel",
+  "post": "18",
+  "hook": "Room tonight? Search first.",
+  "hookSub": "No answer until you pick dates, then a new site forgets them. Here’s the fix.",
+  "before": {
+   "screen": "screens/halfmoon-before.json",
+   "title": "Tired? Fill in a form.",
+   "stat": "Rooms tonight: unknown",
+   "items": [
+    {
+     "title": "Tonight? Search first",
+     "body": "No word on rooms until you pick dates.",
+     "mark": "engine-card",
+     "anchor": {
+      "x": 0.9,
+      "y": 0.05
+     }
+    },
+    {
+     "title": "Booking leaves the site",
+     "body": "Search opens a new site and the dates are gone.",
+     "mark": "engine-button",
+     "anchor": {
+      "x": 0.9,
+      "y": 0.5
+     }
+    },
+    {
+     "title": "Arriving late? No word",
+     "body": "No check-in times, no after-hours number."
+    }
+   ]
+  },
+  "after": {
+   "screen": "screens/halfmoon-after.json",
+   "title": "Tonight? Yes. Book it.",
+   "stat": "Rooms tonight: on the photo",
+   "items": [
+    {
+     "title": "Tonight, answered",
+     "body": "Rooms free tonight, right on the photo.",
+     "mark": "tonight",
+     "anchor": {
+      "x": 1.3,
+      "y": 0.5
+     }
+    },
+    {
+     "title": "Dates already set",
+     "body": "Tonight and tomorrow, ready to book.",
+     "mark": "dates",
+     "anchor": {
+      "x": 0.94,
+      "y": 0.5
+     }
+    },
+    {
+     "title": "Booking stays here",
+     "body": "Same site, same dates, one button.",
+     "mark": "book",
+     "anchor": {
+      "x": 0.9,
+      "y": 0.5
+     }
+    },
+    {
+     "title": "Late check-in, sorted",
+     "body": "A lockbox and a number, in one line.",
+     "mark": "late",
+     "anchor": {
+      "x": 0.96,
+      "y": 0.5
+     }
+    }
+   ]
+  },
+  "cta": "review"
+ },
+ "published": {}
+}

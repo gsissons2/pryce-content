@@ -1,0 +1,58 @@
+{
+ "business": "Wrenfield Cafe",
+ "state": "before",
+ "theme": {
+  "bg": "#FFFFFF",
+  "ink": "#232323",
+  "muted": "#8A8A8A",
+  "accent": "#2E5E4E",
+  "line": "#E7E2DB",
+  "display": "'Playfair Display'"
+ },
+ "blocks": [
+  {
+   "type": "photoOverlay",
+   "id": "slider",
+   "height": 610,
+   "photo": "cafe/interior-window.jpg",
+   "shade": "linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.12) 35%, rgba(0,0,0,0.25) 65%, rgba(0,0,0,0.74) 100%)",
+   "blocks": [
+    {
+     "type": "status",
+     "color": "#FFFFFF"
+    },
+    {
+     "type": "header",
+     "height": 56,
+     "logo": "Wrenfield",
+     "logoFont": "'Playfair Display'",
+     "logoItalic": true,
+     "logoSize": 23,
+     "color": "#FFFFFF"
+    },
+    {
+     "type": "spacer"
+    },
+    {
+     "type": "sliderCaption",
+     "id": "tagline",
+     "kicker": "WELCOME TO",
+     "title": "Wrenfield",
+     "tag": "Open 7 days  ·  7am to 3pm  ·  Yarraville"
+    },
+    {
+     "type": "sliderControls",
+     "id": "controls",
+     "dots": 5,
+     "active": 0
+    }
+   ]
+  },
+  {
+   "type": "igLoading",
+   "id": "instagram",
+   "title": "Holiday hours on our Instagram",
+   "sub": "Loading feed…"
+  }
+ ]
+}

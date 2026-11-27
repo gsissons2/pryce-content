@@ -1,0 +1,61 @@
+{
+ "business": "Quillwood Landscapes",
+ "state": "before",
+ "theme": {
+  "bg": "#FFFFFF",
+  "ink": "#2B2B2B",
+  "muted": "#6B6B6B",
+  "accent": "#3C6E2F",
+  "line": "#E2E2E2",
+  "display": "Montserrat"
+ },
+ "blocks": [
+  {
+   "type": "status",
+   "color": "#111111"
+  },
+  {
+   "type": "header",
+   "id": "header",
+   "height": 64,
+   "padX": 16,
+   "border": "#E3E3E3",
+   "burgerColor": "#333333",
+   "logoParts": [
+    {
+     "text": "QUILLWOOD",
+     "w": 700,
+     "size": 18,
+     "fam": "Montserrat",
+     "ls": 0.08,
+     "color": "#3C6E2F"
+    },
+    {
+     "text": "LANDSCAPES & GARDENS",
+     "w": 400,
+     "size": 9,
+     "fam": "Montserrat",
+     "ls": 0.22,
+     "color": "#7A7A7A"
+    }
+   ]
+  },
+  {
+   "type": "stockHero",
+   "id": "stock-hero",
+   "height": 300,
+   "photo": "stock/handshake-office.jpg",
+   "overlay": "rgba(28,58,28,0.42)",
+   "title": "Your vision, our passion",
+   "sub": "Professional landscaping solutions",
+   "button": "GET A QUOTE",
+   "buttonBg": "#3C6E2F"
+  },
+  {
+   "type": "igLoading",
+   "id": "gallery",
+   "title": "Our Recent Projects",
+   "sub": "Loading gallery (48 photos)…"
+  }
+ ]
+}

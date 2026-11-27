@@ -1,0 +1,99 @@
+{
+ "id": "2026-12-01-larkhill-cooling",
+ "format": "redesign-carousel",
+ "schedule": {
+  "instagram": "2026-12-01T19:00:00+11:00",
+  "tiktok": "2026-12-01T19:30:00+11:00"
+ },
+ "captions": {
+  "instagram": "Concept. Not a client project. Larkhill Cooling is a fictional business.\n\nIt’s 38 degrees and the AC has died. You find a local air conditioning site, and before you see a phone number, a pop-up asks you to join a newsletter. The number is behind the menu, and nothing says which suburbs they cover.\n\nSo we dropped the pop-up, put the suburbs under the headline, added a three-field booking form and kept a call button on screen the whole way down.\n\nDoes your site greet people with a pop-up? Free review at prycedigital.com/book\n\n#airconditioning #tradies #webdesign #smallbusiness #melbourne",
+  "tiktok": "AC’s dead and the site wants your email first. Concept. Not a client project. #airconditioning #webdesign #tradies"
+ },
+ "alt": [
+  "Title slide: AC’s dead. Site says: sign up. A phone shows an air conditioning homepage covered by a newsletter pop-up.",
+  "Before: the homepage with numbered problems: a newsletter pop-up before anything else, the phone number hidden behind the menu, and no suburbs listed.",
+  "After: the redesign with an Answering calls now label, the suburbs under the headline, a three-field booking form and a call button that stays on screen.",
+  "Before and after phones side by side.",
+  "Call to action: book a free review at prycedigital.com/book."
+ ],
+ "data": {
+  "business": "Larkhill Cooling",
+  "post": "15",
+  "hook": "AC’s dead. Site says: sign up.",
+  "hookSub": "A newsletter pop-up before the phone number. Here’s how we’d fix it.",
+  "before": {
+   "screen": "screens/larkhill-before.json",
+   "title": "Email first. Help later.",
+   "stat": "Phone: behind the menu",
+   "items": [
+    {
+     "title": "A pop-up comes first",
+     "body": "It wants your email before you see a number.",
+     "mark": "popup",
+     "anchor": {
+      "x": 0.92,
+      "y": 0.06
+     }
+    },
+    {
+     "title": "Phone behind the menu",
+     "body": "Three taps away, behind the menu icon.",
+     "mark": "header",
+     "anchor": {
+      "x": 0.78,
+      "y": 0.5
+     }
+    },
+    {
+     "title": "No suburbs listed",
+     "body": "Nothing says if they come out to you."
+    }
+   ]
+  },
+  "after": {
+   "screen": "screens/larkhill-after.json",
+   "title": "No pop-up. Just help.",
+   "stat": "Phone: one tap",
+   "items": [
+    {
+     "title": "Answering right now",
+     "body": "A clear sign someone will pick up.",
+     "mark": "answering",
+     "anchor": {
+      "x": 1.35,
+      "y": 0.5
+     }
+    },
+    {
+     "title": "Suburbs up top",
+     "body": "Reservoir to Coburg, before you scroll.",
+     "mark": "suburbs",
+     "anchor": {
+      "x": 0.95,
+      "y": 0.5
+     }
+    },
+    {
+     "title": "Book in three fields",
+     "body": "Suburb, problem, phone. Nothing else.",
+     "mark": "book",
+     "anchor": {
+      "x": 0.92,
+      "y": 0.065
+     }
+    },
+    {
+     "title": "Call from anywhere",
+     "body": "The button stays put as you scroll.",
+     "mark": "call",
+     "anchor": {
+      "x": 0.9,
+      "y": 0.32
+     }
+    }
+   ]
+  },
+  "cta": "review"
+ },
+ "published": {}
+}

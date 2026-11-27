@@ -1,0 +1,99 @@
+{
+ "business": "Halfmoon Bend Motel",
+ "state": "after",
+ "theme": {
+  "bg": "#F1EEE7",
+  "ink": "#232A2E",
+  "muted": "#6A6F70",
+  "accent": "#2F6F73",
+  "accent2": "#B5562F",
+  "box": "#F6F3ED",
+  "line": "#E1DCD2",
+  "display": "'DM Serif Display'"
+ },
+ "blocks": [
+  {
+   "type": "photoOverlay",
+   "id": "photo-header",
+   "height": 230,
+   "photo": "motel/room-green.jpg",
+   "shade": "linear-gradient(180deg, rgba(20,24,26,0.72) 0%, rgba(20,24,26,0.15) 50%, rgba(20,24,26,0.70) 100%)",
+   "blocks": [
+    {
+     "type": "status",
+     "color": "#FFFFFF"
+    },
+    {
+     "type": "header",
+     "height": 52,
+     "logo": "Halfmoon Bend",
+     "logoFont": "'DM Serif Display'",
+     "logoSize": 25,
+     "color": "#FFFFFF"
+    },
+    {
+     "type": "spacer"
+    },
+    {
+     "type": "group",
+     "padding": "0 20px 8px",
+     "blocks": [
+      {
+       "type": "chip",
+       "id": "tonight",
+       "text": "Rooms free tonight",
+       "bg": "#2F6F73",
+       "dot": "#9BE3B0"
+      }
+     ]
+    },
+    {
+     "type": "caption",
+     "text": "Motel · Echuca · parking at your door"
+    }
+   ]
+  },
+  {
+   "type": "group",
+   "padding": "16px 16px 0",
+   "gap": 14,
+   "blocks": [
+    {
+     "type": "bookingCard",
+     "id": "booking",
+     "dates": [
+      [
+       "CHECK IN",
+       "Tonight"
+      ],
+      [
+       "CHECK OUT",
+       "Tomorrow"
+      ]
+     ],
+     "guests": [
+      "GUESTS",
+      "2 adults"
+     ],
+     "room": "Queen room, 1 night",
+     "roomSub": "Available now",
+     "price": "",
+     "button": "Book tonight",
+     "note": "Your dates carry through. No second website."
+    },
+    {
+     "type": "group",
+     "id": "late",
+     "padding": "0 56px 0 4px",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "Arriving after 9pm? Call 0491 570 110 and we’ll leave your key in the lockbox.",
+       "size": 14
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

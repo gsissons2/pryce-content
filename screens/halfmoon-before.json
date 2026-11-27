@@ -1,0 +1,90 @@
+{
+ "business": "Halfmoon Bend Motel",
+ "state": "before",
+ "theme": {
+  "bg": "#EDEDED",
+  "ink": "#333333",
+  "muted": "#777777",
+  "accent": "#3E6FA8",
+  "line": "#DADADA",
+  "display": "Roboto"
+ },
+ "blocks": [
+  {
+   "type": "group",
+   "id": "top",
+   "bg": "#2E3A33",
+   "blocks": [
+    {
+     "type": "status",
+     "color": "#FFFFFF"
+    },
+    {
+     "type": "header",
+     "height": 52,
+     "padX": 16,
+     "logo": "Halfmoon Bend Motel",
+     "logoFont": "Roboto",
+     "logoWeight": 700,
+     "logoSize": 16,
+     "color": "#FFFFFF",
+     "right": "MENU  ☰",
+     "rightColor": "rgba(255,255,255,0.8)"
+    }
+   ]
+  },
+  {
+   "type": "photoOverlay",
+   "id": "hero",
+   "height": 170,
+   "photo": "motel/room-queen-wide.jpg",
+   "shade": "rgba(0,0,0,0.30)",
+   "blocks": [
+    {
+     "type": "spacer"
+    },
+    {
+     "type": "caption",
+     "text": "Welcome to Halfmoon Bend Motel, Echuca"
+    }
+   ]
+  },
+  {
+   "type": "engineForm",
+   "id": "engine",
+   "title": "Book Online",
+   "buttonBg": "#3E6FA8",
+   "button": "SEARCH",
+   "rows": [
+    [
+     {
+      "label": "Check-in *",
+      "placeholder": "dd/mm/yyyy",
+      "icon": "calendar"
+     }
+    ],
+    [
+     {
+      "label": "Check-out *",
+      "placeholder": "dd/mm/yyyy",
+      "icon": "calendar"
+     }
+    ],
+    [
+     {
+      "label": "Adults",
+      "value": "2",
+      "icon": "chevron"
+     },
+     {
+      "label": "Children",
+      "value": "0",
+      "icon": "chevron"
+     }
+    ]
+   ],
+   "note": "You will be redirected to our secure booking partner to complete your reservation.",
+   "secure": "Secure online booking"
+  }
+ ]
+}

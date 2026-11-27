@@ -1,0 +1,86 @@
+{
+ "business": "Quillwood Landscapes",
+ "state": "after",
+ "theme": {
+  "bg": "#F3F1EA",
+  "ink": "#1F2A1C",
+  "muted": "#5E6657",
+  "accent": "#4B7A3A",
+  "line": "#DFDCCF",
+  "display": "Archivo"
+ },
+ "blocks": [
+  {
+   "type": "status",
+   "color": "#1F2A1C"
+  },
+  {
+   "type": "header",
+   "id": "header",
+   "height": 58,
+   "logo": "Quillwood Landscapes",
+   "logoFont": "Archivo",
+   "logoWeight": 800,
+   "logoSize": 19,
+   "logoLs": -0.01,
+   "color": "#1F2A1C",
+   "sub": "Eltham, Montmorency and Research",
+   "subColor": "#5E6657"
+  },
+  {
+   "type": "group",
+   "padding": "6px 20px 0",
+   "gap": 14,
+   "blocks": [
+    {
+     "type": "h1",
+     "text": "Gardens, paving and decks, built to last.",
+     "size": 30,
+     "weight": 800,
+     "lh": 1.04
+    },
+    {
+     "type": "jobPhotos",
+     "id": "job-photos",
+     "height": 150,
+     "photos": [
+      "trades/garden-patio-circle.jpg",
+      "trades/garden-brick-path.jpg",
+      "trades/garden-deck-bench.jpg"
+     ]
+    },
+    {
+     "type": "quoteForm",
+     "id": "quote",
+     "title": "Get a quote",
+     "sub": "Send a photo of the yard. We’ll call you back.",
+     "fields": [
+      {
+       "label": "Suburb",
+       "value": "Eltham",
+       "filled": true
+      },
+      {
+       "label": "Job",
+       "value": "Paving and planting",
+       "filled": true,
+       "chevron": true
+      },
+      {
+       "label": "Photo of the yard",
+       "value": "Add a photo"
+      }
+     ],
+     "button": "Send for a quote"
+    },
+    {
+     "type": "stickyCall",
+     "id": "call",
+     "text": "Call 0491 570 159",
+     "bg": "#4B7A3A",
+     "glass": "rgba(243,241,234,0.92)"
+    }
+   ]
+  }
+ ]
+}
