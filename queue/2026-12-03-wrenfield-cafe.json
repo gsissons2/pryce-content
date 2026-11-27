@@ -1,0 +1,95 @@
+{
+ "id": "2026-12-03-wrenfield-cafe",
+ "format": "redesign-carousel",
+ "schedule": {
+  "instagram": "2026-12-03T19:00:00+11:00",
+  "tiktok": "2026-12-03T19:30:00+11:00"
+ },
+ "captions": {
+  "instagram": "Concept. Not a client project. Wrenfield is a fictional café.\n\nOpen on Boxing Day? On this homepage you swipe through photos, read “Open 7 days” (true, except when it isn’t), and the Christmas hours are in an Instagram post that never finishes loading.\n\nSo we put today’s hours under the name and the holiday hours on the homepage as plain text, every changed day from 24 December to 1 January. Then one button to call.\n\nAre your holiday hours somewhere people will find them? Free review at prycedigital.com/book\n\n#cafe #hospitality #webdesign #smallbusiness #melbourne",
+  "tiktok": "Open on Boxing Day? This café’s site won’t say. Concept. Not a client project. #cafe #webdesign #hospitality"
+ },
+ "alt": [
+  "Title slide: Are you open on Boxing Day? A phone shows a café homepage with a photo slider and an Open 7 days line.",
+  "Before: the café homepage with numbered problems: a photo slider first, an Open 7 days line that is wrong over Christmas, and holiday hours in an Instagram feed that is still loading.",
+  "After: the redesign with today’s hours under the name, holiday hours from 24 December to 1 January as a list, and a button to call the café.",
+  "Before and after phones side by side.",
+  "Call to action: book a free review at prycedigital.com/book."
+ ],
+ "data": {
+  "business": "Wrenfield Cafe",
+  "post": "16",
+  "hook": "Are you open on Boxing Day?",
+  "hookSub": "The answer is stuck in an Instagram post. Here’s how we’d fix it.",
+  "before": {
+   "screen": "screens/wrenfield-before.json",
+   "title": "Nice photos. No hours.",
+   "stat": "Holiday hours: in a post",
+   "items": [
+    {
+     "title": "A slider up front",
+     "body": "Five photos to swipe, none with today’s hours.",
+     "mark": "slider",
+     "anchor": {
+      "x": 0.88,
+      "y": 0.27
+     }
+    },
+    {
+     "title": "“Open 7 days”, mostly",
+     "body": "True most weeks. Not on Christmas Day.",
+     "mark": "tagline",
+     "anchor": {
+      "x": 0.94,
+      "y": 0.86
+     }
+    },
+    {
+     "title": "Hours hidden in a post",
+     "body": "The holiday hours sit in a feed that won’t load.",
+     "mark": "instagram",
+     "anchor": {
+      "x": 0.9,
+      "y": 0.62
+     }
+    }
+   ]
+  },
+  "after": {
+   "screen": "screens/wrenfield-after.json",
+   "title": "Today. Then the holidays.",
+   "stat": "Holiday hours: on the homepage",
+   "items": [
+    {
+     "title": "Today’s hours first",
+     "body": "Open or closed, right under the name.",
+     "mark": "today",
+     "anchor": {
+      "x": 0.68,
+      "y": 0.5
+     }
+    },
+    {
+     "title": "Holiday hours as text",
+     "body": "Every changed day, 24 Dec to 1 Jan.",
+     "mark": "holiday",
+     "anchor": {
+      "x": 0.6,
+      "y": 0.55
+     }
+    },
+    {
+     "title": "One button to call",
+     "body": "Still not sure? Ask them.",
+     "mark": "call",
+     "anchor": {
+      "x": 0.9,
+      "y": 0.5
+     }
+    }
+   ]
+  },
+  "cta": "review"
+ },
+ "published": {}
+}

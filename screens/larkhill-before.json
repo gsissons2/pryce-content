@@ -1,0 +1,114 @@
+{
+ "business": "Larkhill Cooling",
+ "state": "before",
+ "theme": {
+  "bg": "#FFFFFF",
+  "ink": "#1F2A36",
+  "muted": "#66707A",
+  "accent": "#0E7AC4",
+  "line": "#E3E6EA",
+  "display": "Montserrat"
+ },
+ "blocks": [
+  {
+   "type": "photoOverlay",
+   "id": "page",
+   "height": 844,
+   "photo": "stock/thermostat.jpg",
+   "shade": "rgba(8,16,28,0.70)",
+   "blocks": [
+    {
+     "type": "status",
+     "color": "#FFFFFF"
+    },
+    {
+     "type": "header",
+     "id": "header",
+     "height": 64,
+     "padX": 16,
+     "burgerColor": "#FFFFFF",
+     "logoParts": [
+      {
+       "text": "LARKHILL",
+       "w": 800,
+       "size": 18,
+       "fam": "Montserrat",
+       "ls": 0.08,
+       "color": "rgba(255,255,255,0.75)"
+      },
+      {
+       "text": "COOLING & HEATING",
+       "w": 400,
+       "size": 9,
+       "fam": "Montserrat",
+       "ls": 0.24,
+       "color": "rgba(255,255,255,0.5)"
+      }
+     ]
+    },
+    {
+     "type": "group",
+     "padding": "26px 28px 0",
+     "gap": 8,
+     "blocks": [
+      {
+       "type": "h1",
+       "text": "STAY COOL THIS SUMMER",
+       "size": 24,
+       "weight": 800,
+       "font": "Montserrat",
+       "ls": 0.01,
+       "color": "rgba(255,255,255,0.35)"
+      },
+      {
+       "type": "para",
+       "text": "Your comfort is our priority",
+       "size": 14,
+       "font": "'Open Sans'",
+       "color": "rgba(255,255,255,0.3)"
+      }
+     ]
+    },
+    {
+     "type": "group",
+     "padding": "34px 22px 0",
+     "blocks": [
+      {
+       "type": "quoteForm",
+       "id": "popup",
+       "title": "Join the Larkhill Cool Club",
+       "sub": "Seasonal tips and member offers, straight to your inbox.",
+       "fields": [
+        {
+         "label": "First name",
+         "value": "First name"
+        },
+        {
+         "label": "Email address",
+         "value": "you@example.com"
+        }
+       ],
+       "button": "SUBSCRIBE"
+      }
+     ]
+    },
+    {
+     "type": "group",
+     "padding": "16px 0 0 120px",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "No thanks, maybe later",
+       "size": 13,
+       "color": "rgba(255,255,255,0.7)",
+       "font": "'Open Sans'"
+      }
+     ]
+    },
+    {
+     "type": "spacer"
+    }
+   ]
+  }
+ ]
+}

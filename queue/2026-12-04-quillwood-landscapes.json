@@ -1,0 +1,92 @@
+{
+ "id": "2026-12-04-quillwood-landscapes",
+ "format": "redesign-carousel",
+ "schedule": {
+  "instagram": "2026-12-04T19:00:00+11:00",
+  "tiktok": "2026-12-04T19:30:00+11:00",
+  "linkedin": "2026-12-04T08:15:00+11:00"
+ },
+ "captions": {
+  "instagram": "Concept. Not a client project. Quillwood Landscapes is a fictional business.\n\nA landscaper sells with photos of gardens. This homepage opens with a stock photo of a handshake, and the project gallery is 48 full-size photos that keep spinning on a phone. The phone number is on the Contact page.\n\nSo we led with three recent jobs, sized to load quickly, made the quote form ask for a photo of your yard instead of an essay, and kept a call button on screen.\n\nIs your best work the first thing people see? Free review at prycedigital.com/book\n\n#landscaping #gardendesign #tradies #webdesign #smallbusiness",
+  "tiktok": "A landscaper’s site with no gardens on it. Concept. Not a client project. #landscaping #webdesign #tradies",
+  "linkedin": "Concept. Not a client project. A fictional landscaper’s homepage, redesigned for the phone.\n\nThe work is the whole pitch for a landscaper, and this homepage hides it. The top of the page is a stock photo of two people shaking hands. Below it, a gallery of 48 full-size photos keeps loading on a phone connection. There is no call button.\n\nThe new version opens with three recent jobs, sized for a phone so they show straight away. The quote form asks for the suburb, the job and a photo of the yard. A call button stays on screen as you scroll.\n\nIf your site makes people wait to see your work, I’m happy to take a look: prycedigital.com/book"
+ },
+ "alt": [
+  "Title slide: A landscaper’s site with no gardens on it. A phone shows a homepage with a stock handshake photo.",
+  "Before: the landscaper homepage with numbered problems: a stock handshake photo, a project gallery still loading, and no call button.",
+  "After: the redesign with three photos of real gardens, a quote form that takes a photo of the yard, and a call button that stays on screen.",
+  "Before and after phones side by side.",
+  "Call to action: book a free review at prycedigital.com/book."
+ ],
+ "data": {
+  "business": "Quillwood Landscapes",
+  "post": "17",
+  "hook": "A landscaper’s site with no gardens on it.",
+  "hookSub": "A stock handshake and a gallery that won’t load. Here’s the fix.",
+  "before": {
+   "screen": "screens/quillwood-before.json",
+   "title": "Great work. Somewhere.",
+   "stat": "Garden photos: still loading",
+   "items": [
+    {
+     "title": "A stock handshake",
+     "body": "Right where their own gardens should be.",
+     "mark": "stock-hero",
+     "anchor": {
+      "x": 0.88,
+      "y": 0.18
+     }
+    },
+    {
+     "title": "Gallery still loading",
+     "body": "48 full-size photos, spinning on a phone.",
+     "mark": "gallery",
+     "anchor": {
+      "x": 0.9,
+      "y": 0.16
+     }
+    },
+    {
+     "title": "No call button",
+     "body": "The number is on the Contact page."
+    }
+   ]
+  },
+  "after": {
+   "screen": "screens/quillwood-after.json",
+   "title": "The work, then one tap.",
+   "stat": "Garden photos: first thing",
+   "items": [
+    {
+     "title": "Their own gardens first",
+     "body": "Three recent jobs, sized for a phone.",
+     "mark": "job-photos",
+     "anchor": {
+      "x": 0.95,
+      "y": 0.18
+     }
+    },
+    {
+     "title": "Quote from a photo",
+     "body": "Snap the yard instead of writing an essay.",
+     "mark": "quote",
+     "anchor": {
+      "x": 0.92,
+      "y": 0.06
+     }
+    },
+    {
+     "title": "Call from anywhere",
+     "body": "The number follows you down the page.",
+     "mark": "call",
+     "anchor": {
+      "x": 0.9,
+      "y": 0.32
+     }
+    }
+   ]
+  },
+  "cta": "review"
+ },
+ "published": {}
+}

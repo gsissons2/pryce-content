@@ -1,0 +1,85 @@
+{
+ "id": "2026-12-06-page-jumps-video",
+ "format": "stat-video",
+ "schedule": {
+  "instagram": "2026-12-06T12:30:00+11:00",
+  "tiktok": "2026-12-06T12:45:00+11:00",
+  "youtube": "2026-12-06T18:00:00+11:00"
+ },
+ "captions": {
+  "instagram": "You go to tap Call. The page jumps. You land on something else.\n\nWe tested 12,621 Australian small-business websites in Google’s lab test on a simulated mid-range phone. 21.8% did not pass Google’s check for content moving around while the page loads. 78.2% did.\n\nThe usual causes are photos with no set size, banners that arrive late and fonts that swap in. The fix is to save the space before anything loads.\n\nFree review at prycedigital.com/book\n\n#webdesign #smallbusiness #ux #websitespeed",
+  "tiktok": "21.8% of sites jumped around while loading in Google’s lab test. That’s how you tap the wrong thing. #webdesign #smallbusiness #ux",
+  "youtube": {
+   "title": "Why websites jump as you tap: 21.8% failed Google’s check",
+   "description": "From Pryce Digital’s test of 12,621 Australian small-business websites with Google Lighthouse on a simulated mid-range phone. Share of sites that did not pass Google’s check for content moving while the page loads. prycedigital.com/research"
+  }
+ },
+ "alt": [],
+ "sources": [
+  "Pryce Digital Lighthouse study 2026, 12,621 Australian small-business sites (prycedigital.com/research)",
+  "core_web_vitals.lab.cls pass_le_0_1_pct (78.2; 21.8 did not pass), n 12,621, data/lighthouse-2026.json"
+ ],
+ "data": {
+  "hook": "You tap Call. The page jumps.",
+  "footer": "12,621 Australian small-business sites",
+  "slides": [
+   {
+    "type": "bignum",
+    "kicker": "Google’s lab test · page jumps",
+    "value": "21.8%",
+    "unit": "jumped.",
+    "body": "Of 12,621 sites, 21.8% did not pass Google’s check for content moving as the page loads."
+   },
+   {
+    "type": "statement",
+    "kicker": "What that looks like",
+    "size": 80,
+    "title": "You tap Call. The page jumps.",
+    "body": "A photo or banner lands late and pushes everything down, right as your thumb gets there.",
+    "foot": "Google’s lab test · 78.2% passed"
+   },
+   {
+    "type": "list",
+    "kicker": "Usually why",
+    "title": "Why pages jump",
+    "items": [
+     {
+      "title": "Photos with no set size",
+      "body": "No space is saved, so the text moves."
+     },
+     {
+      "title": "Late banners and pop-ups",
+      "body": "Sale or cookie bars that push the page down."
+     },
+     {
+      "title": "Fonts swapping in",
+      "body": "Text changes size when the real font arrives."
+     }
+    ],
+    "foot": "prycedigital.com/research"
+   },
+   {
+    "type": "statement",
+    "kicker": "The fix",
+    "size": 80,
+    "title": "Save the space before it loads.",
+    "facts": [
+     {
+      "label": "Photos",
+      "value": "Give each one a set width and height."
+     },
+     {
+      "label": "Banners",
+      "value": "Keep a fixed spot for them up top."
+     }
+    ]
+   },
+   {
+    "type": "cta",
+    "cta": "review"
+   }
+  ],
+  "videoLabel": "Research"
+ },
+ "published": {}
+}

@@ -1,0 +1,88 @@
+{
+ "id": "2026-12-02-frozen-taps-video",
+ "format": "stat-video",
+ "schedule": {
+  "instagram": "2026-12-02T12:30:00+11:00",
+  "tiktok": "2026-12-02T12:45:00+11:00",
+  "youtube": "2026-12-02T18:00:00+11:00"
+ },
+ "captions": {
+  "instagram": "You tap the menu button. Nothing happens. You tap again.\n\nWe tested 12,621 Australian small-business websites in Google’s lab test on a simulated mid-range phone. 17.6% were too busy to answer a tap for more than 0.6 seconds in total while they loaded. Only 57.3% kept it to 0.2 seconds or less, which Google calls good.\n\nThe usual cause is code the visitor never asked for: chat widgets, trackers and heavy themes all starting at once.\n\nFree review at prycedigital.com/book\n\n#webdesign #smallbusiness #websitespeed #australia",
+  "tiktok": "17.6% of sites froze on taps in Google’s lab test. Is yours one of them? #webdesign #smallbusiness #websitespeed",
+  "youtube": {
+   "title": "Why your website ignores taps: 17.6% of sites froze",
+   "description": "From Pryce Digital’s test of 12,621 Australian small-business websites with Google Lighthouse on a simulated mid-range phone. Share of sites too busy to answer a tap while loading. prycedigital.com/research"
+  }
+ },
+ "alt": [],
+ "sources": [
+  "Pryce Digital Lighthouse study 2026, 12,621 Australian small-business sites (prycedigital.com/research)",
+  "core_web_vitals.lab.tbt_ms poor_gt_600ms_pct (17.6) and good_le_200ms_pct (57.3), n 12,621, data/lighthouse-2026.json. The 0.2 and 0.6 second marks are the thresholds in those field names."
+ ],
+ "data": {
+  "hook": "Looks ready. Your tap won’t work.",
+  "footer": "12,621 Australian small-business sites",
+  "slides": [
+   {
+    "type": "bignum",
+    "kicker": "Google’s lab test · taps",
+    "value": "17.6%",
+    "unit": "froze up.",
+    "body": "Of 12,621 sites, 17.6% were too busy to answer a tap for over 0.6 seconds while loading."
+   },
+   {
+    "type": "loading",
+    "title": "Looks ready. Your tap won’t work.",
+    "body": "It is still busy running code in the background, so the button can’t respond yet.",
+    "button": "View menu",
+    "status": "Busy · tap ignored",
+    "foot": "Illustration"
+   },
+   {
+    "type": "bars",
+    "kicker": "Share of 12,621 sites, Google’s lab test",
+    "title": "How long pages were too busy",
+    "unit": "%",
+    "max": 100,
+    "bars": [
+     {
+      "label": "0.2 seconds or less (good)",
+      "value": 57.3
+     },
+     {
+      "label": "Over 0.6 seconds (poor)",
+      "value": 17.6,
+      "highlight": true
+     }
+    ],
+    "foot": "Time the page could not respond, while loading"
+   },
+   {
+    "type": "list",
+    "kicker": "Usually why",
+    "title": "What keeps a page busy",
+    "items": [
+     {
+      "title": "Chat and booking widgets",
+      "body": "Each one loads its own code before you can tap."
+     },
+     {
+      "title": "Tracking scripts",
+      "body": "Several trackers, all starting at the same time."
+     },
+     {
+      "title": "Heavy themes and sliders",
+      "body": "Code for effects most visitors never see."
+     }
+    ],
+    "foot": "prycedigital.com/research"
+   },
+   {
+    "type": "cta",
+    "cta": "review"
+   }
+  ],
+  "videoLabel": "Research"
+ },
+ "published": {}
+}

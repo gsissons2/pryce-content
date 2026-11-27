@@ -1,0 +1,87 @@
+{
+ "business": "Wrenfield Cafe",
+ "state": "after",
+ "theme": {
+  "bg": "#F7F3EC",
+  "ink": "#24302A",
+  "muted": "#6E7268",
+  "accent": "#2E5E4E",
+  "line": "#E6DFD2",
+  "display": "Fraunces"
+ },
+ "blocks": [
+  {
+   "type": "status",
+   "color": "#24302A"
+  },
+  {
+   "type": "header",
+   "height": 52,
+   "logo": "Wrenfield",
+   "logoFont": "Fraunces",
+   "logoWeight": 600,
+   "logoSize": 25,
+   "logoLs": -0.02,
+   "color": "#2E5E4E"
+  },
+  {
+   "type": "group",
+   "padding": "8px 20px 0",
+   "gap": 16,
+   "blocks": [
+    {
+     "type": "openRow",
+     "id": "today",
+     "pill": "Open today · until 3pm",
+     "pillBg": "#E2ECE4",
+     "dot": "#2F8F55",
+     "sub": ""
+    },
+    {
+     "type": "h1",
+     "text": "Coffee, toasties and cake in Yarraville.",
+     "size": 30
+    },
+    {
+     "type": "photo",
+     "id": "photo",
+     "photo": "cafe/coffee-steam.jpg",
+     "height": 150
+    },
+    {
+     "type": "menuList",
+     "id": "holiday",
+     "title": "Holiday hours",
+     "link": "Add to calendar",
+     "items": [
+      [
+       "Thu 24 Dec",
+       "7am to 1pm"
+      ],
+      [
+       "Fri 25 Dec",
+       "Closed"
+      ],
+      [
+       "Sat 26 Dec",
+       "Closed"
+      ],
+      [
+       "Thu 31 Dec",
+       "7am to 1pm"
+      ],
+      [
+       "Fri 1 Jan",
+       "Closed"
+      ]
+     ]
+    },
+    {
+     "type": "button",
+     "id": "call",
+     "text": "Call the cafe"
+    }
+   ]
+  }
+ ]
+}
